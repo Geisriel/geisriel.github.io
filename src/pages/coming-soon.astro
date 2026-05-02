@@ -1,0 +1,24 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Typography, Button, Input } from "@ui-library";
+// import Input from "@components/ui-library/forms/Input/Input.astro";
+
+---
+
+<Layout title="Coming Soon">
+  <main>
+    <section class="mx-auto max-w-2xl p-6 lg:px-8 text-center mt-16 mb-16 md:mb-32">
+      <Typography variant="heading2" as="h1" class="mb-6">
+        Coming soon
+      </Typography>
+      <Typography variant="body" as="p" class="mb-6">
+        Sign up with your email to be the first to know about our launch,
+        updates, and exclusive content. Don't miss out!
+      </Typography>
+      <div class="flex gap-4 mt-12">
+        <Input type="email" placeholder="Email Address" />
+        <Button href="/" text="Submit" variant="primary" />
+      </div>
+    </section>
+  </main>
+</Layout>

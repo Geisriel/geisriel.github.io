@@ -1,0 +1,31 @@
+---
+import Navbar from "@components/Navbar.astro";
+import Footer from "@components/Footer.astro";
+import BaseLayout from "./BaseLayout.astro";
+import TopLevelNavigation from "@components/documentation/TopLevelNavigation.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <Navbar />
+  <div
+    class="max-w-7xl mx-auto grid grid-cols-12 gap-12 border-t-[1px] border-slate-200"
+  >
+    <div class="col-span-3 border-r-[1px] border-slate-200">
+      <TopLevelNavigation />
+      <slot name="navigation" />
+    </div>
+
+    <div
+      class="col-span-9 py-12 prose prose-sm prose-slate max-w-full prose-a:font-semibold"
+    >
+      <slot name="main-content" />
+    </div>
+  </div>
+  <Footer />
+</BaseLayout>

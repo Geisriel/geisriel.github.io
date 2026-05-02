@@ -1,0 +1,129 @@
+---
+import ComponentDocumentationBlock from "@components/documentation/ComponentDocumentationBlock.astro";
+import Documentation from "@layouts/Documentation.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { slugify } from "@utils/slugify";
+import { Typography } from "@ui-library";
+
+import SecondaryNavigation from "@components/documentation/SecondaryNavigation.astro";
+import SecondaryNavigationCategory from "@components/documentation/SecondaryNavigationCategory.astro";
+import SecondaryNavigationLink from "@components/documentation/SecondaryNavigationLink.astro";
+
+type UiComponent = CollectionEntry<"uiComponent">;
+
+const components = await getCollection("uiComponent");
+
+/*
+    Format the components into categories to build the navigation
+*/
+const componentNavigation = components.reduce(
+  (acc: Record<string, UiComponent[]>, component: UiComponent) => {
+    const category = component.data.category || "Other";
+    if (!acc[category]) {
+      acc[category] = [];
+    }
+    acc[category].push(component);
+    return acc;
+  },
+  {}
+);
+---
+
+<Documentation title="UI Library - Documentation">
+  <Fragment slot="navigation">
+    <SecondaryNavigation>
+      <SecondaryNavigationCategory
+        title={"Overview"}
+        href={`#${slugify("overview")}`}
+      >
+        <SecondaryNavigationLink
+          class="js-secondary-nav-link"
+          href={`#introduction`}
+          title="Introduction"
+        />
+      </SecondaryNavigationCategory>
+      {
+        Object.entries(componentNavigation).map(([category, items]) => (
+          <SecondaryNavigationCategory
+            title={category}
+            href={`#${slugify(category)}`}
+          >
+            {items.map((item) => (
+              <SecondaryNavigationLink
+                class="js-secondary-nav-link"
+                href={`#${item.id}`}
+                title={item.data.title}
+              />
+            ))}
+          </SecondaryNavigationCategory>
+        ))
+      }
+    </SecondaryNavigation>
+  </Fragment>
+
+  <Fragment slot="main-content">
+    <Typography variant="heading2" as="h1">UI Library</Typography>
+
+    <div
+      id="introduction"
+      class="js-docs-section py-5 mb-5 border-b-2 border-b-slate-200"
+    >
+      <Typography variant="heading5" as="heading2">Introduction</Typography>
+
+      <p>
+        This theme comes equipped with a lightweight UI library to help you get
+        started quickly and maintain design consistency across your site. The
+        system includes essential components such as typography, buttons, and
+        forms. Each component is designed to provide a solid foundation for
+        customization while keeping the setup simple and intuitive.
+      </p>
+
+      <p>
+        At its core, the ui library leverages Tailwind CSS for styling. Most
+        components are minimal wrappers around Tailwind classes, giving you the
+        flexibility to customize or extend them as needed.
+      </p>
+    </div>
+
+    {
+      Object.entries(componentNavigation).map(([category, items]) => (
+        <div id={`#${slugify(category)}`}>
+          {items.map((item) => (
+            <ComponentDocumentationBlock component={item} />
+          ))}
+        </div>
+      ))
+    }
+  </Fragment>
+</Documentation>
+
+<script>
+  /* 
+    Handle the active state for the secondary navigation
+  */
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".js-docs-section");
+    const links = document.querySelectorAll(".js-secondary-nav-link");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            links.forEach((link) => {
+              link.classList.toggle(
+                "font-semibold",
+                link.getAttribute("href") === `#${id}`
+              );
+            });
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+  });
+</script>

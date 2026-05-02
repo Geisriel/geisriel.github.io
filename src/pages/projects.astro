@@ -1,0 +1,44 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import ProjectOverview from "@components/projects/ProjectOverview.astro";
+import { Typography } from "@ui-library";
+
+type Project = CollectionEntry<"project">;
+const projects: Project[] = (await getCollection("project")).sort(
+  (a: Project, b: Project) =>
+    b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<Layout title="Projects">
+  <main class="flex flex-col gap-16 lg:gap-32">
+    <div
+      class="mx-auto w-full items-center max-w-3xl text-center mt-20 px-6 flex flex-col gap-6"
+    >
+      <Typography variant="heading1" as="h1">Vision Meets Design</Typography>
+      <Typography variant="body" as="p">
+        See how I partner with clients to create designs that stand out, drive
+        engagement, and push boundaries.
+      </Typography>
+    </div>
+
+    <!-- Section Featured Projects -->
+    <section class="mx-auto max-w-7xl w-full px-6 lg:px-8">
+      <div class="grid md:grid-cols-12 gap-6">
+        <div
+          class="md:col-start-2 md:col-span-10 featured-projects flex flex-col gap-16 md:gap-32"
+        >
+          {
+            projects.map((project, index) => (
+              <ProjectOverview
+                {...project.data}
+                orientation={index % 2 ? "captionLeft" : "captionRight"}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

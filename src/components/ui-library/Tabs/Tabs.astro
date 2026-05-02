@@ -1,0 +1,88 @@
+---
+// const { children } = Astro.props;
+---
+
+<div class="js-tab-container">
+  <div class="tabs" role="tablist">
+    <slot name="links" />
+  </div>
+
+  <div class="js-tab-panels tab-panels">
+    <slot name="panels" />
+  </div>
+</div>
+
+<script>
+  const tabContainers = document.querySelectorAll(".js-tab-container");
+
+  tabContainers.forEach((tabContainer) => {
+    const tabLinks = tabContainer.querySelectorAll("[role='tab']");
+    const tabPanels = tabContainer.querySelectorAll("[role='tabpanel']");
+
+    // Set the first tab as active
+    tabLinks[0].setAttribute("aria-selected", "true");
+    tabLinks[0].classList.add("active");
+    tabPanels[0].classList.add("active");
+
+    // Add click handlers to tabs
+    tabLinks.forEach((tab) => {
+      tab.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetTab = e.currentTarget as HTMLElement;
+        const targetPanelId = targetTab.getAttribute("aria-controls");
+
+        // Update tab states
+        tabLinks.forEach((t) => {
+          const selected = t === targetTab;
+          t.setAttribute("aria-selected", selected.toString());
+          t.classList.toggle("active", selected);
+        });
+
+        // Update panel visibility
+        tabPanels.forEach((panel) => {
+          if (panel.id === targetPanelId) {
+            panel.classList.add("active");
+          } else {
+            panel.classList.remove("active");
+          }
+        });
+      });
+
+      // Add keyboard navigation
+      (tab as HTMLElement).addEventListener("keydown", (e: KeyboardEvent) => {
+        const tabs = Array.from(tabLinks);
+        const index = (tabs as HTMLElement[]).indexOf(
+          e.currentTarget as HTMLElement
+        );
+
+        let targetTab;
+        switch (e.key) {
+          case "ArrowLeft":
+            targetTab = tabs[index - 1] || tabs[tabs.length - 1];
+            break;
+          case "ArrowRight":
+            targetTab = tabs[index + 1] || tabs[0];
+            break;
+          default:
+            return;
+        }
+
+        (targetTab as HTMLElement).click();
+        (targetTab as HTMLElement).focus();
+      });
+    });
+  });
+</script>
+
+<style is:global>
+  .tabs {
+    display: flex;
+    gap: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+  }
+
+  .tab-panels {
+    padding: 1rem 0;
+  }
+</style>

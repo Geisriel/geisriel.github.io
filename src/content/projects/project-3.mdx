@@ -1,0 +1,98 @@
+---
+title: Guided Journeys
+subtitle: Mindfulness on the Go
+slug: "guided-journeys"
+publishDate: 2019-12-01 00:00:00
+description: "A UI/UX project focusing on creating a mobile app for guided mindfulness and meditation. The design emphasizes usability, accessibility, and a calming aesthetic."
+featureImageSmall: ./images/project-3/smallFeatureImage.jpg
+featureImageLarge: ./images/project-3/largeFeatureImage.jpg
+featured: true
+tags:
+  - UI/UX
+  - Mobile
+  - Mindfulness
+---
+
+import { Image } from "astro:assets";
+import CenteredTextBlock from "@content-blocks/CenteredTextBlock/CenteredTextBlock.astro";
+import TextImageBlock from "@content-blocks/TextImageBlock/TextImageBlock.astro";
+import StickyContentGrid from "@content-blocks/StickyContentGrid/StickyContentGrid.astro";
+import StickyContentGridItem from "@content-blocks/StickyContentGrid/StickyContentGridItem.astro";
+import ThreeColumnGrid from "@content-blocks/GridLayout/ThreeColumnGrid.astro";
+import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
+import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
+import Testimonial from "@content-blocks/Testimonial/Testimonial.astro";
+import ScrollScalingImage from "@components/ScrollScalingImage.astro";
+import sampleImage from "@content/projects/images/project-3/sampleImage.jpg";
+import Typography from "@components/ui-library/Typography/Typography.astro";
+
+<div class='not-prose'>
+  <CenteredTextBlock
+    subHeading="Mindful Design"
+    heading="A Calming Digital Experience"
+    className="mb-16 md:mb-48">
+    <Typography variant="body" as="p" class="mb-6">
+      Guided Journeys was envisioned to bring a sense of tranquility to digital interactions. This project combines intuitive navigation with a serene aesthetic to create a truly mindful mobile experience.
+    </Typography>
+  </CenteredTextBlock>
+
+  <TextImageBlock
+    subHeading="Design Process"
+    heading="Journey to Simplicity"
+    image={sampleImage}
+    imageAlt="Screenshot of the app interface with soothing colors"
+    imagePosition="left"
+    className="mb-16 md:mb-48"
+  >
+    <Typography variant="body" as="p" class="mb-6">
+      The design process began with extensive user research and journey mapping to pinpoint moments of mindfulness. The interface uses soft hues and accessible typography to ensure every user feels welcome.
+    </Typography>
+  </TextImageBlock>
+
+  <CenteredTextBlock heading="User Experience Focus"
+  className="mb-16 md:mb-48">
+    <Typography variant="body" as="p" class="mb-6">
+      Every element in Guided Journeys is purposefully crafted to reduce stress and encourage presence. Interactive elements and fluid transitions create an immersive, calming experience for every meditation session.
+    </Typography>
+    <Typography variant="body" as="p" class="mb-6">
+      Usability and accessibility are at the forefront, ensuring that both new and experienced users can navigate the app with ease while enjoying a peaceful digital sanctuary.
+    </Typography>
+  </CenteredTextBlock>
+
+  <ScrollScalingImage alt="Calming visual effect from the guided journey app interface" src={sampleImage} className="mb-16" />
+
+  <StickyContentGrid
+    heading="Core Features"
+    subHeading="Key Elements of the App"
+    text="Guided Journeys integrates technology and mindfulness through a balanced set of features designed for serene navigation:"
+    className="mb-16 md:mb-48"
+  >
+    <Fragment slot="grid-items">
+      <StickyContentGridItem
+        itemNumber="01"
+        heading="Intuitive Navigation"
+        text="Streamlined menus and clear icons simplify the user journey."
+      />
+      <StickyContentGridItem
+        itemNumber="02"
+        heading="Calming Visuals"
+        text="A soothing color palette and gentle animations foster a peaceful environment."
+      />
+      <StickyContentGridItem
+        itemNumber="03"
+        heading="Personalized Sessions"
+        text="Customizable guided meditations tailored to individual needs."
+      />
+      <StickyContentGridItem
+        itemNumber="04"
+        heading="Accessibility First"
+        text="Thoughtfully designed for users of all abilities, ensuring inclusivity."
+      />
+    </Fragment>
+  </StickyContentGrid>
+
+  <Testimonial
+    className="mb-16 md:mb-48"
+    quote="Guided Journeys transforms everyday moments into opportunities for mindfulness, making digital interaction both intuitive and calming."
+  />
+</div>

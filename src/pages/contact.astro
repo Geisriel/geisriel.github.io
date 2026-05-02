@@ -1,0 +1,143 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Typography, Button } from "@ui-library";
+
+import contactProfile from "../images/matthieu-jungfer-unsplash-3.jpg";
+import Hero from "@components/Hero.astro";
+import Input from "@components/ui-library/forms/Input/Input.astro";
+import TextArea from "@components/ui-library/forms/TextArea/TextArea.astro";
+---
+
+<style>
+  .services {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .services__item {
+    margin-bottom: 2rem;
+    width: 45%;
+    position: relative;
+  }
+  .services__item:nth-child(even) {
+    top: 6rem;
+  }
+</style>
+
+<Layout title="Contact">
+  <main>
+    <Hero
+      image={contactProfile}
+      imageAlt="A picture of Gary"
+      subHeading=""
+      heading="Let's Collaborate"
+      tagline="Contact me"
+    >
+      <div slot="leftContent">
+        <Typography variant="body" as="p">
+          Got a project in mind or just want to talk design? I’m here to help
+          you dream up something exciting.
+        </Typography>
+      </div>
+    </Hero>
+
+    <section class="mx-auto max-w-7xl w-full p-6 lg:px-8 mb-16 md:mb-48">
+      <div class="grid md:grid-cols-12 gap-6">
+        <div class="md:col-start-2 md:col-span-5">
+          <div class="flex flex-col gap-6">
+            <Typography as="p" variant="body">
+              Whatever brings you here, I’d love to hear from you. Whether you
+              have a specific project in mind, a collaboration opportunity, or
+              just want to chat and share inspiration, drop me a line using the
+              form or reach out directly. I typically respond within 1–2
+              business days.
+            </Typography>
+            <div class="flex gap-4 items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+                ></path>
+              </svg>
+              <Typography variant="body" as="p"> +1 000-000-0000 </Typography>
+            </div>
+
+            <div class="flex gap-4 items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z"
+                ></path>
+              </svg>
+              <Typography variant="body" as="p">
+                alex@alex-harper.com
+              </Typography>
+            </div>
+
+            <div class="flex gap-4 items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 0 1-1.161.886l-.143.048a1.107 1.107 0 0 0-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 0 1-1.652.928l-.679-.906a1.125 1.125 0 0 0-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 0 0-8.862 12.872M12.75 3.031a9 9 0 0 1 6.69 14.036m0 0-.177-.529A2.25 2.25 0 0 0 17.128 15H16.5l-.324-.324a1.453 1.453 0 0 0-2.328.377l-.036.073a1.586 1.586 0 0 1-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 0 1-5.276 3.67m0 0a9 9 0 0 1-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25"
+                ></path>
+              </svg>
+              <Typography variant="body" as="p">
+                Georgian Bay, Ontario
+              </Typography>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-start-8 md:col-span-4">
+          <div class="border-gray-200 border rounded-xl p-8 shadow-2xl">
+            <div class="grid md:grid-col-2 gap-6">
+              <div>
+                <Input type="text" placeholder="Your Name" />
+              </div>
+              <div>
+                <Input type="email" placeholder="Email Address" />
+              </div>
+              <div class="md:col-span-2">
+                <TextArea
+                  placeholder="What can I help you with?"
+                  rows={4}
+                  cols={50}
+                />
+              </div>
+              <div class="md:col-span-2">
+                <Button href="/" text="Send" variant="primary" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

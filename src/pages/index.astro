@@ -1,0 +1,181 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/Hero.astro";
+import { Image } from "astro:assets";
+import ProjectOverview from "@components/projects/ProjectOverview.astro";
+import { Typography, Button } from "@ui-library";
+import CenteredTextBlock from "@components/content-blocks/CenteredTextBlock/CenteredTextBlock.astro";
+
+import heroSampleImage from "../images/matthieu-jungfer-unsplash-2.jpg";
+import aboutSampleImage from "../images/joyce-romero-unsplash.jpg";
+
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+
+// Fetch featured projects and posts
+
+const featuredPostsCollection: CollectionEntry<"post">[] = await getCollection(
+  "post",
+  (post) => post.data.featured === true
+);
+
+// Transform data for layout
+const posts = featuredPostsCollection.map(({ id, data }) => ({
+  title: data.title,
+  slug: data.slug,
+  description: data.description,
+  id: id,
+  publishDate: data.publishDate,
+  tags: data.tags,
+  image: {
+    url: data.image.url,
+    alt: data.image.alt,
+  },
+}));
+
+const featuredProjectsCollection: CollectionEntry<"project">[] =
+  await getCollection("project", (project) => project.data.featured === true);
+
+// Transform data for layout
+const projects = featuredProjectsCollection.map(({ id, data }) => ({
+  id,
+  title: data.title,
+  slug: data.slug,
+  description: data.description,
+  featureImageSmall: data.featureImageSmall,
+  featureImageLarge: data.featureImageLarge,
+}));
+
+let counter = 0;
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+  });
+}
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <Hero
+      image={heroSampleImage}
+      imageAlt="A picture of Alex"
+      subHeading="A collection of works"
+      heading="Every design tells a story."
+      tagline="Designer"
+    >
+      <div slot="leftContent">
+        <Typography variant="body" as="p">
+          Every story begins with an idea. Here, thoughts and works come
+          together to explore creativity in all its forms.
+        </Typography>
+      </div>
+    </Hero>
+
+    <!-- Section Two Column v2 -->
+    <section class="mx-auto w-full max-w-7xl px-6 lg:px-8 mb-16 md:mb-48">
+      <div class="grid gap-6 grid-cols-1 md:grid-cols-12">
+        <div class="md:col-start-2 md:col-span-4">
+          <Image
+            class="rounded-3xl w-full md:max-w-[50vw]"
+            src={aboutSampleImage}
+            alt="Alternative Text"
+          />
+        </div>
+        <div class="md:col-span-5 md:col-start-7 content-center">
+          <Typography variant="heading2" as="h2" class="mb-6">
+            Crafting Connections Through Creativity
+          </Typography>
+
+          <Typography variant="body" as="p" class="mb-4">
+            Hi, I'm Stella Astro — a visual designer from Canada. My interests lie
+            in exploring innovative visual approaches, uncovering new ways to
+            connect with audiences.</Typography
+          >
+          <Typography variant="body" as="p" class="mb-4"
+            >I've spent the last 5 years collaborating closely with a diverse
+            range of clients, striving to understand their needs and ensuring
+            every project is customized to their unique goals.
+          </Typography>
+          <Button href="/about" text="Explore more" variant="secondary" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Featured Projects -->
+    <section class="mx-auto w-full max-w-7xl mb-16 md:mb-48">
+      <CenteredTextBlock
+          heading="Bringing Concepts to Life"
+          className="mb-4 md:mb-24"
+      >
+        <Typography variant="body" as="p" class="mb-6">
+          A selection of my favorite projects that showcase my versatility as a designer.
+        </Typography>
+      </CenteredTextBlock>
+      <div class="grid md:grid-cols-12 gap-8 md:gap-16 px-6 lg:px-8">
+        <div
+          class="md:col-start-2 md:col-span-10 featured-projects flex flex-col gap-16 md:gap-32"
+        >
+          {
+            projects.map((project, index) => (
+              <ProjectOverview
+                {...project}
+                orientation={index % 2 ? "captionLeft" : "captionRight"}
+              />
+            ))
+          }
+        </div>
+        <div class="md:col-start-2 md:col-span-10 justify-self-center">
+          <Button href="/projects" text="View all projects" variant="primary" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Latest Blog -->
+    <section class="mx-auto w-full max-w-7xl mb-16 md:mb-48">
+      <CenteredTextBlock
+          heading="Behind the Designs"
+          className="mb-4 md:mb-24"
+      >
+        <Typography variant="body" as="p" class="mb-6">
+          Design insights, personal stories, and lessons learned along the way.
+        </Typography>
+      </CenteredTextBlock>
+
+      <div class="md:grid md:grid-cols-12 px-6 lg:px-8">
+        {
+          posts.map((post) => {
+            counter++;
+            return (
+              <div class="md:col-start-2 md:col-span-10">
+                <a
+                  href={`/blog/${post.slug}`}
+                  class="flex w-full gap-8 items-start group relative"
+                >
+                  <div class="flex-grow flex flex-col md:flex-row flex-wrap justify-between items-left gap-2 md:gap-6 border-b-2 border-gray-900 px-6 py-8 relative before:absolute before:inset-0 before:bg-gray-50 before:origin-left before:scale-x-0 before:transition-transform before:duration-300 before:ease-out group-hover:before:scale-x-100 before:-z-10">
+                    <Typography variant="heading4" as="h2">
+                      {post.title}
+                    </Typography>
+                    <Typography
+                      variant="body"
+                      as="p"
+                      class="text-gray-500 uppercase"
+                    >
+                      {formatDate(post.publishDate)}
+                    </Typography>
+                  </div>
+                </a>
+              </div>
+            );
+          })
+        }
+        <div
+          class="col-start-2 col-span-10 mt-8 flex gap-6 justify-center items-center"
+        >
+          <Button href="/blog" text="view all posts" variant="primary" />
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

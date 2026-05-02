@@ -1,0 +1,44 @@
+---
+import { Typography } from "@ui-library";
+import SocialLinks from "@components/SocialLinks.astro";
+import Logo from './Logo.astro';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gray-900 text-white mt-24 px-4">
+  <div
+    class="mx-auto w-full max-w-7xl py-12 grid md:grid-cols-2 gap-8 items-center"
+  >
+    <ul class="flex flex-col gap-4 text-3xl font-light">
+      <li><a href="/about">About</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <div class="md:text-right">
+      <Typography as="p" variant="body" class="mb-6"
+        >+1 000-000-0000<br />
+        Georgian Bay, ON</Typography
+      >
+      <Typography variant="heading3" as="p">
+        <a href="/">hello@domain.com</a>
+      </Typography>
+    </div>
+  </div>
+  <div
+    class="mx-auto w-full max-w-7xl py-6 grid grid-col-2 md:grid-cols-3 gap-8 items-center"
+  >
+    <Logo />
+    <div
+      class="md:justify-self-center order-1 md:order-2 col-span-2 md:col-span-1"
+    >
+      <SocialLinks />
+    </div>
+    <div class="order-3">
+      <Typography variant="bodySmall" as="p" class="md:text-right">
+        © {currentYear} | <a href="/privacy">Privacy</a>
+      </Typography>
+    </div>
+  </div>
+</footer>

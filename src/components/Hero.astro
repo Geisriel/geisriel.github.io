@@ -1,0 +1,84 @@
+---
+import HeroTagline from "@components/HeroTagline.astro";
+import { Typography } from "@ui-library";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  tagline?: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
+  subHeading?: string;
+  heading?: string;
+}
+
+const { tagline, image, imageAlt, subHeading, heading } = Astro.props;
+---
+
+<script>
+  import { animate, scroll } from "motion";
+
+  const images = document.querySelectorAll(".js-hero-image");
+  const taglines = document.querySelectorAll(".js-hero-tagline");
+  const isMdup = window.matchMedia("(min-width: 768px)").matches;
+  const imageYPosition = isMdup ? -200 : -50;
+
+  images.forEach((image) => {
+    scroll(animate(image, { y: [imageYPosition, 0] }, { ease: "linear" }), {
+      target: image,
+    });
+  });
+
+  taglines.forEach((tagline) => {
+    scroll(animate(tagline, { y: [80, 0] }, { ease: "linear" }), {
+      target: tagline,
+    });
+  });
+</script>
+
+<section
+  id="hero"
+  class="w-full mx-auto flex flex-col gap-4 md:gap-8 items-center relative mt-16 mb-32 min-h-[90vh] px-4"
+>
+  <div class="max-w-lg text-center flex flex-col gap-4">
+    <Typography variant="bodySmall" as="p" class="text-gray-500 uppercase"
+      >{subHeading}</Typography
+    >
+    <Typography variant="heading1" as="h1">{heading}</Typography>
+  </div>
+  <div class="grid md:grid-cols-12 gap-6 z-10 max-w-7xl py-6 items-start">
+    <div
+      class="md:col-start-2 md:col-span-3 text-center md:text-left order-1 relative md:top-12"
+    >
+      <slot name="leftContent" />
+    </div>
+    {
+      image && (
+        <div class="md:col-span-4 order-3 md:order-2">
+          <Image
+            class="js-hero-image rounded-3xl mx-auto max-w-80"
+            src={image}
+            alt={imageAlt || "Profile picture"}
+          />
+        </div>
+      )
+    }
+    <div class="md:col-start-9 md:col-span-3 items-center order-2 md:order-3">
+      <slot name="rightContent" />
+    </div>
+  </div>
+
+  <div
+    class="js-hero-tagline absolute left-0 right-0 -bottom-0 w-full flex justify-center items-center z-0 text-center"
+  >
+    <HeroTagline tagline={tagline} />
+  </div>
+
+  {/* Duplicate tagline which overlays the image */}
+  <div
+    aria-hidden="true"
+    class="mix-blend-overlay js-hero-tagline absolute left-0 right-0 -bottom-0 w-full flex justify-center items-center z-10 text-center"
+  >
+    <HeroTagline tagline={tagline} />
+  </div>
+</section>

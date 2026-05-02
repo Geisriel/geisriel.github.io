@@ -1,0 +1,40 @@
+---
+interface Props {
+  type?: "ordered" | "unordered";
+  class?: string;
+}
+
+const { type = "unordered", class: className = "" } = Astro.props;
+---
+
+<ul class:list={[type === "ordered" ? "ordered" : "unordered", className]}>
+  <slot />
+</ul>
+
+<style>
+  ul {
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+  }
+
+  ul > :global(*) {
+    margin-top: 0.75rem;
+  }
+
+  ul > :global(*:first-child) {
+    margin-top: 0;
+  }
+
+  .unordered {
+    list-style-type: disc;
+  }
+
+  .ordered {
+    list-style-type: decimal;
+  }
+
+  ul :global(li) {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+</style>

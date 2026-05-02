@@ -1,0 +1,322 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Typography, Button } from "@ui-library";
+import ScrollScalingImage from "@components/ScrollScalingImage.astro";
+import ScrollingText from "@components/ScrollingText.astro";
+
+import { Image } from "astro:assets";
+import coverImage from "../images/derek-sutton-unsplash.jpg";
+import coverImage2 from "../images/marek-okon-unsplash.jpg";
+import aboutProfile from "../images/matthieu-jungfer-unsplash-2.jpg";
+import aboutSampleImage2 from "../images/matthieu-jungfer-unsplash.jpg";
+import gitlabLogo from "../images/gitlab-logo.svg";
+import paypalLogo from "../images/paypal-logo.svg";
+import spotifyLogo from "../images/spotify-logo.svg";
+import asanaLogo from "../images/asana-logo.svg";
+import TextImageBlock from "@components/content-blocks/TextImageBlock/TextImageBlock.astro";
+import CenteredTextBlock from "@components/content-blocks/CenteredTextBlock/CenteredTextBlock.astro";
+import StickyContentGrid from "@components/content-blocks/StickyContentGrid/StickyContentGrid.astro";
+import StickyContentGridItem from "@components/content-blocks/StickyContentGrid/StickyContentGridItem.astro";
+---
+
+<Layout title="About">
+  <main>
+    <div class="mx-auto w-full items-center max-w-3xl text-center mt-20 px-6 mb-16 md:mb-32">
+      <Typography variant="heading1" as="h1"
+        >Crafting Connections Through Creativity</Typography
+      >
+    </div>
+    <div class="w-full relative mb-16 md:mb-48">
+      <Image
+        class="rounded-3xl w-1/2 md:w-1/4 absolute left-0 right-0 mx-auto -translate-y-12 md:-translate-y-16 z-50"
+        src={aboutProfile}
+        alt="Alternative Text"
+      />
+      <ScrollScalingImage alt={`cover image`} src={coverImage2} />
+    </div>
+
+    <!-- About Section: Philosophy -->
+    <section>
+      <CenteredTextBlock
+        subHeading="Philosophy"
+        heading="Design with Purpose"
+        className="mb-16 md:mb-48"
+      >
+        <Typography variant="body" as="p" class="mb-6">
+          Every project begins with a deep dive—understanding the problem, the
+          audience, and the story that needs to be told. I believe in designing
+          with intention, fueled by curiosity and empathy. For me, design isn't
+          just about aesthetics; it's about creating meaningful connections and
+          transforming ideas into visually compelling realities.
+        </Typography>
+      </CenteredTextBlock>
+    </section>
+
+    <!-- About Section: Journey -->
+    <section>
+      <TextImageBlock
+        subHeading="My journey"
+        heading="From Curiosity to Craft"
+        image={aboutSampleImage2}
+        imageAlt="Project feature image"
+        imagePosition="left"
+        className="mb-16 md:mb-48"
+      >
+        <Typography variant="body" as="p" class="mb-6">
+          My love for design started with a fascination for creating—whether
+          it was drawing logos as a kid or designing posters for school
+          events. This spark grew into a passion as I explored the worlds of
+          color, typography, and layout.
+        </Typography>
+        <Typography variant="body" as="p" class="mb-6"
+          >Over the years, I've honed my skills through constant learning,
+          experimentation, and working alongside inspiring people and brands.
+          Today, my expertise spans digital and print, from shaping brand
+          identities to building user-friendly websites that leave a lasting
+          impression.
+        </Typography>
+      </TextImageBlock>
+    </section>
+
+    <!-- About Section: Services -->
+    <section>
+      <StickyContentGrid
+        heading="Services"
+        subHeading="Designed to Deliver"
+        text="I offer a range of design services to help you bring your ideas to life. Whether you're building a brand from scratch or enhancing an existing one, my work ensures you stand out with designs that are both functional and beautiful."
+        className="mb-16 md:mb-48"
+      >
+        <Fragment slot="grid-items">
+          <StickyContentGridItem
+            itemNumber="01"
+            heading="Brand Identity Design"
+            text="Crafting cohesive and memorable brand identities that capture the essence of your business. From logos to color palettes, I'll help you build a brand that resonates."
+          />
+          <StickyContentGridItem
+            itemNumber="02"
+            heading="Website Design"
+            text="Designing user-friendly, visually engaging websites that deliver seamless digital experiences. Each design is tailored to your audience and business goals."
+          />
+          <StickyContentGridItem
+            itemNumber="03"
+            heading="Print Design"
+            text="From business cards to brochures, I create print materials that leave a lasting impression. Every piece is designed to align with your brand's message and style."
+          />
+          <StickyContentGridItem
+            itemNumber="04"
+            heading="UX/UI Design"
+            text="Enhancing user experiences with intuitive and visually appealing interfaces. I focus on usability, accessibility, and making every interaction meaningful."
+          />
+        </Fragment>
+      </StickyContentGrid>
+    </section>
+
+    <!-- About Section: Scroll Scaling Image -->
+    <ScrollScalingImage alt={`cover image`} src={coverImage} className="mb-16 md:mb-48" />
+
+    <!-- About Section: Process -->
+    <section>
+      <CenteredTextBlock
+        subHeading="My Process"
+        heading="How I Work"
+        className="mb-16"
+      >
+        <Typography variant="body" as="p" class="mb-6">
+          I believe that every project is unique, but my process ensures consistency and success:
+        </Typography>
+      </CenteredTextBlock>
+
+      <div class="mx-auto max-w-7xl flex flex-wrap justify-center gap-8 mb-16 md:mb-48">
+        <div
+          class="flex flex-col gap-2 max-w-xs text-center items-center bg-gray-50 p-6 rounded-3xl"
+        >
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6 text-gray-500"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+            ></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+          </svg>
+          <Typography variant="heading5" as="h3">Discovery</Typography>
+          <Typography variant="body" as="p">
+            Understanding the goals, audience, and challenges.
+          </Typography>
+        </div>
+        <div
+          class="flex flex-col gap-2 max-w-xs text-center items-center bg-gray-100 p-6 rounded-3xl"
+        >
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6 text-gray-500"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
+            ></path>
+          </svg>
+          <Typography variant="heading5" as="h3">Ideation</Typography>
+          <Typography variant="body" as="p">
+            Exploring concepts and sketching ideas.
+          </Typography>
+        </div>
+        <div
+          class="flex flex-col gap-2 max-w-xs text-center items-center bg-gray-200 p-6 rounded-3xl"
+        >
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6 text-gray-500"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125"
+            ></path>
+          </svg>
+          <Typography variant="heading5" as="h3">Design</Typography>
+          <Typography variant="body" as="p">
+            Bringing ideas to life through high-fidelity mockups.
+          </Typography>
+        </div>
+        <div
+          class="flex flex-col gap-2 max-w-xs text-center items-center bg-gray-100 p-6 rounded-3xl"
+        >
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6 text-gray-500"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
+            ></path>
+          </svg>
+
+          <Typography variant="heading5" as="h3">Development</Typography>
+          <Typography variant="body" as="p">
+            Building functional and scalable solutions.
+          </Typography>
+        </div>
+        <div
+          class="flex flex-col gap-2 max-w-xs text-center items-center bg-gray-50 p-6 rounded-3xl"
+        >
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6 text-gray-500"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
+            ></path>
+          </svg>
+
+          <Typography variant="heading5" as="h3">Delivery</Typography>
+          <Typography variant="body" as="p">
+            Testing, refining, and launching the final product.
+          </Typography>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col gap-20 mb-16 md:mb-48 justify-center items-center">
+      <ScrollingText
+        staticText="I can"
+        scrollingItems={[
+          "design.",
+          "prototype.",
+          "solve.",
+          "build.",
+          "develop.",
+          "debug.",
+          "learn.",
+          "ship.",
+          "collaborate.",
+          "create.",
+          "inspire.",
+          "innovate.",
+          "test.",
+          "optimize.",
+          "teach.",
+          "visualize.",
+          "scale.",
+          "transform.",
+        ]}
+      />
+    </section>
+
+    <!-- About Section: Clients -->
+    <section>
+      <CenteredTextBlock
+        subHeading="Clients"
+        heading="Trusted by Leading Brands"
+        className="mb-16"
+      >
+        <Typography variant="body" as="p" class="mb-6">
+          I've had the privilege of collaborating with amazing clients across various industries. Here are just a few of the companies I've partnered with to deliver exceptional results.
+        </Typography>
+      </CenteredTextBlock>
+      <div class="flex flex-wrap mx-auto max-w-7xl items-center gap-12 justify-center mb-16 md:mb-48">
+        <Image
+          src={gitlabLogo}
+          alt="Gitlab"
+          class="w-auto max-h-12 grayscale hover:grayscale-0 transition-all duration-300"
+        />
+        <Image
+          src={paypalLogo}
+          alt="PayPal"
+          class="w-auto max-h-12 grayscale hover:grayscale-0 transition-all duration-300"
+        />
+        <Image
+          src={spotifyLogo}
+          alt="Spotify"
+          class="w-auto max-h-12 grayscale hover:grayscale-0 transition-all duration-300"
+        />
+        <Image
+          src={asanaLogo}
+          alt="Asana"
+          class="w-auto max-h-12 grayscale hover:grayscale-0 transition-all duration-300"
+        />
+      </div>
+    </section>
+
+    <!-- About Section: Resume -->
+    <section>
+      <CenteredTextBlock
+        subHeading="Resume"
+        heading="Want More Details?"
+        className="mb-16"
+      >
+        <Typography variant="body" as="p" class="mb-6">
+          Looking for a quick overview of my experience, skills, and accomplishments? Download my resume to get all the details in one place.
+        </Typography>
+      </CenteredTextBlock>
+      <div class="mx-auto text-center mb-16 md:mb-48">
+        <Button href="#" text="Download my resume" variant="primary" />
+      </div>
+    </section>
+
+  </main>
+</Layout>

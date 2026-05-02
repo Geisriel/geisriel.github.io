@@ -1,0 +1,14 @@
+---
+import { Tab, Tabs, TabPanel } from "@ui-library";
+---
+
+<Tabs>
+  <Fragment slot="links">
+    <Tab id="example">Example</Tab>
+    <Tab id="code">Code</Tab>
+  </Fragment>
+  <Fragment slot="panels">
+    <TabPanel id="example"><slot name="example" /></TabPanel>
+    <TabPanel id="code"><slot name="code" /></TabPanel>
+  </Fragment>
+</Tabs>

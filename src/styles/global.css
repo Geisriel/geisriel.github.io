@@ -1,0 +1,30 @@
+/* Tailwind config */
+
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Add tailwind theme vars here */
+}
+
+@view-transition {
+  navigation: auto; /* enabled! */
+}
+
+html {
+  font-family: "Figtree", system-ui, sans-serif;
+  background: #ffffff;
+  color: #0a1011;
+}
+
+code {
+  font-family:
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
+}

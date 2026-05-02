@@ -1,0 +1,151 @@
+---
+interface Props {
+  staticText: string;
+  scrollingItems: string[];
+}
+
+const { staticText, scrollingItems } = Astro.props;
+---
+
+<div class="scroll-text-container">
+  <div class="static-text">{staticText}</div>
+  <div class="scrolling-container">
+    <div class="scrolling-text js-scrolling-text">
+      {
+        scrollingItems.map((item) => (
+          <div class="scroll-item" data-scroll>
+            {item}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .scroll-text-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .static-text {
+    max-width: 300px;
+    position: sticky;
+    top: 50vh;
+    transform: translateY(-50%);
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    font-weight: 600;
+    justify-self: end;
+    text-align: right;
+  }
+
+  .scrolling-container {
+    flex: 1;
+    position: relative;
+    top: -3.3rem;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    /* Styles for tablet devices in portrait orientation */
+    .scrolling-container {
+      top: -2.4rem;
+    }
+    /* Add any other tablet-specific styles here */
+  }
+  @media (max-width: 768px) {
+    .scrolling-container {
+      top: -1.5rem;
+    }
+  }
+
+  .scrolling-text {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    font-weight: 600;
+  }
+
+  .scroll-item {
+    opacity: 0.3;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: center;
+    color: var(--item-color, #666);
+    scroll-snap-align: center;
+  }
+
+  .scroll-item.in-view {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  import { inView } from "motion";
+  import { interpolateColor } from "../utils/interpolateColor";
+
+  function setupScrollEffect() {
+    const itemsContainer = document.querySelectorAll(".js-scrolling-text");
+    const items = document.querySelectorAll("[data-scroll]");
+    const htmlElement = document.documentElement;
+    if (items.length < 2) return;
+
+    const startColor = "#3B8BE9"; // Change this to your desired start color
+    const endColor = "#0327D3"; // Change this to your desired end color
+
+    items.forEach((item, index) => {
+    const factor = index / (items.length - 1);
+    const color = interpolateColor(startColor, endColor, factor);
+    (item as HTMLElement).style.setProperty("--item-color", color);
+
+    // Make the first item "active" from the start:
+    if (index === 0) {
+      item.classList.add("in-view");
+    }
+
+    inView(
+      item,
+      ({ target }) => {
+        target.classList.add("in-view");
+        return () => {
+          target.classList.remove("in-view");
+        };
+      },
+      {
+        margin: "-45% 0px -45% 0px",
+        amount: 0.6,
+      }
+    );
+  });
+
+    /*
+      Enable scroll snapping on the <html> element while this
+      component is in view
+    */
+    inView(
+      itemsContainer,
+      () => {
+        htmlElement.classList.add("snap-y", "snap-mandatory");
+        return () => {
+          htmlElement.classList.remove("snap-y", "snap-mandatory");
+        };
+      },
+      {
+        /*
+          The snapping should only apply when the static text is close to the
+          center, otherwise it would be too disruptive
+        */
+        margin: "-50% 0px -45% 0px",
+      }
+    );
+  }
+
+  // Run setup when the component mounts
+  setupScrollEffect();
+
+  // Run setup again if the component is dynamically loaded
+  document.addEventListener("astro:page-load", setupScrollEffect);
+</script>

@@ -1,0 +1,64 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Typography } from "@ui-library";
+
+import { Image } from "astro:assets";
+
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import ScrollScalingImage from "@components/ScrollScalingImage.astro";
+
+type Project = CollectionEntry<"project">;
+
+interface Props {
+  project: Project;
+}
+
+export async function getStaticPaths() {
+  const projects = await getCollection("project");
+  return projects.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const { title, description, featureImageLarge, featureImageSmall } =
+  project.data;
+---
+
+<Layout title="Projects">
+  <main class="flex flex-col">
+    <!-- Project Title and Desc -->
+    <div class="mx-auto w-full items-center max-w-3xl text-center mt-20 px-6 mb-16 md:mb-32">
+      <Typography class="mb-4" variant="heading1" as="h1">{title}</Typography>
+      <Typography variant="body" as="p">
+        {description}
+      </Typography>
+    </div>
+
+    <!-- Featured Images-->
+    <div class="w-full relative mb-16 md:mb-48">
+      <Image
+        class="rounded-3xl w-1/2 md:w-1/4 absolute left-0 right-0 mx-auto -translate-y-12 md:-translate-y-16 z-50"
+        src={featureImageLarge}
+        alt="Alternative Text"
+      />
+      {
+        featureImageSmall && (
+          <ScrollScalingImage alt={`cover image`} src={featureImageSmall} />
+        )
+      }
+    </div>
+
+    {
+      /*
+          .prose adds tailwind typography styling to markdown content
+          ref: https://docs.astro.build/en/recipes/tailwind-rendered-markdown/
+        */
+    }
+    <div class="prose max-w-full">
+      <Content />
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  className?: string;
+  image?: ImageMetadata;
+  quote: string;
+  author?: string;
+  roleAndCompany?: string;
+}
+
+const { image, quote, author, roleAndCompany, className = "" } = Astro.props;
+---
+
+<div class:list={["mx-auto max-w-7xl p-6 lg:px-8", className]}>
+  <div class="mx-auto max-w-2xl lg:max-w-4xl">
+    <figure class="mt-10">
+      <blockquote
+        class="text-center italic text-3xl md:text-4xl font-semibold text-gray-900"
+      >
+        <p>
+          {quote}
+        </p>
+      </blockquote>
+      <figcaption class="mt-10">
+        {image && (
+          <Image
+            src={image}
+            alt="Testimonial image"
+            class="mx-auto size-10 rounded-full"
+          />
+        )}
+
+        <div class="mt-4 flex items-center justify-center space-x-3 text-base">
+          <div class="font-semibold text-gray-900">{author}</div>
+          <svg
+            viewBox="0 0 2 2"
+            width="3"
+            height="3"
+            aria-hidden="true"
+            class="fill-gray-900"
+          >
+            <circle cx="1" cy="1" r="1"></circle>
+          </svg>
+          <div class="text-gray-600">{roleAndCompany}</div>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+</div>

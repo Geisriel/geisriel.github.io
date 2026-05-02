@@ -1,0 +1,24 @@
+---
+import { render, type CollectionEntry } from "astro:content";
+import { Typography } from "@ui-library";
+
+type UiComponent = CollectionEntry<"uiComponent">;
+
+type Props = {
+  component: UiComponent;
+};
+
+const { component } = Astro.props;
+const { Content } = await render(component);
+const { title } = component.data;
+---
+
+<div
+  id={component.id}
+  class="js-docs-section py-5 mb-5 border-b-2 border-b-slate-200"
+>
+  <Typography variant="heading5" as="heading2">{title}</Typography>
+  <Content />
+</div>
+
+<style></style>

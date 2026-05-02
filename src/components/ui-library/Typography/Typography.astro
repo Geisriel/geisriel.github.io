@@ -1,0 +1,111 @@
+---
+type Props = {
+  /**
+   * Specify a semantic HTML element to use.
+   */
+  as?:
+    | "p"
+    | "h1"
+    | "h2"
+    | "h3"
+    | "h4"
+    | "h5"
+    | "h6"
+    | "span"
+    | "div"
+    | "caption";
+  /**
+   * Applies the correct typography styles
+   */
+  variant?:
+    | "heading1"
+    | "heading2"
+    | "heading3"
+    | "heading4"
+    | "heading5"
+    | "heading6"
+    | "body"
+    | "bodySmall"
+    | "caption";
+  class?: string;
+};
+
+const {
+  as = "p",
+  variant = "body",
+  class: classAttr = "",
+}: Props = Astro.props;
+const Element = as;
+---
+
+<Element class:list={[classAttr, variant]}>
+  <slot />
+</Element>
+
+<style>
+  .heading1 {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  .heading2 {
+    font-size: 2.25rem;
+    line-height: 1;
+    font-weight: 600;
+  }
+  .heading3 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 500;
+  }
+  .heading4 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+  .heading5 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+  }
+  .heading6 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+  }
+
+  /* Desktop sizes */
+  @media (min-width: 768px) {
+    .heading1 {
+      font-size: 3.75rem;
+    }
+    .heading2 {
+      font-size: 3rem;
+    }
+    .heading3 {
+      font-size: 2.25rem;
+    }
+    .heading4 {
+      font-size: 1.875rem;
+    }
+    .heading5 {
+      font-size: 1.5rem;
+    }
+    .heading6 {
+      font-size: 1.125rem;
+    }
+  }
+
+  .body {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  .bodySmall {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  .caption {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+</style>

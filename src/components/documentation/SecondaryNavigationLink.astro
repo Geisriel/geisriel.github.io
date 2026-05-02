@@ -1,0 +1,19 @@
+---
+type Props = {
+  title: string;
+  href: string;
+  active?: boolean;
+  class?: string;
+};
+
+const { title, href, active, class: className } = Astro.props;
+---
+
+<li>
+  <a
+    href={href}
+    class:list={["text-slate-900", className, { "font-semibold": active }]}
+  >
+    {title}
+  </a>
+</li>

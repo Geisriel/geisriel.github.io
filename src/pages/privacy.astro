@@ -1,0 +1,170 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Typography, List } from "@ui-library";
+---
+
+<Layout title="Privacy">
+  <main>
+    <!-- Section One Column -->
+    <section class="mx-auto max-w-2xl p-6 lg:px-8 text-center mt-16 mb-16 md:mb-32">
+      <Typography variant="heading2" as="h2" class="mb-8"
+        >Privacy Policy</Typography
+      >
+      <Typography
+        variant="bodySmall"
+        as="p"
+        class="text-gray-500 mb-4 uppercase"
+      >
+        Last Updated: [Date]
+      </Typography>
+      <Typography variant="body" as="p" class="mb-6">
+        Thank you for visiting my personal portfolio website ("Site"). I respect
+        your privacy and am committed to protecting any personal information you
+        may share. This Privacy Policy outlines the types of information I may
+        collect from you, how I use it, and the steps taken to protect it.
+      </Typography>
+    </section>
+
+    <section
+      class="mx-auto max-w-7xl py-6 my-12 flex flex-nowrap justify-between mb-16 md:mb-48"
+    >
+      <div class="w-1/2">
+        <div class="max-w-lg sticky top-4">
+          <Typography variant="heading3" as="h3" class="mb-6">
+            Information I Collect
+          </Typography>
+        </div>
+      </div>
+      <div class="w-1/2">
+        <Typography variant="body" as="p" class="mb-8"
+          >Personal information you provide:</Typography
+        >
+        <List type="unordered">
+          <li>
+            <strong>Contact Forms:</strong> When you fill out the contact form on
+            my Site, I collect information you provide directly, such as your name,
+            email address, and any message content.
+          </li>
+
+          <li>
+            <strong>Newsletter Subscriptions (if applicable):</strong> If you sign
+            up for a newsletter or mailing list, I may collect your name and email
+            address.
+          </li>
+        </List>
+
+        <Typography variant="body" as="p" class="mb-8"
+          >Automatically collected information:</Typography
+        >
+        <List type="unordered">
+          <li>
+            <strong>Usage Data:</strong> I may use basic analytics tools (e.g., Google
+            Analytics) to track usage data such as the pages you visit, the time
+            and date of your visit, the time spent on those pages, and other diagnostic
+            data.
+          </li>
+          <li>
+            <strong>Cookies:</strong> Cookies are small text files stored on your
+            browser. They help the Site function properly and allow certain analytics
+            or preference features to work. For instance, cookies may be used to
+            remember your preferences, track session information, or gather analytics
+            data. You can set your browser to refuse cookies or indicate when cookies
+            are being sent. However, if you do not accept cookies, you may not be
+            able to use some portions of the Site.
+          </li>
+        </List>
+      </div>
+    </section>
+
+    <section
+      class="mx-auto max-w-7xl py-6 my-12 flex flex-nowrap justify-between mb-16 md:mb-48"
+    >
+      <div class="w-1/2">
+        <div class="max-w-lg sticky top-4">
+          <Typography variant="heading3" as="h3" class="mb-6">
+            How I Use Your Information
+          </Typography>
+        </div>
+      </div>
+      <div class="w-1/2">
+        <Typography variant="body" as="p" class="mb-6"
+          >I use your information for the following purposes:</Typography
+        >
+        <List type="unordered">
+          <li>
+            <strong>To respond to inquiries:</strong> Any personal information you
+            provide through a contact form is used to respond to your message or
+            request.
+          </li>
+          <li>
+            <strong>To maintain and improve the Site:</strong> Analytics data helps
+            me understand how users engage with my Site so I can improve its content
+            and functionality.
+          </li>
+          <li>
+            <strong>To send occasional updates:</strong> If you have opted in to
+            receive a newsletter or updates, I will use your email address to send
+            communications about news, updates, or relevant information related to
+            my work.
+          </li>
+        </List>
+      </div>
+    </section>
+
+    <section
+      class="mx-auto max-w-7xl py-6 my-12 flex flex-nowrap justify-between mb-16 md:mb-48"
+    >
+      <div class="w-1/2">
+        <div class="max-w-lg sticky top-4">
+          <Typography variant="heading3" as="h3" class="mb-6">
+            Sharing and Disclosure of Information
+          </Typography>
+        </div>
+      </div>
+      <div class="w-1/2">
+        <Typography variant="body" as="p" class="mb-6"
+          >I will never sell or rent your personal information. However, I may
+          share some information in the following circumstances:</Typography
+        >
+        <List type="unordered">
+          <li>
+            <strong>Service Providers:</strong> I may engage third-party companies
+            or individuals to facilitate certain parts of the Site (e.g., analytics
+            providers like Google Analytics). These third parties have access to
+            your information only to perform specific tasks on my behalf and are
+            obligated not to disclose or use your information for any other purpose.
+          </li>
+          <li>
+            <strong>Legal Requirements:</strong> I may disclose your information
+            if required by law or if I believe in good faith that such action is
+            necessary to comply with legal obligations, protect my rights or property,
+            or ensure the safety of my users or the public.
+          </li>
+        </List>
+      </div>
+    </section>
+
+    <section
+      class="mx-auto max-w-7xl py-6 my-12 flex flex-nowrap justify-between mb-16 md:mb-48"
+    >
+      <div class="w-1/2">
+        <div class="max-w-lg sticky top-4">
+          <Typography variant="heading3" as="h3" class="mb-6">
+            Contact Information
+          </Typography>
+        </div>
+      </div>
+      <div class="w-1/2">
+        <Typography variant="body" as="p" class="mb-6"
+          >If you have any questions or concerns about this Privacy Policy or
+          the practices of this Site, please contact me at:</Typography
+        >
+        <List type="unordered">
+          <li>Your Name</li>
+          <li>Phone: +1 000-000-0000</li>
+          <li>Email: your-email@email.com</li>
+        </List>
+      </div>
+    </section>
+  </main>
+</Layout>

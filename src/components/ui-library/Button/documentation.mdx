@@ -1,0 +1,52 @@
+---
+id: button
+title: Button
+category: Actions
+---
+
+import Button from "./Button.astro";
+import CodeSample from '../../documentation/CodeSample.astro'
+
+The Button component is a versatile and styled wrapper that creates interactive buttons with animated hover effects. It comes in two variants: primary and secondary, each with its own distinct visual style.
+
+### Props
+
+| Prop      | Type     | Description                          |
+|-----------|----------|--------------------------------------|
+| href      | string   | The URL that the button links to     |
+| text      | string   | The text content of the button       |
+| className | string   | Additional CSS classes to apply (optional) |
+| variant   | "primary" \| "secondary" | The button style variant. Defaults to "secondary" |
+
+### Examples
+
+<Button text="Primary" variant="primary" href="#" />
+<Button text="Secondary" variant="secondary" href="#" />
+
+#### Variants
+
+<CodeSample>
+    <Fragment slot="example">
+        <Button text="Primary" variant="primary" href="#" />
+        <Button text="Secondary" variant="secondary" href="#" />
+    </Fragment>
+    <Fragment slot="code">
+        ```html
+        <Button text="Primary" variant="primary" href="#" />
+        <Button text="Secondary" variant="secondary" href="#" />
+        ```
+    </Fragment>
+</CodeSample>
+
+
+### Features
+
+- **Primary Variant**: A solid button with a sliding hover effect
+- **Secondary Variant**: A text button with an expanding circular background on hover
+- **Animated Effects**: Smooth transitions and hover animations
+- **Accessible**: Built with proper semantic HTML and ARIA attributes
+- **Customizable**: Accepts additional classes for custom styling
+
+### Notes
+
+The Button component renders as an `<a>` tag, making it perfect for navigation and links. For form submissions or click actions, consider creating a separate button variant that uses the `<button>` element.

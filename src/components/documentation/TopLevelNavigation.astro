@@ -1,0 +1,26 @@
+---
+import homeIcon from "../../images/ui/icon-home.svg";
+import pageIcon from "../../images/ui/icon-page.svg";
+import bookIcon from "../../images/ui/icon-book.svg";
+import supportIcon from "../../images/ui/icon-support.svg";
+import TopLevelNavigationItem from "./TopLevelNavigationItem.astro";
+---
+
+<ul class="mt-12 mb-10 mr-4 space-y-1 p-2 ml-0 bg-slate-100 rounded-md">
+  <TopLevelNavigationItem title="Home" href="/documentation" icon={homeIcon} />
+  <TopLevelNavigationItem
+    title="UI library"
+    href="/documentation/ui-library"
+    icon={bookIcon}
+  />
+  <TopLevelNavigationItem
+    title="Pages"
+    href="/documentation/pages"
+    icon={pageIcon}
+  />
+  <TopLevelNavigationItem
+    title="Support"
+    href="/documentation/support"
+    icon={supportIcon}
+  />
+</ul>

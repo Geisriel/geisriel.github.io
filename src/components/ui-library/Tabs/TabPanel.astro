@@ -1,0 +1,23 @@
+---
+type Props = {
+  id: string;
+  active?: boolean;
+};
+
+const { id } = Astro.props;
+---
+
+<div role="tabpanel" id={`${id}-panel`} aria-labelledby={`${id}-control`}>
+  <slot />
+</div>
+
+<style>
+  [role="tabpanel"] {
+    margin-top: 1rem;
+    display: none;
+  }
+
+  [role="tabpanel"].active {
+    display: block;
+  }
+</style>

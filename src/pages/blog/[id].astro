@@ -1,0 +1,79 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import Typography from "../../components/ui-library/Typography/Typography.astro";
+
+type Post = CollectionEntry<"post">;
+
+interface Props {
+  post: Post;
+}
+
+export async function getStaticPaths() {
+  const posts = await getCollection("post");
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { title, publishDate, tags } = post.data;
+---
+
+<Layout title={`${title} | Blog`}>
+  <main class="flex flex-col gap-24 lg:gap-32">
+    <div
+      class="mx-auto w-full items-center max-w-3xl text-center mt-20 px-6 flex flex-col gap-6"
+    >
+      <Typography variant="heading1" as="h1">{title}</Typography>
+      <Typography variant="bodySmall" as="p" class="text-gray-500 uppercase"
+        >{publishDate.toString().slice(0, 10)}</Typography
+      >
+      {
+        tags?.length > 0 && (
+          <div class="flex gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 6h.008v.008H6V6Z"
+              />
+            </svg>
+            <Typography
+              variant="bodySmall"
+              as="p"
+              class="text-gray-500 uppercase"
+            >
+              {tags.join(", ")}
+            </Typography>
+          </div>
+        )
+      }
+    </div>
+    <div class="mb-24 mx-auto max-w-3xl px-6">
+      {
+        /*
+          .prose adds tailwind typography styling to markdown content
+          ref: https://docs.astro.build/en/recipes/tailwind-rendered-markdown/
+        */
+      }
+      <div class="prose max-w-full text-lg">
+        <Content />
+      </div>
+    </div>
+  </main>
+</Layout>

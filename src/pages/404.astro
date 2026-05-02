@@ -1,0 +1,19 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Typography, Button } from "@ui-library";
+---
+
+<Layout title="404">
+  <main>
+    <section class="mx-auto max-w-2xl p-6 lg:px-8 text-center mt-16 mb-16 md:mb-32">
+      <Typography variant="heading2" as="h1" class="mb-6">
+        Oops this page cannot be found!
+      </Typography>
+      <Typography variant="body" as="p" class="mb-6">
+        The page you're looking for doesn't exist or has been moved.
+      </Typography>
+
+      <Button href="/" text="Back to home" />
+    </section>
+  </main>
+</Layout>

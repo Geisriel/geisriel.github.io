@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+type Props = {
+  className?: string;
+  src: ImageMetadata;
+  alt: string;
+  /**
+   * The initial scale of the image at the beginning of the animation,
+   * as a percentage.
+   * @default 80
+   */
+  startSize?: number;
+  /**
+   * The scale of the image at the end of the animation,
+   * as a percentage.
+   * @default 100
+   */
+  endSize?: number;
+};
+
+const { className, src, alt, startSize = 80, endSize = 100 } = Astro.props;
+---
+
+<script>
+  import { animate, scroll } from "motion";
+
+  /*
+    Animation to increase the size of the cover image while scrolling
+  */
+  document.querySelectorAll(".js-cover-image").forEach((image) => {
+    const endSize = (image as HTMLElement).dataset.endSize;
+
+    scroll(
+      animate(image, {
+        borderRadius: 0,
+        transform: `scale(${endSize}%)`,
+      }),
+      {
+        target: image,
+        offset: ["start end", "end end"],
+      }
+    );
+  });
+</script>
+
+<Image
+  src={src}
+  alt={alt}
+  style={{ transform: `scale(${startSize}%)` }}
+  class:list={["block mx-auto rounded-3xl w-full js-cover-image origin-top", className]}
+  data-end-size={endSize}
+/>

@@ -1,0 +1,52 @@
+---
+id: typography
+title: Typography
+category: Foundations
+---
+
+import Typography from "./Typography.astro";
+
+## Description
+
+The **Typography** component is a flexible way to ensure consistent styling for all text elements in your application. It lets you choose which semantic HTML element to render via the `as` prop, and applies a corresponding style variant (e.g., headings, body text, captions) via the `variant` prop. This decouples the styling of your text from the semantic meaning, ensuring a clean and maintainable codebase.
+
+### Props
+
+| Prop     | Type                                                                                                                                               | Default | Description                                                                                     |
+|----------|----------------------------------------------------------------------------------------------------------------------------------------------------|---------|-------------------------------------------------------------------------------------------------|
+| **as**   | `"p" \| "h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6" \| "span" \| "div" \| "caption"`                                                               | `"p"`   | Specifies which HTML tag to render.                                                             |
+| **variant** | `"heading1" \| "heading2" \| "heading3" \| "heading4" \| "heading5" \| "heading6" \| "body" \| "bodySmall" \| "caption"` | `"body"` | Applies the corresponding typography style (font size, weight, line-height, etc.).              |
+| **class** | `string`                                                                                                                                         | `""`    | Any additional classes to apply to the rendered HTML element.                                  |
+
+### Examples
+
+<div class="not-prose">
+  <Typography as="h1" variant="heading1" class="mb-2">1Click me</Typography>
+  <Typography as="h2" variant="heading2">2Click me</Typography>
+  <Typography as="h3" variant="heading3">3Click me</Typography>
+  <Typography as="h3" variant="body">body as h3</Typography>
+  <Typography as="caption" variant="caption">caption</Typography>
+  <Typography as="h4" variant="caption">caption as h4</Typography>
+</div>
+
+#### Basic Usage
+
+```astro
+---
+import Typography from './Typography.astro';
+---
+
+<!-- Heading example -->
+<Typography as="h1" variant="heading1">
+  Heading Level 1
+</Typography>
+
+<!-- Body text example -->
+<Typography as="p" variant="body">
+  This is body text displayed as a paragraph tag.
+</Typography>
+
+<!-- Caption example -->
+<Typography as="span" variant="caption">
+  This is a caption displayed as a span.
+</Typography>

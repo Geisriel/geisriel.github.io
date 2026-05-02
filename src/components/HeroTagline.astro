@@ -1,0 +1,68 @@
+---
+interface Props {
+  tagline?: string;
+}
+
+const { tagline } = Astro.props;
+---
+
+<span
+  class="js-adjust-text-size block text-[20vw] leading-none overflow-hidden whitespace-nowrap uppercase font-bold"
+>
+  {
+    // For the animation, split the tagline into a span for each letter
+    tagline &&
+      Array.from(tagline).map((letter) => (
+        <span class="inline-block opacity-0">
+          {letter === " " ? "\u00A0" : letter}
+        </span>
+      ))
+  }
+</span>
+
+<script>
+  import { animate, stagger, inView } from "motion";
+
+  // Text resizing
+  function adjustTextSize() {
+    const containers = document.querySelectorAll(".js-adjust-text-size");
+
+    containers.forEach((container) => {
+      const parent = container.parentElement;
+      if (!parent) return;
+
+      // Start with 20vw
+      let fontSize = 20;
+      (container as HTMLElement).style.fontSize = `${fontSize}vw`;
+
+      // Reduce size until it fits within the parent width
+      while (container.scrollWidth > parent.clientWidth && fontSize > 1) {
+        fontSize -= 0.5;
+        (container as HTMLElement).style.fontSize = `${fontSize}vw`;
+      }
+    });
+  }
+
+  // Initialize text sizing
+  window.addEventListener("load", adjustTextSize);
+  window.addEventListener("resize", adjustTextSize);
+
+  // Setup animations
+  document.querySelectorAll(".js-adjust-text-size").forEach((container) => {
+    inView(
+      container,
+      ({ target }) => {
+        const letters = Array.from(
+          target.querySelectorAll("span")
+        ) as HTMLElement[];
+
+        animate(
+          letters,
+          { y: ["100%", 0], opacity: [0, 1] },
+          { delay: stagger(0.1), duration: 0.8 }
+        );
+      },
+      { amount: 0.1 }
+    );
+  });
+</script>

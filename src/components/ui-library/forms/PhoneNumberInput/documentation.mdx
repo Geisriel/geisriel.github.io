@@ -1,0 +1,32 @@
+---
+id: phone-number-input
+title: Phone Number Input
+category: Forms
+---
+
+import PhoneNumberInput from "./PhoneNumberInput.astro";
+
+The **Phone Number Input** component provides a combined interface for entering a phone number along with a country selector. On the left, a dropdown allows users to select a country (with options for US, CA, and EU) and displays an accompanying icon. On the right, a text input field is used for entering the phone number (e.g., "123-456-7890"). The component is styled using Tailwind CSS classes and supports additional input props via a spread attribute.
+
+#### Examples
+
+Below is an example of the component in its default state:
+
+<PhoneNumberInput />
+
+#### Usage
+
+You can pass any standard input properties to the component. For example:
+
+```astro
+<PhoneNumberInput type="text" value="123-456-7890" />
+```
+### Props
+
+This component accepts all standard props for an `<input>` element, including:
+
+- type: Defines the input type (default is "text").
+- value: Sets the current value of the phone number input.
+- placeholder: Provides placeholder text (default is "123-456-7890").
+
+Additional properties such as onChange, name, etc., are forwarded to the text input.

@@ -1,0 +1,51 @@
+---
+id: textarea
+title: TextArea
+category: Forms
+---
+
+import TextArea from "./TextArea.astro";
+
+## Description
+
+The TextArea component is a styled wrapper around the standard HTML textarea element. It utilizes Tailwind CSS for styling, providing a consistent and modern look across your application.
+
+### Props
+
+| Prop      | Type     | Description                          |
+|-----------|----------|--------------------------------------|
+| value     | string   | The value of the textarea.           |
+| onChange  | function | Callback function that is called when the textarea value changes. |
+| rows      | number   | The number of visible text lines.    |
+| cols      | number   | The visible width of the textarea.   |
+
+Plus all of the props available on the standard textarea element, please refer to the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attributes).
+
+
+### Examples
+
+
+#### Basic Usage
+
+```jsx
+<TextArea placeholder="Enter your text here..." />
+```
+<TextArea placeholder="Enter your text here..." />
+
+
+#### Controlled TextArea
+
+```jsx
+const [textValue, setTextValue] = useState("");
+
+<TextArea
+    value={textValue}
+    onChange={(e) => setTextValue(e.target.value)}
+    rows={4}
+    cols={50}
+/>
+```
+
+### Notes
+
+For more information on the standard textarea element, please refer to the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea).

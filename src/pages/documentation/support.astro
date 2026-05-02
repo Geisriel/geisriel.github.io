@@ -1,0 +1,57 @@
+---
+import Documentation from "@layouts/Documentation.astro";
+import { Typography } from "@ui-library";
+---
+
+<Documentation title="Support - Documentation">
+  <Fragment slot="main-content">
+    <Typography variant="heading2" as="h1">Support</Typography>
+    <Typography variant="bodySmall">
+      If you run into any issues, have questions, or need guidance while using
+      this theme, we’ve got you covered. Here are the support options available
+      to help you make the most of your experience:
+    </Typography>
+
+    <div class="mb-10">
+      <Typography variant="heading4" as="h2">Astro Documentation</Typography>
+      <Typography variant="bodySmall">
+        This theme is built on <a
+          target="_blank"
+          rel="noopener"
+          href="https://astro.build/">Astro</a
+        >, a fast and modern static site generator. If you’re new to Astro or
+        want to deepen your understanding of how it works, the official Astro
+        documentation is an excellent resource. Learn about key concepts,
+        advanced features, and best practices to unlock the full potential of
+        this theme.
+      </Typography>
+      <Typography variant="bodySmall">
+        Visit the official Astro docs here: <a
+          target="_blank"
+          rel="noopener"
+          href="https://docs.astro.build/en/getting-started/"
+          >Astro Documentation</a
+        >
+      </Typography>
+    </div>
+
+    <div class="mb-10">
+      <Typography variant="heading4" as="h2">Report an Issue</Typography>
+      <Typography variant="bodySmall" component="div">
+        Found a bug or have a feature request? Let us know by opening an issue
+        on the GitHub repository. Please include as much detail as possible so
+        we can assist you effectively.
+      </Typography>
+    </div>
+
+    <div class="mb-10">
+      <Typography variant="heading4" as="h2">Contact Us</Typography>
+      <Typography variant="bodySmall" component="div">
+        If you need further assistance, feel free to reach out directly. You can
+        contact us at <a href="mailto:support@etchthemes.dev">support@etchthemes.dev</a>.
+        We're committed to ensuring you have a smooth experience with the this
+        theme. Don't hesitate to reach out—we're here to help!
+      </Typography>
+    </div>
+  </Fragment>
+</Documentation>

@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+
+type Props = {
+  title: string;
+  icon: ImageMetadata;
+  href: string;
+};
+
+const { title, icon, href } = Astro.props;
+const { pathname } = Astro.url;
+const isActive = pathname === href;
+---
+
+<li class="">
+  <a
+    href={href}
+    class:list={[
+      "flex align-center text-slate-800 text-sm p-2 rounded-md hover:bg-slate-200",
+      {
+        "bg-slate-300 hover:bg-slate-300 border-slate-600 font-semibold":
+          isActive,
+      },
+    ]}
+  >
+    <Image class="w-5 mr-2" alt="" aria-hidden="true" src={icon} />
+    {title}
+  </a>
+</li>

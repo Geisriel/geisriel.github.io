@@ -1,0 +1,14 @@
+---
+import type { JSX } from "astro/jsx-runtime";
+
+type Props = JSX.IntrinsicElements["input"];
+
+const inputProps = Astro.props;
+---
+
+<input
+  {...inputProps}
+  class="w-full rounded-md px-3.5 py-2 text-base outline outline-1 -outline-offset-1 outline-gray-500/50 placeholder:text-gray-500 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-900"
+/>
+
+<style></style>

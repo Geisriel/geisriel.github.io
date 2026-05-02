@@ -1,0 +1,39 @@
+---
+import { Typography } from "@ui-library";
+
+interface Props {
+  prefix?: string; // Could be a number, icon, or any other prefix
+  title: string;
+  description: string;
+}
+
+const { prefix, title, description } = Astro.props;
+---
+
+<div class="feature-grid-item md:col-span-3">
+  {
+    prefix && (
+      <Typography variant="heading2" as="div" class="mb-2">
+        {prefix}
+      </Typography>
+    )
+  }
+  <Typography variant="heading5" as="h3" class="mb-2">{title}</Typography>
+  <Typography>{description}</Typography>
+</div>
+
+<style>
+  /* First row, first item */
+  :global(.feature-grid-item:nth-child(3n + 1)) {
+    @media (min-width: 768px) {
+      grid-column-start: 2;
+    }
+  }
+
+  /* Second row, first item */
+  :global(.feature-grid-item:nth-child(3n + 4)) {
+    @media (min-width: 768px) {
+      grid-column-start: 3;
+    }
+  }
+</style>

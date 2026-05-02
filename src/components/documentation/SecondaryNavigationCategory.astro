@@ -1,0 +1,19 @@
+---
+type Props = {
+  title: string;
+  href: string;
+  active?: string;
+};
+
+const { title, href } = Astro.props;
+---
+
+<li>
+  <a href={href} class="font-semibold text-slate-900">
+    {title}
+  </a>
+
+  <ul role="list" class="mt-2 space-y-2 border-l border-slate-200 pl-6">
+    <slot />
+  </ul>
+</li>

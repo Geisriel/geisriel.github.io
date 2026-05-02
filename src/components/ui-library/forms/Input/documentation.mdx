@@ -1,0 +1,69 @@
+---
+id: input
+title: Input
+category: Forms
+---
+
+import Input from "./Input.astro";
+
+The **Input** component is a styled wrapper around the standard HTML `<input>` element. Built with Astro and Tailwind CSS, it offers a consistent, modern, and accessible design while maintaining full compatibility with native HTML input features.
+
+## Props
+
+| Prop      | Type     | Description                                                                                                 |
+|-----------|----------|-------------------------------------------------------------------------------------------------------------|
+| type      | string   | The type of the input (e.g., `text`, `password`, `email`). Default is `"text"`.                              |
+| value     | string   | The value of the input, useful for controlled components.                                                 |
+| onChange  | function | Callback function triggered when the input value changes.                                                 |
+| ...others | any      | All standard HTML input attributes are supported. For a complete list, refer to the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes). |
+
+## Examples
+
+<Input />
+
+### Basic Usage
+
+```astro
+<Input type="text" placeholder="My name" />
+
+<Input type="password" value="Secret" />
+
+const [inputValue, setInputValue] = useState("");
+<Input
+  type="text"
+  value={inputValue}
+  onChange={(e) => setInputValue(e.target.value)}
+/>
+```
+
+### Styling & Customization
+
+- Default Styles with Tailwind CSS: The component includes built-in classes for width, padding, border outlines, and focus states. This ensures a modern appearance without additional setup.
+- Class Overriding Consideration: The default class attribute is applied after spreading the input props. This means if you pass a custom class prop, it will be overridden. To customize styles, either modify the default classes within the component or wrap the component in a container that applies additional styling.
+
+### Accessibility Considerations
+
+- Focus States: Designed with clear focus outlines to assist keyboard navigation. Always verify that the focus state is visible in your overall design.
+- Labeling: Use proper `<label>` elements to ensure the input is accessible. Avoid relying solely on placeholder text for identification, as placeholders disappear once the user begins typing.
+- Error Handling & ARIA: If using validation, consider adding ARIA attributes (like aria-invalid or aria-describedby) to further improve accessibility.
+
+### Controlled vs. Uncontrolled Components
+
+- Controlled Inputs: For scenarios where you need to manage the input's value via state (such as in React), use the value prop along with an onChange handler. This provides you with full control over the component's state.
+- Uncontrolled Inputs: If you don’t need to manage the value actively, you can simply use default HTML attributes (such as defaultValue) without binding state.
+Event Handling
+- onChange Event: Utilize the onChange event to capture user interactions. Ensure that any state updates in your event handlers are efficient and reflect the current input value.
+- Performance Tips: When dealing with high-frequency input events, consider debouncing your state updates to improve performance.
+
+### Integration with Astro
+
+- Astro Props: The component leverages Astro’s Astro.props system, making it simple to pass all valid HTML attributes and event handlers directly to the `<input>` element.
+- Component Composition: This design allows you to integrate the Input component seamlessly into larger forms or complex UIs within your Astro projects.
+
+### Notes
+
+For more detailed information on the native input element and its attributes, please refer to the MDN documentation.
+
+Always test the component in context to ensure that the default styling and behavior meet your application's needs—especially if overriding styles or integrating with form libraries.
+
+Consider additional accessibility improvements if the input is part of a complex form (e.g., adding ARIA attributes for better screen reader support).

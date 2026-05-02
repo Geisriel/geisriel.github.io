@@ -1,0 +1,145 @@
+---
+# Frontmatter content is used accross the site (e.g homepage, projects home page), and to generate the page metadata
+title: Blooming Perspectives
+subtitle: This is a subtitle 1
+slug: "blooming-perspectives"
+publishDate: 2024-12-01 00:00:00
+description: "A photography series capturing the delicate beauty of flowers and natural landscapes. Focused on texture, light, and color to evoke calm and wonder."
+featured: true
+featureImageSmall: "./images/project-1/smallFeatureImage.jpg"
+featureImageLarge: "./images/project-1/largeFeatureImage.jpg"
+tags:
+  - Dev
+  - Branding
+  - Backend
+---
+
+import { Image } from "astro:assets";
+
+{/* Content blocks used in this file */}
+import CenteredTextBlock from "@content-blocks/CenteredTextBlock/CenteredTextBlock.astro";
+import TextImageBlock from "@content-blocks/TextImageBlock/TextImageBlock.astro";
+import StickyContentGrid from "@content-blocks/StickyContentGrid/StickyContentGrid.astro";
+import StickyContentGridItem from "@content-blocks/StickyContentGrid/StickyContentGridItem.astro";
+import ThreeColumnGrid from "@content-blocks/GridLayout/ThreeColumnGrid.astro";
+import TwoColumnGrid from "@content-blocks/GridLayout/TwoColumnGrid.astro";
+import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
+import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
+import Testimonial from "@content-blocks/Testimonial/Testimonial.astro";
+import ScrollScalingImage from "@components/ScrollScalingImage.astro";
+import Typography from "@components/ui-library/Typography/Typography.astro";
+
+
+{/* Load additional images which are used in this file, but not needed in frontmatter */}
+import sampleImage1 from "@content/projects/images/project-1/sampleImage1.jpg";
+import sampleImage2 from "@content/projects/images/project-1/sampleImage2.jpg";
+import sampleImage3 from "@content/projects/images/project-1/sampleImage3.jpg";
+import sampleImage4 from "@content/projects/images/project-1/sampleImage4.jpg";
+import sampleImage5 from "@content/projects/images/project-1/sampleImage5.jpg";
+import sampleImage6 from "@content/projects/images/project-1/sampleImage6.jpg";
+import sampleImage7 from "@content/projects/images/project-1/sampleImage7.jpg";
+import sampleImage8 from "@content/projects/images/project-1/sampleImage8.jpg";
+
+{/* Example using components */}
+<div class='not-prose'>
+  <CenteredTextBlock
+    subHeading="Soft Hues and Subtle Movements"
+    heading="A Glimpse into Nature’s Poetry"
+    className="mb-16 md:mb-48"
+  >
+    <Typography variant="body" as="p" class="mb-6">
+      Welcome to <strong>Blooming Perspectives</strong>, where every photograph captures a fleeting moment of wonder in the natural world. From pastel petals to warm sunbeams dancing across leaves, this series is an invitation to pause and immerse yourself in the calming rhythm of nature.
+    </Typography>
+  </CenteredTextBlock>
+
+  <TextImageBlock
+    subHeading="Morning Dew"
+    heading="Awakenings in the Early Light"
+    image={sampleImage1}
+    imageAlt="Project feature image"
+    imagePosition="right"
+    className="mb-16 md:mb-48"
+  >
+    <Typography variant="body" as="p" class="mb-6">
+      As the sun gently rises, droplets of dew reflect tiny rainbows on each petal. This portion of the collection emphasizes the fresh, invigorating feeling of a new day, when blossoms appear especially vibrant against the soft glow of dawn.
+    </Typography>
+  </TextImageBlock>
+
+  <TextImageBlock
+    subHeading="Golden Afternoons"
+    heading="Sunlit Reflections"
+    image={sampleImage7}
+    imageAlt="Project feature image"
+    imagePosition="left"
+    className="mb-16 md:mb-48"
+  >
+    <Typography variant="body" as="p" class="mb-6">
+      During midday, bright sunbeams intensify the vivid hues of petals and leaves. In this segment, the interplay of light and shadow highlights the intricate textures of each flower, showcasing nature’s artistry in the simplest of details.
+    </Typography>
+  </TextImageBlock>
+
+  <ScrollScalingImage alt={`a description of the image`} src={sampleImage4} className="mb-16 md:mb-48" />
+
+  <StickyContentGrid
+    className="mb-16 md:mb-48"
+    heading="A Tapestry of Colors"
+    subHeading="Moments of Serendipity"
+    text="From softly blurred edges to sharply focused stamens, every frame is a study in color, light, and composition—coming together to evoke calm and delight."
+  >
+    <Fragment slot="grid-items">
+      <StickyContentGridItem
+        itemNumber="01"
+        heading="Whispering Petals"
+        text="Macro shots reveal delicate veins and textures rarely noticed by the naked eye."
+      />
+      <StickyContentGridItem
+        itemNumber="02"
+        heading="Glistening Dew"
+        text="Tiny water droplets act as natural lenses, refracting sunlight into a miniature spectrum."
+      />
+      <StickyContentGridItem
+        itemNumber="03"
+        heading="Ethereal Landscapes"
+        text="Wide-angle vistas capture the grand scale of meadows and rolling fields in bloom."
+      />
+      <StickyContentGridItem
+        itemNumber="04"
+        heading="Nurtured by Twilight"
+        text="Fading light cloaks flowers in gentle hues, celebrating the close of each day."
+      />
+    </Fragment>
+  </StickyContentGrid>
+
+  <ThreeColumnGrid className="mb-16 md:mb-48">
+    <Image src={sampleImage3} alt="Project feature 1" class="w-full rounded-3xl"  />
+    <Image src={sampleImage5} alt="Project feature 2" class="w-full rounded-3xl" />
+    <Image src={sampleImage6} alt="Project feature 3" class="w-full rounded-3xl" />
+  </ThreeColumnGrid>
+
+  <FeatureGrid className="mb-16 md:mb-48">
+    <FeatureGridItem prefix="100+" title="Photographs" description="Each showcasing intricate floral details" />
+    <FeatureGridItem prefix="20" title="Varieties" description="Capturing diverse blooms and foliage" />
+    <FeatureGridItem prefix="10,000" title="Steps" description="Walked through gardens and trails" />
+    <FeatureGridItem prefix="8" title="Seasons" description="Explored across multiple climates" />
+    <FeatureGridItem prefix="3" title="Lenses" description="Used to capture unique angles and macro details" />
+    <FeatureGridItem prefix="4" title="Locations" description="Spanning botanical gardens and wild meadows" />
+  </FeatureGrid>
+
+
+
+  <TwoColumnGrid className="mb-16 md:mb-48">
+    <Image src={sampleImage2} alt="Project feature 1" class="w-full rounded-3xl" />
+    <Image src={sampleImage8} alt="Project feature 2" class="w-full rounded-3xl" />
+  </TwoColumnGrid>
+
+  <Testimonial
+    className="mb-16 md:mb-48"
+    quote="Nature’s subtle details remind us to slow down and marvel at the beauty unfolding before our eyes."
+  />
+</div>
+
+{/* Example using markdown content */}
+<div class="mb-24 mx-auto max-w-3xl px-6">
+  ## A Note on Perspective
+  Photography, at its core, is about capturing a perspective. With <em>Blooming Perspectives</em>, the goal is to immerse you in the quiet moments that often go unnoticed—revealing the intricate dance between color, light, and life itself. Whether you’re drawn to a single drop of dew or the gentle curve of a petal, each frame is a reminder that nature’s splendor lies in the smallest of details.
+</div>

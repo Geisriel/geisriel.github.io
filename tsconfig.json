@@ -1,0 +1,30 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@content-blocks/*": [
+        "src/components/content-blocks/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@content/*": [
+        "src/content/*"
+      ],
+      /* 
+        This ui-library alias is without the '/*', so we can do imports like:
+        import { Button, Typography } from "@ui-library";
+      */
+      "@ui-library": [
+        "src/components/ui-library"
+      ]
+    }
+  }
+}
