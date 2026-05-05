@@ -1,13 +1,15 @@
 ---
 # Frontmatter content is used accross the site (e.g homepage, projects home page), and to generate the page metadata
-title: Blooming Perspectives
-subtitle: This is a subtitle 1
-slug: "blooming-perspectives"
+title: "AI-powered funding scheme extraction for the Soil Association's Exchange platform"
+subtitle: "Turning unstructured funding scheme web pages into structured, standardised data ready for scale"
+slug: "soil-association-exchange"
 publishDate: 2024-12-01 00:00:00
-description: "A photography series capturing the delicate beauty of flowers and natural landscapes. Focused on texture, light, and color to evoke calm and wonder."
+description: "Turning unstructured funding scheme web pages into structured, standardised data ready for scale"
 featured: true
-featureImageSmall: "./images/project-1/smallFeatureImage.jpg"
-featureImageLarge: "./images/project-1/largeFeatureImage.jpg"
+featureImageSmall: "./images/soil-association-exchange/smallFeatureImage.jpg"
+featureImageLarge: "./images/soil-association-exchange/largeFeatureImage.png"
+detailImageHero: "./images/soil-association-exchange/largeFeatureImage.png"
+headerLayout: "imageLeft"
 tags:
   - Dev
   - Branding
@@ -31,17 +33,48 @@ import Typography from "@components/ui-library/Typography/Typography.astro";
 
 
 {/* Load additional images which are used in this file, but not needed in frontmatter */}
-import sampleImage1 from "@content/projects/images/project-1/sampleImage1.jpg";
-import sampleImage2 from "@content/projects/images/project-1/sampleImage2.jpg";
-import sampleImage3 from "@content/projects/images/project-1/sampleImage3.jpg";
-import sampleImage4 from "@content/projects/images/project-1/sampleImage4.jpg";
-import sampleImage5 from "@content/projects/images/project-1/sampleImage5.jpg";
-import sampleImage6 from "@content/projects/images/project-1/sampleImage6.jpg";
-import sampleImage7 from "@content/projects/images/project-1/sampleImage7.jpg";
-import sampleImage8 from "@content/projects/images/project-1/sampleImage8.jpg";
+import sampleImage1 from "@content/projects/images/soil-association-exchange/sampleImage1.jpg";
+import sampleImage2 from "@content/projects/images/soil-association-exchange/sampleImage2.jpg";
+import sampleImage3 from "@content/projects/images/soil-association-exchange/sampleImage3.jpg";
+import sampleImage4 from "@content/projects/images/soil-association-exchange/sampleImage4.jpg";
+import sampleImage5 from "@content/projects/images/soil-association-exchange/sampleImage5.jpg";
+import sampleImage6 from "@content/projects/images/soil-association-exchange/sampleImage6.jpg";
+import sampleImage7 from "@content/projects/images/soil-association-exchange/sampleImage7.jpg";
+import sampleImage8 from "@content/projects/images/soil-association-exchange/sampleImage8.jpg";
 
-{/* Example using components */}
+{/* Content */}
 <div class='not-prose'>
+  <FeatureGrid className="mb-16 md:mb-48">
+    <FeatureGridItem
+      title="Challenge"
+      description="Manual funding scheme data entry was slow, inconsistent and dependent on specialist knowledge, limiting the Funding Tool’s ability to stay up to date and scale with new schemes."
+    />
+    <FeatureGridItem
+      title="Approach"
+      description="Designed a multi‑step AI agent workflow that scrapes, cleans and structures scheme content into a standardised schema aligned with backend constraints."
+    />
+    <FeatureGridItem
+      title="Outcome"
+      description="Data translation logic now automatically converts unstructured scheme pages into normalised, app‑optimised data, significantly reducing manual effort, ready to process hundreds of schemes with consistent output."
+    />
+  </FeatureGrid>
+
+  <TextImageBlock
+    subHeading="Context and problem"
+    heading="Manual scheme entry as a bottleneck"
+    image={sampleImage1}
+    imageAlt="Replace with real image description"
+    imagePosition="left"
+    className="mb-16 md:mb-48"
+  >
+    <Typography variant="body" as="p" class="mb-6">
+      The Exchange platform connects sustainable farming practices to funding schemes like Sustainable Farming Initiative and Countryside Stewardship, but its Funding Tool depended on humans re‑typing complex policy pages into a rigid internal schema.
+    </Typography>
+    <Typography variant="body" as="p" class="mb-6">
+      Historically, Soil Association staff and contractors manually identified relevant funding sources, read long description pages and entered key details into an internal admin tool, a process that took around 10–15 minutes per scheme and often required specialist agricultural knowledge​, while producing non-standardised outcomes. .
+    </Typography>
+  </TextImageBlock>
+
   <CenteredTextBlock
     subHeading="Soft Hues and Subtle Movements"
     heading="A Glimpse into Nature’s Poetry"

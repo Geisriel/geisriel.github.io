@@ -26,7 +26,7 @@ employers — it needs to communicate credibility.
 - `@ui-library` → src/components/ui-library/index.ts (named exports, no wildcard)
 
 ## Content collections (src/content.config.ts)
-- `project` — MDX files in src/content/projects/, schema requires: title, slug, subtitle, tags, featured, featureImageSmall, featureImageLarge, publishDate, description
+- `project` — MDX files in src/content/projects/, schema requires: title, slug, subtitle, tags, featured, featureImageSmall, featureImageLarge, publishDate, description. Optional: `detailImageHero` (detail page full-width image, falls back to featureImageLarge), `detailImageOverlay` (floating overlay on detail page, omit if not needed)
 - `post` — MD files in src/content/posts/, schema requires: title, slug, publishDate, description, featured, author, image {url, alt}, tags
 - `uiComponent` — internal, used only for /documentation pages
 

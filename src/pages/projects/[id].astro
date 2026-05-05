@@ -5,7 +5,6 @@ import { Typography } from "@ui-library";
 import { Image } from "astro:assets";
 
 import { getCollection, render, type CollectionEntry } from "astro:content";
-import ScrollScalingImage from "@components/ScrollScalingImage.astro";
 
 type Project = CollectionEntry<"project">;
 
@@ -23,35 +22,44 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await render(project);
-const { title, description, featureImageLarge, featureImageSmall } =
+const { title, subtitle, description, featureImageLarge, headerLayout } =
   project.data;
 ---
 
 <Layout title="Projects">
   <main class="flex flex-col">
-    <!-- Project Title and Desc -->
-    <div class="mx-auto w-full items-center max-w-3xl text-center mt-20 px-6 mb-16 md:mb-32">
-      <Typography class="mb-4" variant="heading1" as="h1">{title}</Typography>
-      <Typography variant="body" as="p">
-        {description}
-      </Typography>
-    </div>
 
-    <!-- Featured Images-->
-    <div class="w-full relative mb-16 md:mb-48">
-      <Image
-        class="rounded-3xl w-1/2 md:w-1/4 absolute left-0 right-0 mx-auto -translate-y-12 md:-translate-y-16 z-50"
-        src={featureImageLarge}
-        alt="Alternative Text"
-      />
-      {
-        featureImageSmall && (
-          <ScrollScalingImage alt={`cover image`} src={featureImageSmall} />
-        )
-      }
-    </div>
+    <!-- Header: centered (default) -->
+    {headerLayout === "centered" && (
+      <div class="mx-auto w-full items-center max-w-3xl text-center mt-20 px-6 mb-16 md:mb-32">
+        <Typography class="mb-4" variant="heading1" as="h1">{title}</Typography>
+        {subtitle && (
+          <Typography variant="heading3" as="p" class="mb-4 text-gray-500">{subtitle}</Typography>
+        )}
+        <Typography variant="body" as="p">{description}</Typography>
+      </div>
+    )}
 
-    {
+    <!-- Header: image left, text right -->
+    {headerLayout === "imageLeft" && (
+      <div class="mx-auto w-full max-w-7xl px-6 lg:px-8 mt-20 mb-16 md:mb-32">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-5">
+            <Image class="rounded-3xl w-full" src={featureImageLarge} alt={title} />
+          </div>
+          <div class="md:col-span-6 md:col-start-7">
+            <Typography variant="heading1" as="h1" class="mb-4">{title}</Typography>
+            {subtitle && (
+              <Typography variant="heading3" as="p" class="mb-6 text-gray-500">{subtitle}</Typography>
+            )}
+            <Typography variant="body" as="p">{description}</Typography>
+          </div>
+        </div>
+      </div>
+    )}
+
+
+{
       /*
           .prose adds tailwind typography styling to markdown content
           ref: https://docs.astro.build/en/recipes/tailwind-rendered-markdown/

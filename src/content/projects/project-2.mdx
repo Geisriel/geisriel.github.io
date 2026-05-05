@@ -24,9 +24,12 @@ import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
 import Testimonial from "@content-blocks/Testimonial/Testimonial.astro";
 import ScrollScalingImage from "@components/ScrollScalingImage.astro";
 import sampleImage from "@content/projects/images/project-2/sampleImage.jpg";
+import featureImageLarge from "@content/projects/images/project-2/largeFeatureImage.jpg";
 import Typography from "@components/ui-library/Typography/Typography.astro";
 
 <div class='not-prose'>
+  <ScrollScalingImage alt="Project hero image" src={featureImageLarge} className="mb-16 md:mb-48" />
+
   <CenteredTextBlock
     subHeading="Digital Sculptures"
     heading="The Art of Light & Form"
