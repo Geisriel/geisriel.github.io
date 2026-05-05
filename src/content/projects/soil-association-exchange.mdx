@@ -34,6 +34,7 @@ import Typography from "@components/ui-library/Typography/Typography.astro";
 
 {/* Load additional images which are used in this file, but not needed in frontmatter */}
 import sampleImage1 from "@content/projects/images/soil-association-exchange/sampleImage1.jpg";
+import fundingSchemeComplexity from "@content/projects/images/soil-association-exchange/fundingSchemeComplexity.png";
 import sampleImage2 from "@content/projects/images/soil-association-exchange/sampleImage2.jpg";
 import sampleImage3 from "@content/projects/images/soil-association-exchange/sampleImage3.jpg";
 import sampleImage4 from "@content/projects/images/soil-association-exchange/sampleImage4.jpg";
@@ -62,8 +63,8 @@ import sampleImage8 from "@content/projects/images/soil-association-exchange/sam
   <TextImageBlock
     subHeading="Context and problem"
     heading="Manual scheme entry as a bottleneck"
-    image={sampleImage1}
-    imageAlt="Replace with real image description"
+    image={fundingSchemeComplexity}
+    imageAlt="GOV.UK funding scheme pages showing the complexity of unstructured policy content"
     imagePosition="left"
     className="mb-16 md:mb-48"
   >
@@ -76,13 +77,12 @@ import sampleImage8 from "@content/projects/images/soil-association-exchange/sam
   </TextImageBlock>
 
   <CenteredTextBlock
-    subHeading="Soft Hues and Subtle Movements"
-    heading="A Glimpse into Nature’s Poetry"
+    subHeading="How Might We"
+    heading="How Might We..."
     className="mb-16 md:mb-48"
   >
-    <Typography variant="body" as="p" class="mb-6">
-      Welcome to <strong>Blooming Perspectives</strong>, where every photograph captures a fleeting moment of wonder in the natural world. From pastel petals to warm sunbeams dancing across leaves, this series is an invitation to pause and immerse yourself in the calming rhythm of nature.
-    </Typography>
+    <Typography variant="heading5
+    " as="p" class="mb-6">translate complex, non‑standard funding scheme web pages into structured data the Exchange app can trust, so updating and expanding the scheme library becomes fast, reliable and scalable?</Typography>
   </CenteredTextBlock>
 
   <TextImageBlock
@@ -93,7 +93,7 @@ import sampleImage8 from "@content/projects/images/soil-association-exchange/sam
     imagePosition="right"
     className="mb-16 md:mb-48"
   >
-    <Typography variant="body" as="p" class="mb-6">
+    <Typography variant="body" as="body" class="mb-6">
       As the sun gently rises, droplets of dew reflect tiny rainbows on each petal. This portion of the collection emphasizes the fresh, invigorating feeling of a new day, when blossoms appear especially vibrant against the soft glow of dawn.
     </Typography>
   </TextImageBlock>
@@ -172,7 +172,7 @@ import sampleImage8 from "@content/projects/images/soil-association-exchange/sam
 </div>
 
 {/* Example using markdown content */}
-<div class="mb-24 mx-auto max-w-3xl px-6">
+<div class="prose mb-24 mx-auto max-w-3xl px-6">
   ## A Note on Perspective
   Photography, at its core, is about capturing a perspective. With <em>Blooming Perspectives</em>, the goal is to immerse you in the quiet moments that often go unnoticed—revealing the intricate dance between color, light, and life itself. Whether you’re drawn to a single drop of dew or the gentle curve of a petal, each frame is a reminder that nature’s splendor lies in the smallest of details.
 </div>

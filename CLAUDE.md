@@ -35,6 +35,9 @@ employers — it needs to communicate credibility.
 - Content blocks: import individually from `@content-blocks/BlockName/BlockName.astro`
 - Page-level components: import from `@components/ComponentName.astro`
 
+## Typography
+Type scale lives in `src/styles/global.css` — edit there, not in `Typography.astro`. The component is a thin wrapper that applies class names only. Raw markdown sections in MDX need their own `<div class="prose">` wrapper; component blocks do not.
+
 ## Conventions observed in code
 - Max content width: `max-w-7xl` with `px-6 lg:px-8`
 - 12-column grid: `grid-cols-12` with content typically in `col-start-2 col-span-10`

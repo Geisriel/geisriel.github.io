@@ -1,0 +1,124 @@
+---
+title: "Translating user needs into a meaningful dashboard"
+subtitle: "Designing a user-friendly data visualisation to allow non-technical users to draw commercial insights from renewable energy systems' data"
+slug: "wattstor-dashboard"
+publishDate: 2024-06-01 00:00:00
+description: "Designing a user-friendly data visualisation to allow non-technical users to draw commercial insights from renewable energy systems' data"
+featured: true
+featureImageSmall: "./images/wattstor-dashboard/featureImageSmall.png"
+featureImageLarge: "./images/wattstor-dashboard/featureImageLarge.png"
+headerLayout: "imageLeft"
+tags:
+  - Product Design
+  - Data Visualisation
+  - UX
+---
+
+import CenteredTextBlock from "@content-blocks/CenteredTextBlock/CenteredTextBlock.astro";
+import TextImageBlock from "@content-blocks/TextImageBlock/TextImageBlock.astro";
+import StickyContentGrid from "@content-blocks/StickyContentGrid/StickyContentGrid.astro";
+import StickyContentGridItem from "@content-blocks/StickyContentGrid/StickyContentGridItem.astro";
+import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
+import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
+import Typography from "@components/ui-library/Typography/Typography.astro";
+
+import featureImage from "@content/projects/images/wattstor-dashboard/featureImageLarge.png";
+import podiumOverview from "@content/projects/images/wattstor-dashboard/podiumOverview.png";
+import ScrollScalingImage from "@components/ScrollScalingImage.astro";
+
+<div class="not-prose">
+
+  <FeatureGrid className="mb-16 md:mb-48">
+    <FeatureGridItem
+      title="The Context"
+      description="While the Wattstor web app provided technical data on the performance of onsite renewable energy systems for engineers, it was challenging for non-technical users to understand the system's performance or value at a glance."
+    />
+    <FeatureGridItem
+      title="Strategic Fit"
+      description="For Wattstor's business goals, it was important to strengthen the relationship with the commercial end users, and make the web app a convenient source of information."
+    />
+    <FeatureGridItem
+      title="Intent"
+      description="The goal was to enable non-technical users to quickly review the performance of their investment, reassuring them of the continuous value Wattstor delivers."
+    />
+  </FeatureGrid>
+
+  <CenteredTextBlock
+    subHeading="The Problem Space"
+    heading="Making complex energy data legible"
+    className="mb-16 md:mb-48"
+  >
+    <Typography variant="body" as="p" class="mb-6">The Wattstor team had been gathering insights on this particular problem for a while, and the sales team was a key stakeholder for a potential solution. They wanted to be able to visualise complex information to users in a meaningful and engaging way.</Typography>
+  </CenteredTextBlock>
+
+  <ScrollScalingImage alt="Wattstor Podium dashboard overview screen" src={podiumOverview} className="mb-16 md:mb-48" />
+
+  <StickyContentGrid
+    className="mb-16 md:mb-48"
+    heading="Discovery and Design Process"
+    subHeading="Approach"
+    text="A structured discovery process grounded in stakeholder knowledge, existing solutions, and iterative design."
+  >
+    <Fragment slot="grid-items">
+      <StickyContentGridItem
+        itemNumber="01"
+        heading="In-depth stakeholder interviews"
+        text="Without direct access to end-users, detailed conversations with the sales team — who knew their clients intimately — helped understand user needs sufficiently."
+      />
+      <StickyContentGridItem
+        itemNumber="02"
+        heading="Researching existing solutions"
+        text="Dashboards and data visualisation are a standard web-app offer. A review of existing solutions provided a strong foundation of design patterns and insights to draw from."
+      />
+      <StickyContentGridItem
+        itemNumber="03"
+        heading="User jobs-to-be-done and task analysis"
+        text="Using the JTBD framework to specify users goals, jobs, needs, pains, and desires helped clarify exactly what the dashboard needed to show."
+      />
+      <StickyContentGridItem
+        itemNumber="04"
+        heading="Data visualisation feasibility assessment"
+        text="Understanding the limitations of the open-source charting library in use was important to ensure the design solution remained achievable within technical constraints."
+      />
+      <StickyContentGridItem
+        itemNumber="05"
+        heading="Iterative wireframing"
+        text="Through an iterative cycle of lo-fi UI screens and stakeholder feedback sessions, the design progressed to a solution ready to take forwards."
+      />
+    </Fragment>
+  </StickyContentGrid>
+
+  <TextImageBlock
+    subHeading="Output"
+    heading="Dashboard UI design"
+    image={featureImage}
+    imageAlt="Wattstor Podium dashboard UI showing energy performance cards"
+    imagePosition="right"
+    className="mb-16 md:mb-48"
+  >
+    <Typography variant="body" as="p" class="mb-6">The new dashboard design was embedded into the existing Podium web app, with the intention to update and improve the UI and UX of other elements — such as the side navigation — in a future initiative.</Typography>
+    <Typography variant="body" as="p">This is a live feature of the Wattstor Podium web app.</Typography>
+  </TextImageBlock>
+
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16 md:mb-48">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 pt-8">
+      <div>
+        <Typography variant="bodySmall" as="p" class="text-gray-400 uppercase mb-1">Role</Typography>
+        <Typography variant="bodySmall" as="p">Lead Product Designer</Typography>
+      </div>
+      <div>
+        <Typography variant="bodySmall" as="p" class="text-gray-400 uppercase mb-1">Scope</Typography>
+        <Typography variant="bodySmall" as="p">Research, wireframing, UI design, user testing</Typography>
+      </div>
+      <div>
+        <Typography variant="bodySmall" as="p" class="text-gray-400 uppercase mb-1">Collaborators</Typography>
+        <Typography variant="bodySmall" as="p">Head of Product, Engineering team</Typography>
+      </div>
+      <div>
+        <Typography variant="bodySmall" as="p" class="text-gray-400 uppercase mb-1">Status</Typography>
+        <Typography variant="bodySmall" as="p">Live feature — Wattstor Podium web app</Typography>
+      </div>
+    </div>
+  </div>
+
+</div>

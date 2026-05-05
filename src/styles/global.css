@@ -17,6 +17,28 @@ html {
   color: #0a1011;
 }
 
+/* Type scale — edit here, not in Typography.astro
+   Typography.astro is a thin wrapper that applies these class names.
+   Changing sizes, weights or adding new variants should happen here. */
+.heading1 { font-size: 3rem; line-height: 1; font-weight: 700; color: #111827; }
+.heading2 { font-size: 2.25rem; line-height: 1; font-weight: 600; color: #111827; }
+.heading3 { font-size: 1.875rem; line-height: 2.25rem; font-weight: 500; color: #111827; }
+.heading4 { font-size: 1.5rem; line-height: 2rem; font-weight: 500; color: #111827; }
+.heading5 { font-size: 1.25rem; line-height: 1.75rem; font-weight: 500; color: #111827; }
+.heading6 { font-size: 1rem; line-height: 1.5rem; font-weight: 700; color: #111827; }
+.body { font-size: 1.125rem; line-height: 1.75rem; color: #374151; } /* gray-700 */
+.bodySmall { font-size: 0.875rem; line-height: 1.25rem; color: #6b7280; } /* gray-500 */
+.caption { font-size: 1rem; line-height: 1.5rem; color: #374151; } /* gray-700 */
+
+@media (min-width: 768px) {
+  .heading1 { font-size: 3.75rem; }
+  .heading2 { font-size: 3rem; }
+  .heading3 { font-size: 2.25rem; }
+  .heading4 { font-size: 1.875rem; }
+  .heading5 { font-size: 1.5rem; }
+  .heading6 { font-size: 1.125rem; }
+}
+
 code {
   font-family:
     Menlo,
