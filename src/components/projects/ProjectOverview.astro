@@ -7,7 +7,7 @@ type Project = InferEntrySchema<"project">;
 
 type Props = Pick<
   Project,
-  "title" | "slug" | "description" | "featureImageSmall" | "featureImageLarge"
+  "title" | "slug" | "subtitle" | "featureImageSmall" | "featureImageLarge"
 > & {
   orientation?: "captionLeft" | "captionRight";
 };
@@ -15,7 +15,7 @@ type Props = Pick<
 const {
   title,
   slug,
-  description,
+  subtitle,
   featureImageSmall,
   featureImageLarge,
   orientation = "captionLeft",
@@ -37,7 +37,7 @@ const {
             {title}
           </Typography>
           <Typography variant="body" as="p">
-            {description}
+            {subtitle}
           </Typography>
         </div>
         {

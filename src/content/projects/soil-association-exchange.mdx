@@ -1,14 +1,14 @@
 ---
 # Frontmatter content is used accross the site (e.g homepage, projects home page), and to generate the page metadata
-title: "AI-powered funding scheme extraction for the Soil Association's Exchange platform"
-subtitle: "Turning unstructured funding scheme web pages into structured, standardised data ready for scale"
+title: "Making grant funding accessible to farmers at scale, without the admin bottleneck for Soil Association"
+subtitle: "A multi‑step AI workflow turns unstructured funding pages into structured, standardised data ready to scale"
 slug: "soil-association-exchange"
 publishDate: 2024-12-01 00:00:00
-description: "Turning unstructured funding scheme web pages into structured, standardised data ready for scale"
+description: "A multi‑step AI workflow turns unstructured funding pages into structured, standardised data ready to scale"
 featured: true
-featureImageSmall: "./images/soil-association-exchange/smallFeatureImage.jpg"
-featureImageLarge: "./images/soil-association-exchange/largeFeatureImage.png"
-detailImageHero: "./images/soil-association-exchange/largeFeatureImage.png"
+featureImageSmall: "./images/soil-association-exchange/featureImageSmall.png"
+featureImageLarge: "./images/soil-association-exchange/featureImageLarge.png"
+detailImageHero: "./images/soil-association-exchange/featureImageLarge.png"
 headerLayout: "imageLeft"
 tags:
   - Dev
@@ -45,6 +45,10 @@ import sampleImage8 from "@content/projects/images/soil-association-exchange/sam
 
 {/* Content */}
 <div class='not-prose'>
+  <div class="mx-auto max-w-3xl px-6 mb-16 md:mb-48">
+    <Typography variant="body" as="p">Soil Association's Funding Tool relied on people manually reading complex grant pages and re‑entering details into a rigid schema, making updates slow, inconsistent and dependent on specialists. I treated that as a design problem: how to turn messy web content into structured data the app could trust, without changing the backend. The result is a multi‑step AI workflow — schema, prompts, QA and orchestration — that scrapes, structures and validates scheme data, cutting effort to light‑touch QA and making it realistic to process hundreds of schemes consistently.</Typography>
+  </div>
+
   <FeatureGrid className="mb-16 md:mb-48">
     <FeatureGridItem
       title="Challenge"
