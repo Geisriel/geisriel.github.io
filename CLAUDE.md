@@ -38,12 +38,14 @@ employers — it needs to communicate credibility.
 ## Typography
 Type scale lives in `src/styles/global.css` — edit there, not in `Typography.astro`. The component is a thin wrapper that applies class names only. Raw markdown sections in MDX need their own `<div class="prose">` wrapper; component blocks do not.
 
+**MDX usage rule:** Never use `<Typography as="p">` with text content on a new line inside MDX — MDX wraps multiline text in its own `<p>`, resulting in an empty styled element and an unstyled content paragraph. Either write content inline (`<Typography variant="body" as="p">text here</Typography>`) or use a bare HTML element directly (`<p class="body">text here</p>`).
+
 ## Conventions observed in code
 - Max content width: `max-w-7xl` with `px-6 lg:px-8`
 - 12-column grid: `grid-cols-12` with content typically in `col-start-2 col-span-10`
 - Spacing scale: `mb-16 md:mb-48` for section gaps
 - Images imported directly as Astro assets (not public/ URLs) for optimisation
-- No custom CSS — Tailwind utility classes only
+- Custom type scale in `src/styles/global.css` via `@layer components` — use `.heading1`–`.heading6`, `.body`, and `.caption` for typography. All other styling uses Tailwind utility classes directly.
 - Image border radius: `rounded-xl` (12px) across all images and videos — matches project listing cards
 
 ## Content blocks reference

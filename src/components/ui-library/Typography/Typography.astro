@@ -25,7 +25,7 @@ type Props = {
     | "heading5"
     | "heading6"
     | "body"
-    | "bodySmall"
+    | "body-small"
     | "caption";
   class?: string;
 };
@@ -36,76 +36,13 @@ const {
   class: classAttr = "",
 }: Props = Astro.props;
 const Element = as;
+
+const variantClass = variant === "body-small"
+  ? "text-sm leading-5 text-gray-500"
+  : variant;
 ---
 
-<Element class:list={[classAttr, variant]}>
+<Element class:list={[classAttr, variantClass]}>
   <slot />
 </Element>
 
-<style is:global>
-  .heading1 {
-    font-size: 3rem;
-    line-height: 1;
-    font-weight: 700;
-  }
-  .heading2 {
-    font-size: 2.25rem;
-    line-height: 1;
-    font-weight: 600;
-  }
-  .heading3 {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 500;
-  }
-  .heading4 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 500;
-  }
-  .heading5 {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    font-weight: 500;
-  }
-  .heading6 {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-weight: 700;
-  }
-
-  /* Desktop sizes */
-  @media (min-width: 768px) {
-    .heading1 {
-      font-size: 3.75rem;
-    }
-    .heading2 {
-      font-size: 3rem;
-    }
-    .heading3 {
-      font-size: 2.25rem;
-    }
-    .heading4 {
-      font-size: 1.875rem;
-    }
-    .heading5 {
-      font-size: 1.5rem;
-    }
-    .heading6 {
-      font-size: 1.125rem;
-    }
-  }
-
-  .body {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-  .bodySmall {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-  .caption {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-</style>

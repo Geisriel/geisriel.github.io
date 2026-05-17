@@ -29,6 +29,7 @@ import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
 import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
 import Testimonial from "@content-blocks/Testimonial/Testimonial.astro";
 import ScrollScalingImage from "@components/ScrollScalingImage.astro";
+import Section from "@content-blocks/Section/Section.astro";
 import Typography from "@components/ui-library/Typography/Typography.astro";
 
 
@@ -71,32 +72,27 @@ import extractionFlow from "@content/projects/images/soil-association-exchange/e
     imagePosition="left"
     className="mb-16 md:mb-48"
   >
-    <Typography variant="body" as="p" class="mb-6">
-      The Exchange platform connects sustainable farming practices to funding schemes like Sustainable Farming Initiative and Countryside Stewardship, but its Funding Tool depended on humans re‑typing complex policy pages into a rigid internal schema.
-    </Typography>
-    <Typography variant="body" as="p" class="mb-6">
-      Historically, Soil Association staff and contractors manually identified relevant funding sources, read long description pages and entered key details into an internal admin tool, a process that took around 10–15 minutes per scheme and often required specialist agricultural knowledge​, while producing non-standardised outcomes. .
-    </Typography>
+    <p class="body mb-6">The Exchange platform connects sustainable farming practices to funding schemes like Sustainable Farming Initiative and Countryside Stewardship, but its Funding Tool depended on humans re‑typing complex policy pages into a rigid internal schema.</p>
+    <p class="body mb-6">Historically, Soil Association staff and contractors manually identified relevant funding sources, read long description pages and entered key details into an internal admin tool, a process that took around 10–15 minutes per scheme and often required specialist agricultural knowledge​, while producing non-standardised outcomes.</p>
   </TextImageBlock>
 
-  <TextImageBlock
-    subHeading="Approach and process"
-    heading="Designing an AI workflow"
-    image={relayScreenshot1}
-    imageAlt="Relay workflow screenshot showing the multi-step AI pipeline"
-    imagePosition="right"
-    className="mb-16 md:mb-48"
-  >
-    <Typography variant="body" as="p" class="mb-6">
-      Three phases shaped the design work — understanding the existing process, defining the data model, and building and refining the pipeline.
-    </Typography>
-  </TextImageBlock>
+  <Section background="subtle">
+    <TextImageBlock
+      subHeading="Approach and process"
+      heading="Designing an AI workflow"
+      image={relayScreenshot1}
+      imageAlt="Relay workflow screenshot showing the multi-step AI pipeline"
+      imagePosition="right"
+    >
+      <p class="body mb-6">Three phases shaped the design work — understanding the existing process, defining the data model, and building and refining the pipeline.</p>
+    </TextImageBlock>
 
-  <FeatureGrid className="mb-16 md:mb-48">
-    <FeatureGridItem prefix="01" title="Understanding the existing workflow" description="Mapping the manual process and working with product and engineering to understand exactly what the Funding Tool could ingest, from required fields to standard value lists and formatting constraints." />
-    <FeatureGridItem prefix="02" title="Designing the extraction schema and prompts" description="Narrowed the initial field model to an app-optimised set matching what the frontend already used, while keeping a richer model in view for future iterations." />
-    <FeatureGridItem prefix="03" title="Designing and refining the workflow" description="Built a multi-step AI pipeline in Relay that scraped source pages, extracted structured field groups into strict JSON, and used QA steps to catch missing or inconsistent outputs before hand-off." />
-  </FeatureGrid>
+    <FeatureGrid>
+      <FeatureGridItem prefix="01" title="Understanding the existing workflow" description="Mapping the manual process and working with product and engineering to understand exactly what the Funding Tool could ingest, from required fields to standard value lists and formatting constraints." />
+      <FeatureGridItem prefix="02" title="Designing the extraction schema and prompts" description="Narrowed the initial field model to an app-optimised set matching what the frontend already used, while keeping a richer model in view for future iterations." />
+      <FeatureGridItem prefix="03" title="Designing and refining the workflow" description="Built a multi-step AI pipeline in Relay that scraped source pages, extracted structured field groups into strict JSON, and used QA steps to catch missing or inconsistent outputs before hand-off." />
+    </FeatureGrid>
+  </Section>
 
   <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16 md:mb-48">
     <Image src={extractionFlow} alt="AI extraction workflow diagram showing the multi-step pipeline" class="w-full rounded-xl" />
@@ -105,14 +101,12 @@ import extractionFlow from "@content/projects/images/soil-association-exchange/e
   <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16 md:mb-48">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
       <div class="md:col-span-5">
-        <Typography variant="bodySmall" as="p" class="text-gray-500 uppercase mb-4">Outcomes and impact</Typography>
+        <Typography variant="body-small" as="p" class="text-gray-500 uppercase mb-4">Outcomes and impact</Typography>
         <Typography variant="heading2" as="h2" class="mb-6">Faster updates, more consistent data</Typography>
         <Typography variant="body" as="p" class="text-gray-500">Replacing manual effort with structured automation — making scheme updates faster, more consistent, and ready to scale.</Typography>
       </div>
       <div class="md:col-span-6 md:col-start-7">
-        <Typography variant="body" as="p">
-          The workflow is designed to replace around 15 minutes of manual work per scheme with automated extraction plus light QA, making larger scheme updates far more practical for the team. It also standardises how key fields like payments, land types, practices and eligibility are captured, reducing variability between contributors and creating cleaner inputs for the Funding Tool. Because outputs are already aligned to the backend schema, the work also gives Soil Association a clearer route to scaling scheme coverage without rebuilding the process from scratch.
-        </Typography>
+        <p class="body">The workflow is designed to replace around 15 minutes of manual work per scheme with automated extraction plus light QA, making larger scheme updates far more practical for the team. It also standardises how key fields like payments, land types, practices and eligibility are captured, reducing variability between contributors and creating cleaner inputs for the Funding Tool. Because outputs are already aligned to the backend schema, the work also gives Soil Association a clearer route to scaling scheme coverage without rebuilding the process from scratch.</p>
       </div>
     </div>
   </div>
