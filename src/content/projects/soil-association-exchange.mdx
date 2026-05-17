@@ -98,16 +98,23 @@ import extractionFlow from "@content/projects/images/soil-association-exchange/e
     <FeatureGridItem prefix="03" title="Designing and refining the workflow" description="Built a multi-step AI pipeline in Relay that scraped source pages, extracted structured field groups into strict JSON, and used QA steps to catch missing or inconsistent outputs before hand-off." />
   </FeatureGrid>
 
-  <ScrollScalingImage src={extractionFlow} alt="AI extraction workflow diagram showing the multi-step pipeline" className="mb-16 md:mb-48" />
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16 md:mb-48">
+    <Image src={extractionFlow} alt="AI extraction workflow diagram showing the multi-step pipeline" class="w-full rounded-xl" />
+  </div>
 
-  <CenteredTextBlock
-    subHeading="Outcomes and impact"
-    heading="Faster updates, more consistent data"
-    className="mb-16 md:mb-48"
-  >
-    <Typography variant="body" as="p">
-      The workflow is designed to replace around 15 minutes of manual work per scheme with automated extraction plus light QA, making larger scheme updates far more practical for the team. It also standardises how key fields like payments, land types, practices and eligibility are captured, reducing variability between contributors and creating cleaner inputs for the Funding Tool. Because outputs are already aligned to the backend schema, the work also gives Soil Association a clearer route to scaling scheme coverage without rebuilding the process from scratch.
-    </Typography>
-  </CenteredTextBlock>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16 md:mb-48">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div class="md:col-span-5">
+        <Typography variant="bodySmall" as="p" class="text-gray-500 uppercase mb-4">Outcomes and impact</Typography>
+        <Typography variant="heading2" as="h2" class="mb-6">Faster updates, more consistent data</Typography>
+        <Typography variant="body" as="p" class="text-gray-500">Replacing manual effort with structured automation — making scheme updates faster, more consistent, and ready to scale.</Typography>
+      </div>
+      <div class="md:col-span-6 md:col-start-7">
+        <Typography variant="body" as="p">
+          The workflow is designed to replace around 15 minutes of manual work per scheme with automated extraction plus light QA, making larger scheme updates far more practical for the team. It also standardises how key fields like payments, land types, practices and eligibility are captured, reducing variability between contributors and creating cleaner inputs for the Funding Tool. Because outputs are already aligned to the backend schema, the work also gives Soil Association a clearer route to scaling scheme coverage without rebuilding the process from scratch.
+        </Typography>
+      </div>
+    </div>
+  </div>
 
 </div>
