@@ -44,3 +44,14 @@ Type scale lives in `src/styles/global.css` — edit there, not in `Typography.a
 - Spacing scale: `mb-16 md:mb-48` for section gaps
 - Images imported directly as Astro assets (not public/ URLs) for optimisation
 - No custom CSS — Tailwind utility classes only
+- Image border radius: `rounded-xl` (12px) across all images and videos — matches project listing cards
+
+## Content blocks reference
+All available content blocks are demonstrated at `/projects/content-blocks` (`featured: false`, not shown on homepage). Use it to preview components before implementing in a project. Available blocks:
+- `FeatureGrid` / `FeatureGridItem` — context/outcome cards, optional `prefix` prop for numbered steps or metrics
+- `CenteredTextBlock` — centred heading + body slot, used for intros and section transitions
+- `TextImageBlock` — heading + body slot + image, `imagePosition="left"|"right"`, `imageSize="default"|"large"` (large = ~75% image / 25% text)
+- `ScrollScalingImage` — full-width image with scroll-driven scale animation, `startSize` and `endSize` props
+- `StickyContentGrid` / `StickyContentGridItem` — sticky left heading column + flowing numbered items on the right
+- `ThreeColumnGrid` / `TwoColumnGrid` — image grid wrappers, children passed as slot
+- `Testimonial` — single quote block
