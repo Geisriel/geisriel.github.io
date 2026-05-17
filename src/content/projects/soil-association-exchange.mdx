@@ -17,33 +17,12 @@ tags:
 ---
 
 import { Image } from "astro:assets";
-
-{/* Content blocks used in this file */}
-import CenteredTextBlock from "@content-blocks/CenteredTextBlock/CenteredTextBlock.astro";
 import TextImageBlock from "@content-blocks/TextImageBlock/TextImageBlock.astro";
-import StickyContentGrid from "@content-blocks/StickyContentGrid/StickyContentGrid.astro";
-import StickyContentGridItem from "@content-blocks/StickyContentGrid/StickyContentGridItem.astro";
-import ThreeColumnGrid from "@content-blocks/GridLayout/ThreeColumnGrid.astro";
-import TwoColumnGrid from "@content-blocks/GridLayout/TwoColumnGrid.astro";
 import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
 import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
-import Testimonial from "@content-blocks/Testimonial/Testimonial.astro";
-import ScrollScalingImage from "@components/ScrollScalingImage.astro";
 import Section from "@content-blocks/Section/Section.astro";
-import Typography from "@components/ui-library/Typography/Typography.astro";
 
-
-{/* Load additional images which are used in this file, but not needed in frontmatter */}
-import sampleImage1 from "@content/projects/images/soil-association-exchange/sampleImage1.jpg";
 import fundingSchemeComplexity from "@content/projects/images/soil-association-exchange/fundingSchemeComplexity.png";
-import sampleImage2 from "@content/projects/images/soil-association-exchange/sampleImage2.jpg";
-import sampleImage3 from "@content/projects/images/soil-association-exchange/sampleImage3.jpg";
-import sampleImage4 from "@content/projects/images/soil-association-exchange/sampleImage4.jpg";
-import sampleImage5 from "@content/projects/images/soil-association-exchange/sampleImage5.jpg";
-import sampleImage6 from "@content/projects/images/soil-association-exchange/sampleImage6.jpg";
-import sampleImage7 from "@content/projects/images/soil-association-exchange/sampleImage7.jpg";
-import sampleImage8 from "@content/projects/images/soil-association-exchange/sampleImage8.jpg";
-import jsonExampleFull from "@content/projects/images/soil-association-exchange/jsonExampleFull.svg";
 import relayScreenshot1 from "@content/projects/images/soil-association-exchange/relayScreenshot1.png";
 import extractionFlow from "@content/projects/images/soil-association-exchange/extractionFlow.png";
 
@@ -101,9 +80,9 @@ import extractionFlow from "@content/projects/images/soil-association-exchange/e
   <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16 md:mb-48">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
       <div class="md:col-span-5">
-        <Typography variant="body-small" as="p" class="text-gray-500 uppercase mb-4">Outcomes and impact</Typography>
-        <Typography variant="heading2" as="h2" class="mb-6">Faster updates, more consistent data</Typography>
-        <Typography variant="body" as="p" class="text-gray-500">Replacing manual effort with structured automation — making scheme updates faster, more consistent, and ready to scale.</Typography>
+        <p class="text-sm text-gray-500 uppercase mb-4">Outcomes and impact</p>
+        <h2 class="heading2 mb-6">Faster updates, more consistent data</h2>
+        <p class="body text-gray-500">Replacing manual effort with structured automation — making scheme updates faster, more consistent, and ready to scale.</p>
       </div>
       <div class="md:col-span-6 md:col-start-7">
         <p class="body">The workflow is designed to replace around 15 minutes of manual work per scheme with automated extraction plus light QA, making larger scheme updates far more practical for the team. It also standardises how key fields like payments, land types, practices and eligibility are captured, reducing variability between contributors and creating cleaner inputs for the Funding Tool. Because outputs are already aligned to the backend schema, the work also gives Soil Association a clearer route to scaling scheme coverage without rebuilding the process from scratch.</p>

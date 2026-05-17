@@ -19,13 +19,12 @@ import CenteredTextBlock from "@content-blocks/CenteredTextBlock/CenteredTextBlo
 import TextImageBlock from "@content-blocks/TextImageBlock/TextImageBlock.astro";
 import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
 import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
-import Typography from "@components/ui-library/Typography/Typography.astro";
+import ScrollScalingImage from "@components/ScrollScalingImage.astro";
 
 import featureImage from "@content/projects/images/wattstor-dashboard/featureImageLarge.png";
 import podiumOverview from "@content/projects/images/wattstor-dashboard/podiumOverview.png";
 import collaborativeWireframing from "@content/projects/images/wattstor-dashboard/collaborativeWireframing.png";
 import collaborativeWireframingDotted from "@content/projects/images/wattstor-dashboard/collaborativeWireframingDotted.png";
-import ScrollScalingImage from "@components/ScrollScalingImage.astro";
 
 <div class="not-prose">
 
@@ -49,49 +48,49 @@ import ScrollScalingImage from "@components/ScrollScalingImage.astro";
     heading="Making complex energy data legible"
     className="mb-16 md:mb-48"
   >
-    <Typography variant="body" as="p" class="mb-6">The Wattstor team had been gathering insights on this particular problem for a while, and the sales team was a key stakeholder for a potential solution. They wanted to be able to visualise complex information to users in a meaningful and engaging way.</Typography>
+    <p class="body mb-6">The Wattstor team had been gathering insights on this particular problem for a while, and the sales team was a key stakeholder for a potential solution. They wanted to be able to visualise complex information to users in a meaningful and engaging way.</p>
   </CenteredTextBlock>
 
   <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16 md:mb-48">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
       <div class="md:col-span-5">
-        <Typography variant="body-small" as="p" class="text-gray-400 uppercase mb-3">Approach</Typography>
-        <Typography variant="heading2" as="h2" class="mb-6">Discovery and Design Process</Typography>
-        <Typography variant="body" as="p">A structured discovery process grounded in stakeholder knowledge, existing solutions, and iterative design.</Typography>
+        <p class="text-sm text-gray-400 uppercase mb-3">Approach</p>
+        <h2 class="heading2 mb-6">Discovery and Design Process</h2>
+        <p class="body">A structured discovery process grounded in stakeholder knowledge, existing solutions, and iterative design.</p>
       </div>
       <div class="md:col-span-6 md:col-start-7">
         <video autoplay loop muted playsinline class="w-full rounded-xl">
           <source src="/videos/wattstor-miro-process.mp4" type="video/mp4" />
         </video>
-        <Typography variant="body-small" as="p" class="text-gray-400 mt-3">Process overview — Miro board</Typography>
+        <p class="text-sm text-gray-400 mt-3">Process overview — Miro board</p>
       </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mt-16">
       <div>
-        <Typography variant="body-small" as="p" class="text-gray-400 mb-2">01</Typography>
-        <Typography variant="heading6" as="h3" class="mb-2">In-depth stakeholder interviews</Typography>
-        <Typography variant="body-small" as="p">Without direct access to end-users, detailed conversations with the sales team — who knew their clients intimately — helped understand user needs sufficiently.</Typography>
+        <p class="text-sm text-gray-400 mb-2">01</p>
+        <h3 class="heading6 mb-2">In-depth stakeholder interviews</h3>
+        <p class="text-sm text-gray-500">Without direct access to end-users, detailed conversations with the sales team — who knew their clients intimately — helped understand user needs sufficiently.</p>
       </div>
       <div>
-        <Typography variant="body-small" as="p" class="text-gray-400 mb-2">02</Typography>
-        <Typography variant="heading6" as="h3" class="mb-2">Researching existing solutions</Typography>
-        <Typography variant="body-small" as="p">Dashboards and data visualisation are a standard web-app offer. A review of existing solutions provided a strong foundation of design patterns and insights to draw from.</Typography>
+        <p class="text-sm text-gray-400 mb-2">02</p>
+        <h3 class="heading6 mb-2">Researching existing solutions</h3>
+        <p class="text-sm text-gray-500">Dashboards and data visualisation are a standard web-app offer. A review of existing solutions provided a strong foundation of design patterns and insights to draw from.</p>
       </div>
       <div>
-        <Typography variant="body-small" as="p" class="text-gray-400 mb-2">03</Typography>
-        <Typography variant="heading6" as="h3" class="mb-2">User jobs-to-be-done and task analysis</Typography>
-        <Typography variant="body-small" as="p">Using the JTBD framework to specify users goals, jobs, needs, pains, and desires helped clarify exactly what the dashboard needed to show.</Typography>
+        <p class="text-sm text-gray-400 mb-2">03</p>
+        <h3 class="heading6 mb-2">User jobs-to-be-done and task analysis</h3>
+        <p class="text-sm text-gray-500">Using the JTBD framework to specify users goals, jobs, needs, pains, and desires helped clarify exactly what the dashboard needed to show.</p>
       </div>
       <div>
-        <Typography variant="body-small" as="p" class="text-gray-400 mb-2">04</Typography>
-        <Typography variant="heading6" as="h3" class="mb-2">Data visualisation feasibility assessment</Typography>
-        <Typography variant="body-small" as="p">Understanding the limitations of the open-source charting library in use was important to ensure the design solution remained achievable within technical constraints.</Typography>
+        <p class="text-sm text-gray-400 mb-2">04</p>
+        <h3 class="heading6 mb-2">Data visualisation feasibility assessment</h3>
+        <p class="text-sm text-gray-500">Understanding the limitations of the open-source charting library in use was important to ensure the design solution remained achievable within technical constraints.</p>
       </div>
       <div>
-        <Typography variant="body-small" as="p" class="text-gray-400 mb-2">05</Typography>
-        <Typography variant="heading6" as="h3" class="mb-2">Iterative wireframing</Typography>
-        <Typography variant="body-small" as="p">Through an iterative cycle of lo-fi UI screens and stakeholder feedback sessions, the design progressed to a solution ready to take forwards.</Typography>
+        <p class="text-sm text-gray-400 mb-2">05</p>
+        <h3 class="heading6 mb-2">Iterative wireframing</h3>
+        <p class="text-sm text-gray-500">Through an iterative cycle of lo-fi UI screens and stakeholder feedback sessions, the design progressed to a solution ready to take forwards.</p>
       </div>
     </div>
 
@@ -129,8 +128,8 @@ import ScrollScalingImage from "@components/ScrollScalingImage.astro";
     imagePosition="right"
     className="mb-16 md:mb-48"
   >
-    <Typography variant="body" as="p" class="mb-6">The new dashboard design was embedded into the existing Podium web app, with the intention to update and improve the UI and UX of other elements — such as the side navigation — in a future initiative.</Typography>
-    <Typography variant="body" as="p">This is a live feature of the Wattstor Podium web app.</Typography>
+    <p class="body mb-6">The new dashboard design was embedded into the existing Podium web app, with the intention to update and improve the UI and UX of other elements — such as the side navigation — in a future initiative.</p>
+    <p class="body">This is a live feature of the Wattstor Podium web app.</p>
   </TextImageBlock>
 
   <ScrollScalingImage alt="Wattstor Podium dashboard overview screen" src={podiumOverview} className="mb-16 md:mb-48" />
@@ -138,20 +137,20 @@ import ScrollScalingImage from "@components/ScrollScalingImage.astro";
   <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16 md:mb-48">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 pt-8">
       <div>
-        <Typography variant="body-small" as="p" class="text-gray-400 uppercase mb-1">Role</Typography>
-        <Typography variant="body-small" as="p">Lead Product Designer</Typography>
+        <p class="text-sm text-gray-400 uppercase mb-1">Role</p>
+        <p class="text-sm text-gray-500">Lead Product Designer</p>
       </div>
       <div>
-        <Typography variant="body-small" as="p" class="text-gray-400 uppercase mb-1">Scope</Typography>
-        <Typography variant="body-small" as="p">Research, wireframing, UI design, user testing</Typography>
+        <p class="text-sm text-gray-400 uppercase mb-1">Scope</p>
+        <p class="text-sm text-gray-500">Research, wireframing, UI design, user testing</p>
       </div>
       <div>
-        <Typography variant="body-small" as="p" class="text-gray-400 uppercase mb-1">Collaborators</Typography>
-        <Typography variant="body-small" as="p">Head of Product, Engineering team</Typography>
+        <p class="text-sm text-gray-400 uppercase mb-1">Collaborators</p>
+        <p class="text-sm text-gray-500">Head of Product, Engineering team</p>
       </div>
       <div>
-        <Typography variant="body-small" as="p" class="text-gray-400 uppercase mb-1">Status</Typography>
-        <Typography variant="body-small" as="p">Live feature — Wattstor Podium web app</Typography>
+        <p class="text-sm text-gray-400 uppercase mb-1">Status</p>
+        <p class="text-sm text-gray-500">Live feature — Wattstor Podium web app</p>
       </div>
     </div>
   </div>
