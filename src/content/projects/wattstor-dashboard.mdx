@@ -14,6 +14,7 @@ tags:
   - UX
 ---
 
+import { Image } from "astro:assets";
 import CenteredTextBlock from "@content-blocks/CenteredTextBlock/CenteredTextBlock.astro";
 import TextImageBlock from "@content-blocks/TextImageBlock/TextImageBlock.astro";
 import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
@@ -22,6 +23,7 @@ import Typography from "@components/ui-library/Typography/Typography.astro";
 
 import featureImage from "@content/projects/images/wattstor-dashboard/featureImageLarge.png";
 import podiumOverview from "@content/projects/images/wattstor-dashboard/podiumOverview.png";
+import collaborativeWireframing from "@content/projects/images/wattstor-dashboard/collaborativeWireframing.png";
 import ScrollScalingImage from "@components/ScrollScalingImage.astro";
 
 <div class="not-prose">
@@ -48,8 +50,6 @@ import ScrollScalingImage from "@components/ScrollScalingImage.astro";
   >
     <Typography variant="body" as="p" class="mb-6">The Wattstor team had been gathering insights on this particular problem for a while, and the sales team was a key stakeholder for a potential solution. They wanted to be able to visualise complex information to users in a meaningful and engaging way.</Typography>
   </CenteredTextBlock>
-
-  <ScrollScalingImage alt="Wattstor Podium dashboard overview screen" src={podiumOverview} className="mb-16 md:mb-48" />
 
   <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16 md:mb-48">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
@@ -93,6 +93,8 @@ import ScrollScalingImage from "@components/ScrollScalingImage.astro";
         <Typography variant="bodySmall" as="p">Through an iterative cycle of lo-fi UI screens and stakeholder feedback sessions, the design progressed to a solution ready to take forwards.</Typography>
       </div>
     </div>
+
+    <Image src={collaborativeWireframing} alt="Collaborative wireframing session for the Wattstor dashboard" class="w-full rounded-3xl mt-16" />
   </div>
 
   <TextImageBlock
@@ -106,6 +108,8 @@ import ScrollScalingImage from "@components/ScrollScalingImage.astro";
     <Typography variant="body" as="p" class="mb-6">The new dashboard design was embedded into the existing Podium web app, with the intention to update and improve the UI and UX of other elements — such as the side navigation — in a future initiative.</Typography>
     <Typography variant="body" as="p">This is a live feature of the Wattstor Podium web app.</Typography>
   </TextImageBlock>
+
+  <ScrollScalingImage alt="Wattstor Podium dashboard overview screen" src={podiumOverview} className="mb-16 md:mb-48" />
 
   <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16 md:mb-48">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 pt-8">

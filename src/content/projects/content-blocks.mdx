@@ -1,0 +1,155 @@
+---
+title: "Content blocks"
+subtitle: "A reference page showing all available content block components with placeholder content"
+slug: "content-blocks"
+publishDate: 2024-01-01 00:00:00
+description: "A reference page showing all available content block components with placeholder content"
+featured: false
+featureImageSmall: "./images/content-blocks/placeholderSmall.jpg"
+featureImageLarge: "./images/content-blocks/placeholder.jpg"
+tags:
+  - Reference
+---
+
+import { Image } from "astro:assets";
+
+import CenteredTextBlock from "@content-blocks/CenteredTextBlock/CenteredTextBlock.astro";
+import TextImageBlock from "@content-blocks/TextImageBlock/TextImageBlock.astro";
+import StickyContentGrid from "@content-blocks/StickyContentGrid/StickyContentGrid.astro";
+import StickyContentGridItem from "@content-blocks/StickyContentGrid/StickyContentGridItem.astro";
+import ThreeColumnGrid from "@content-blocks/GridLayout/ThreeColumnGrid.astro";
+import TwoColumnGrid from "@content-blocks/GridLayout/TwoColumnGrid.astro";
+import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
+import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
+import Testimonial from "@content-blocks/Testimonial/Testimonial.astro";
+import ScrollScalingImage from "@components/ScrollScalingImage.astro";
+import Typography from "@components/ui-library/Typography/Typography.astro";
+
+import placeholder from "@content/projects/images/content-blocks/placeholder.jpg";
+import placeholderSmall from "@content/projects/images/content-blocks/placeholderSmall.jpg";
+
+<div class="not-prose">
+
+  {/* FeatureGrid — 3 cards, no prefix */}
+  <FeatureGrid className="mb-16 md:mb-48">
+    <FeatureGridItem
+      title="Card title"
+      description="Short description text that sits below the title. Use this for context, challenge, or outcome cards."
+    />
+    <FeatureGridItem
+      title="Card title"
+      description="Short description text that sits below the title. Use this for context, challenge, or outcome cards."
+    />
+    <FeatureGridItem
+      title="Card title"
+      description="Short description text that sits below the title. Use this for context, challenge, or outcome cards."
+    />
+  </FeatureGrid>
+
+  {/* FeatureGrid — with prefix numbers */}
+  <FeatureGrid className="mb-16 md:mb-48">
+    <FeatureGridItem prefix="01" title="Step or metric title" description="Use the prefix prop for numbered steps or large metrics." />
+    <FeatureGridItem prefix="02" title="Step or metric title" description="Use the prefix prop for numbered steps or large metrics." />
+    <FeatureGridItem prefix="03" title="Step or metric title" description="Use the prefix prop for numbered steps or large metrics." />
+  </FeatureGrid>
+
+  {/* CenteredTextBlock */}
+  <CenteredTextBlock
+    subHeading="Sub heading label"
+    heading="Centered section heading"
+    className="mb-16 md:mb-48"
+  >
+    <Typography variant="body" as="p">
+      Body text sits below the heading. Use this block for introductions, "How Might We" statements, or section transitions where no image is needed.
+    </Typography>
+  </CenteredTextBlock>
+
+  {/* TextImageBlock — image right */}
+  <TextImageBlock
+    subHeading="Sub heading label"
+    heading="Text and image — image right"
+    image={placeholder}
+    imageAlt="Placeholder image"
+    imagePosition="right"
+    className="mb-16 md:mb-48"
+  >
+    <Typography variant="body" as="p" class="mb-6">
+      First paragraph of body text. The image sits to the right on desktop and stacks below on mobile.
+    </Typography>
+    <Typography variant="body" as="p">
+      Second paragraph. You can pass as many Typography blocks as needed via the slot.
+    </Typography>
+  </TextImageBlock>
+
+  {/* TextImageBlock — image left */}
+  <TextImageBlock
+    subHeading="Sub heading label"
+    heading="Text and image — image left"
+    image={placeholderSmall}
+    imageAlt="Placeholder image"
+    imagePosition="left"
+    className="mb-16 md:mb-48"
+  >
+    <Typography variant="body" as="p" class="mb-6">
+      First paragraph of body text. The image sits to the left on desktop and stacks above on mobile.
+    </Typography>
+    <Typography variant="body" as="p">
+      Second paragraph.
+    </Typography>
+  </TextImageBlock>
+
+  {/* ScrollScalingImage */}
+  <ScrollScalingImage
+    src={placeholder}
+    alt="Placeholder image for scroll scaling effect"
+    className="mb-16 md:mb-48"
+    startSize={80}
+    endSize={100}
+  />
+
+  {/* StickyContentGrid */}
+  <StickyContentGrid
+    className="mb-16 md:mb-48"
+    subHeading="Sub heading label"
+    heading="Sticky section heading"
+    text="Introductory text in the sticky left column. This stays fixed while the right column scrolls through the items below."
+  >
+    <Fragment slot="grid-items">
+      <StickyContentGridItem
+        itemNumber="01"
+        heading="Item heading"
+        text="Item body text. Each item scrolls through on the right while the heading stays fixed on the left."
+      />
+      <StickyContentGridItem
+        itemNumber="02"
+        heading="Item heading"
+        text="Item body text. Each item scrolls through on the right while the heading stays fixed on the left."
+      />
+      <StickyContentGridItem
+        itemNumber="03"
+        heading="Item heading"
+        text="Item body text. Each item scrolls through on the right while the heading stays fixed on the left."
+      />
+    </Fragment>
+  </StickyContentGrid>
+
+  {/* ThreeColumnGrid */}
+  <ThreeColumnGrid className="mb-16 md:mb-48">
+    <Image src={placeholder} alt="Placeholder image 1" class="w-full rounded-3xl" />
+    <Image src={placeholderSmall} alt="Placeholder image 2" class="w-full rounded-3xl" />
+    <Image src={placeholder} alt="Placeholder image 3" class="w-full rounded-3xl" />
+  </ThreeColumnGrid>
+
+  {/* TwoColumnGrid */}
+  <TwoColumnGrid className="mb-16 md:mb-48">
+    <Image src={placeholder} alt="Placeholder image 1" class="w-full rounded-3xl" />
+    <Image src={placeholderSmall} alt="Placeholder image 2" class="w-full rounded-3xl" />
+  </TwoColumnGrid>
+
+  {/* Testimonial */}
+  <Testimonial
+    className="mb-16 md:mb-48"
+    quote="Quote text goes here. Keep it short and punchy — one or two sentences from a stakeholder, client, or collaborator."
+  />
+
+</div>
