@@ -50,7 +50,7 @@ const { className, src, alt, startSize = 40, endSize = 100 } = Astro.props;
     src={src}
     alt={alt}
     style={{ transform: `scale(${startSize}%)` }}
-    class:list={["block mx-auto rounded-3xl w-full js-cover-image origin-top", className]}
+    class:list={["block mx-auto rounded-xl w-full js-cover-image origin-top", className]}
     data-end-size={endSize}
   />
 </div>

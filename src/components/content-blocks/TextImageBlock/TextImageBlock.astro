@@ -10,6 +10,7 @@ interface Props {
   image: ImageMetadata;
   imageAlt: string;
   imagePosition?: "left" | "right";
+  imageSize?: "default" | "large";
 }
 
 const {
@@ -19,21 +20,28 @@ const {
   image,
   imageAlt,
   imagePosition = "right",
+  imageSize = "default",
 } = Astro.props;
+
+const isLarge = imageSize === "large";
 ---
 
 <div class:list={["mx-auto max-w-7xl px-6 lg:px-8", className]}>
   <div class="grid gap-6 grid-cols-1 md:grid-cols-12 items-center">
     {
       imagePosition === "left" ? (
-        <div class="md:col-start-2 md:col-span-4">
-          <Image class="rounded-3xl w-full" src={image} alt={imageAlt} />
+        <div class={isLarge ? "md:col-start-1 md:col-span-8" : "md:col-start-2 md:col-span-4"}>
+          <Image class="rounded-xl w-full" src={image} alt={imageAlt} />
         </div>
       ) : null
     }
 
     <div
-      class={`md:col-span-5 ${imagePosition === "right" ? "md:col-start-2" : "md:col-start-7"}`}
+      class={
+        isLarge
+          ? `md:col-span-3 ${imagePosition === "right" ? "md:col-start-2" : "md:col-start-10"}`
+          : `md:col-span-5 ${imagePosition === "right" ? "md:col-start-2" : "md:col-start-7"}`
+      }
     >
       <Typography
         variant="bodySmall"
@@ -50,8 +58,8 @@ const {
 
     {
       imagePosition === "right" ? (
-        <div class="md:col-start-8 md:col-span-4">
-          <Image class="rounded-3xl w-full" src={image} alt={imageAlt} />
+        <div class={isLarge ? "md:col-start-6 md:col-span-7" : "md:col-start-8 md:col-span-4"}>
+          <Image class="rounded-xl w-full" src={image} alt={imageAlt} />
         </div>
       ) : null
     }

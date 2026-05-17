@@ -24,6 +24,7 @@ import Typography from "@components/ui-library/Typography/Typography.astro";
 import featureImage from "@content/projects/images/wattstor-dashboard/featureImageLarge.png";
 import podiumOverview from "@content/projects/images/wattstor-dashboard/podiumOverview.png";
 import collaborativeWireframing from "@content/projects/images/wattstor-dashboard/collaborativeWireframing.png";
+import collaborativeWireframingDotted from "@content/projects/images/wattstor-dashboard/collaborativeWireframingDotted.png";
 import ScrollScalingImage from "@components/ScrollScalingImage.astro";
 
 <div class="not-prose">
@@ -59,7 +60,7 @@ import ScrollScalingImage from "@components/ScrollScalingImage.astro";
         <Typography variant="body" as="p">A structured discovery process grounded in stakeholder knowledge, existing solutions, and iterative design.</Typography>
       </div>
       <div class="md:col-span-6 md:col-start-7">
-        <video autoplay loop muted playsinline class="w-full rounded-3xl">
+        <video autoplay loop muted playsinline class="w-full rounded-xl">
           <source src="/videos/wattstor-miro-process.mp4" type="video/mp4" />
         </video>
         <Typography variant="bodySmall" as="p" class="text-gray-400 mt-3">Process overview — Miro board</Typography>
@@ -94,8 +95,35 @@ import ScrollScalingImage from "@components/ScrollScalingImage.astro";
       </div>
     </div>
 
-    <Image src={collaborativeWireframing} alt="Collaborative wireframing session for the Wattstor dashboard" class="w-full rounded-3xl mt-16" />
   </div>
+
+  <TextImageBlock
+    subHeading="Process"
+    heading="Collaborative wireframing"
+    image={collaborativeWireframing}
+    imageAlt="Collaborative wireframing session for the Wattstor dashboard"
+    imagePosition="right"
+    imageSize="large"
+    className="mb-16 md:mb-48"
+  >
+    <Typography variant="body" as="p">
+      Placeholder caption — update with a short description of what this image shows.
+    </Typography>
+  </TextImageBlock>
+
+  <TextImageBlock
+    subHeading="Process"
+    heading="Collaborative wireframing"
+    image={collaborativeWireframingDotted}
+    imageAlt="Collaborative wireframing session for the Wattstor dashboard"
+    imagePosition="right"
+    imageSize="large"
+    className="mb-16 md:mb-48"
+  >
+    <Typography variant="body" as="p">
+      Placeholder caption — update with a short description of what this image shows.
+    </Typography>
+  </TextImageBlock>
 
   <TextImageBlock
     subHeading="Output"

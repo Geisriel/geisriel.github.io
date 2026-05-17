@@ -64,7 +64,7 @@ import placeholderSmall from "@content/projects/images/content-blocks/placeholde
     </Typography>
   </CenteredTextBlock>
 
-  {/* TextImageBlock — image right */}
+  {/* TextImageBlock — image right, default (50/50) */}
   <TextImageBlock
     subHeading="Sub heading label"
     heading="Text and image — image right"
@@ -78,6 +78,36 @@ import placeholderSmall from "@content/projects/images/content-blocks/placeholde
     </Typography>
     <Typography variant="body" as="p">
       Second paragraph. You can pass as many Typography blocks as needed via the slot.
+    </Typography>
+  </TextImageBlock>
+
+  {/* TextImageBlock — image right, large (75/25) */}
+  <TextImageBlock
+    subHeading="Sub heading label"
+    heading="Text and image — image right, large"
+    image={placeholder}
+    imageAlt="Placeholder image"
+    imagePosition="right"
+    imageSize="large"
+    className="mb-16 md:mb-48"
+  >
+    <Typography variant="body" as="p">
+      With imageSize="large" the image takes roughly 3/4 of the width and text gets 1/4. Best for a short caption or label alongside a dominant visual.
+    </Typography>
+  </TextImageBlock>
+
+  {/* TextImageBlock — image left, large (75/25) */}
+  <TextImageBlock
+    subHeading="Sub heading label"
+    heading="Text and image — image left, large"
+    image={placeholderSmall}
+    imageAlt="Placeholder image"
+    imagePosition="left"
+    imageSize="large"
+    className="mb-16 md:mb-48"
+  >
+    <Typography variant="body" as="p">
+      Same large variant with the image on the left.
     </Typography>
   </TextImageBlock>
 
@@ -135,15 +165,15 @@ import placeholderSmall from "@content/projects/images/content-blocks/placeholde
 
   {/* ThreeColumnGrid */}
   <ThreeColumnGrid className="mb-16 md:mb-48">
-    <Image src={placeholder} alt="Placeholder image 1" class="w-full rounded-3xl" />
-    <Image src={placeholderSmall} alt="Placeholder image 2" class="w-full rounded-3xl" />
-    <Image src={placeholder} alt="Placeholder image 3" class="w-full rounded-3xl" />
+    <Image src={placeholder} alt="Placeholder image 1" class="w-full rounded-xl" />
+    <Image src={placeholderSmall} alt="Placeholder image 2" class="w-full rounded-xl" />
+    <Image src={placeholder} alt="Placeholder image 3" class="w-full rounded-xl" />
   </ThreeColumnGrid>
 
   {/* TwoColumnGrid */}
   <TwoColumnGrid className="mb-16 md:mb-48">
-    <Image src={placeholder} alt="Placeholder image 1" class="w-full rounded-3xl" />
-    <Image src={placeholderSmall} alt="Placeholder image 2" class="w-full rounded-3xl" />
+    <Image src={placeholder} alt="Placeholder image 1" class="w-full rounded-xl" />
+    <Image src={placeholderSmall} alt="Placeholder image 2" class="w-full rounded-xl" />
   </TwoColumnGrid>
 
   {/* Testimonial */}
