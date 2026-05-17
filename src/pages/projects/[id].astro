@@ -42,17 +42,19 @@ const { title, subtitle, description, featureImageLarge, headerLayout } =
 
     <!-- Header: image left, text right -->
     {headerLayout === "imageLeft" && (
-      <div class="mx-auto w-full max-w-7xl px-6 lg:px-8 mt-20 mb-16 md:mb-32">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          <div class="md:col-span-5">
-            <Image class="rounded-xl w-full" src={featureImageLarge} alt={title} />
-          </div>
-          <div class="md:col-span-6 md:col-start-7">
-            <Typography variant="heading1" as="h1" class="mb-4">{title}</Typography>
-            {subtitle && (
-              <Typography variant="heading3" as="p" class="mb-6 text-gray-500">{subtitle}</Typography>
-            )}
-            <Typography variant="body" as="p">{description}</Typography>
+      <div class="w-full bg-[#F4F1ED] mb-16 md:mb-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-20 pb-16 md:pb-24">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-5">
+              <Image class="rounded-xl w-full" src={featureImageLarge} alt={title} />
+            </div>
+            <div class="md:col-span-6 md:col-start-7">
+              <Typography variant="heading1" as="h1" class="mb-4">{title}</Typography>
+              {subtitle && (
+                <Typography variant="heading3" as="p" class="mb-6 text-gray-500">{subtitle}</Typography>
+              )}
+              <Typography variant="body" as="p">{description}</Typography>
+            </div>
           </div>
         </div>
       </div>
