@@ -38,7 +38,9 @@ employers — it needs to communicate credibility.
 ## Typography
 Type scale lives in `src/styles/global.css` — edit there, not in `Typography.astro`. The component is a thin wrapper that applies class names only. Raw markdown sections in MDX need their own `<div class="prose">` wrapper; component blocks do not.
 
-**MDX usage rule:** Never use `<Typography as="p">` with text content on a new line inside MDX — MDX wraps multiline text in its own `<p>`, resulting in an empty styled element and an unstyled content paragraph. Either write content inline (`<Typography variant="body" as="p">text here</Typography>`) or use a bare HTML element directly (`<p class="body">text here</p>`).
+**`body-small` has no CSS class** — removed to avoid Tailwind v4 scanning conflicts. Use `text-sm text-gray-500` directly (or `text-gray-400` for lighter labels).
+
+**MDX usage rule:** Use bare HTML with direct class names inside MDX — not `<Typography>`. The component adds no value in `not-prose` MDX contexts and causes wrapping bugs when content is on a new line. Use `<p class="body">`, `<h2 class="heading2">` etc. directly.
 
 ## Conventions observed in code
 - Max content width: `max-w-7xl` with `px-6 lg:px-8`
