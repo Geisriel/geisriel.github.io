@@ -1,0 +1,31 @@
+---
+interface Props {
+  role: string;
+  scope: string;
+  collaborators: string;
+  status: string;
+}
+
+const { role, scope, collaborators, status } = Astro.props;
+---
+
+<div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16 md:mb-48">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 pt-8">
+    <div>
+      <p class="text-sm text-gray-400 uppercase mb-1">Role</p>
+      <p class="text-sm text-gray-500">{role}</p>
+    </div>
+    <div>
+      <p class="text-sm text-gray-400 uppercase mb-1">Scope</p>
+      <p class="text-sm text-gray-500">{scope}</p>
+    </div>
+    <div>
+      <p class="text-sm text-gray-400 uppercase mb-1">Collaborators</p>
+      <p class="text-sm text-gray-500">{collaborators}</p>
+    </div>
+    <div>
+      <p class="text-sm text-gray-400 uppercase mb-1">Status</p>
+      <p class="text-sm text-gray-500">{status}</p>
+    </div>
+  </div>
+</div>

@@ -59,3 +59,4 @@ All available content blocks are demonstrated at `/projects/content-blocks` (`fe
 - `StickyContentGrid` / `StickyContentGridItem` — sticky left heading column + flowing numbered items on the right
 - `ThreeColumnGrid` / `TwoColumnGrid` — image grid wrappers, children passed as slot
 - `Testimonial` — single quote block
+- `ProjectMeta` — project summary footer bar, props: `role`, `scope`, `collaborators`, `status`. Use at the bottom of every project page.

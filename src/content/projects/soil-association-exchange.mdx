@@ -21,10 +21,14 @@ import TextImageBlock from "@content-blocks/TextImageBlock/TextImageBlock.astro"
 import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
 import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
 import Section from "@content-blocks/Section/Section.astro";
+import ProjectMeta from "@content-blocks/ProjectMeta/ProjectMeta.astro";
 
 import fundingSchemeComplexity from "@content/projects/images/soil-association-exchange/fundingSchemeComplexity.png";
 import relayScreenshot1 from "@content/projects/images/soil-association-exchange/relayScreenshot1.png";
 import extractionFlow from "@content/projects/images/soil-association-exchange/extractionFlow.png";
+import qaVisual from "@content/projects/images/soil-association-exchange/qaVisual.png";
+import promptExample from "@content/projects/images/soil-association-exchange/promptExample.png";
+import humanInTheLoop from "@content/projects/images/soil-association-exchange/humanInTheLoop.png";
 
 {/* Content */}
 <div class='not-prose'>
@@ -73,6 +77,43 @@ import extractionFlow from "@content/projects/images/soil-association-exchange/e
     </FeatureGrid>
   </Section>
 
+  <Section>
+    <TextImageBlock
+      subHeading="Process detail"
+      heading="Structured prompt design"
+      image={promptExample}
+      imageAlt="Example prompt showing field-by-field extraction structure"
+      imagePosition="left"
+      imageSize="medium"
+      className="mb-16 md:mb-48"
+    >
+      <p class="body mb-6">I designed prompts around each field group, using strict matching where the schema required it and flagging anything outside the taxonomy for review. Through testing and QA, I refined both the extraction prompts and checks over multiple iterations. Different models were used for different jobs, balancing reliability, cost and independent review.</p>
+    </TextImageBlock>
+
+    <TextImageBlock
+      subHeading="Process detail"
+      heading="Targeted human review"
+      image={humanInTheLoop}
+      imageAlt="Human in the loop review step diagram"
+      imagePosition="right"
+      imageSize="medium"
+      className="mb-16 md:mb-48"
+    >
+      <p class="body">Human review only happens at defined points: when extraction confidence drops or when values fall outside the expected taxonomy. Slack alerts guide reviewers to clear, human-readable artefacts they can review, edit and approve. This keeps oversight lightweight while helping the system adapt to new or unusual data.</p>
+    </TextImageBlock>
+
+    <TextImageBlock
+      subHeading="Process detail"
+      heading="QA with confidence scoring"
+      image={qaVisual}
+      imageAlt="QA process diagram showing confidence scoring and human review trigger"
+      imagePosition="left"
+      imageSize="medium"
+    >
+      <p class="body">A scripted QA loop compares extracted fields against the original source, scores confidence and records issues with suggested fixes. It outputs both structured JSON and a readable QA document, and automatically triggers review when scores fall below a threshold.</p>
+    </TextImageBlock>
+  </Section>
+
   <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16 md:mb-48">
     <Image src={extractionFlow} alt="AI extraction workflow diagram showing the multi-step pipeline" class="w-full rounded-xl" />
   </div>
@@ -89,5 +130,12 @@ import extractionFlow from "@content/projects/images/soil-association-exchange/e
       </div>
     </div>
   </div>
+
+  <ProjectMeta
+    role="AI Workflow Designer"
+    scope="Workflow design, prompt engineering, schema design, QA system"
+    collaborators="Soil Association product and engineering team"
+    status="Delivered — Soil Association Exchange"
+  />
 
 </div>

@@ -20,6 +20,7 @@ import TextImageBlock from "@content-blocks/TextImageBlock/TextImageBlock.astro"
 import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
 import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
 import ScrollScalingImage from "@components/ScrollScalingImage.astro";
+import ProjectMeta from "@content-blocks/ProjectMeta/ProjectMeta.astro";
 
 import featureImage from "@content/projects/images/wattstor-dashboard/featureImageLarge.png";
 import podiumOverview from "@content/projects/images/wattstor-dashboard/podiumOverview.png";
@@ -134,25 +135,11 @@ import collaborativeWireframingDotted from "@content/projects/images/wattstor-da
 
   <ScrollScalingImage alt="Wattstor Podium dashboard overview screen" src={podiumOverview} className="mb-16 md:mb-48" />
 
-  <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16 md:mb-48">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 pt-8">
-      <div>
-        <p class="text-sm text-gray-400 uppercase mb-1">Role</p>
-        <p class="text-sm text-gray-500">Lead Product Designer</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-400 uppercase mb-1">Scope</p>
-        <p class="text-sm text-gray-500">Research, wireframing, UI design, user testing</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-400 uppercase mb-1">Collaborators</p>
-        <p class="text-sm text-gray-500">Head of Product, Engineering team</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-400 uppercase mb-1">Status</p>
-        <p class="text-sm text-gray-500">Live feature — Wattstor Podium web app</p>
-      </div>
-    </div>
-  </div>
+  <ProjectMeta
+    role="Lead Product Designer"
+    scope="Research, wireframing, UI design, user testing"
+    collaborators="Head of Product, Engineering team"
+    status="Live feature — Wattstor Podium web app"
+  />
 
 </div>
