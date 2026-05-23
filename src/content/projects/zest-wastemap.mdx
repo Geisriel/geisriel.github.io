@@ -19,8 +19,15 @@ import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
 import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
 import Section from "@content-blocks/Section/Section.astro";
 import ProjectMeta from "@content-blocks/ProjectMeta/ProjectMeta.astro";
+import ScrollScalingImage from "@components/ScrollScalingImage.astro";
 
 import breadFactoryIllustration from "@content/projects/images/zest-wastemap/breadFactoryIllustration.png";
+import wasteMapSchema from "@content/projects/images/zest-wastemap/wasteMapSchema.png";
+import wastemapVisualSchematic from "@content/projects/images/zest-wastemap/wastemapVisualSchematic.png";
+import wastemapEarlyVisual from "@content/projects/images/zest-wastemap/wastemapEarlyVisual.png";
+import uiComponentExamples from "@content/projects/images/zest-wastemap/uiComponentExamples.png";
+import wastemapUI1 from "@content/projects/images/zest-wastemap/wastemapUI1.png";
+import wastemapUI2 from "@content/projects/images/zest-wastemap/wastemapUI2.png";
 
 <div class="not-prose">
 
@@ -39,9 +46,9 @@ import breadFactoryIllustration from "@content/projects/images/zest-wastemap/bre
     />
   </FeatureGrid>
 
-  <Section background="subtle">
+  <Section background="subtle" heading="Context & Problem">
     <TextImageBlock
-      subHeading="Context & Problem"
+      subHeading="The blind spot"
       heading="Why waste in factories is so hard to see and deal with"
       image={breadFactoryIllustration}
       imageAlt="Illustration of a bread factory production line"
@@ -61,6 +68,63 @@ import breadFactoryIllustration from "@content/projects/images/zest-wastemap/bre
         description="At the same time, this blind spot is a major opportunity. When Zest analysed individual production lines in detail, they repeatedly found interventions that could avoid thousands of tonnes of waste per year or save up to seven figures annually on a single line. With tighter regulation, rising ingredient costs and growing demand for food donations, this became the right moment to act – and Zest set out to build a solution that could turn hidden waste into real value."
       />
     </FeatureGrid>
+  </Section>
+
+  <Section heading="Approach & Process">
+    <TextImageBlock
+      subHeading="The design challenge"
+      heading="Designing a standardised, scalable product for wildly different factories"
+      image={wasteMapSchema}
+      imageAlt="Zest Wastemap schema showing the underlying data structure"
+      imagePosition="right"
+      imageSize="medium"
+    >
+      <p class="body">Zest had just pivoted from a B2C "wonky veg" service to a B2B food‑waste technology platform, with no established digital product and product–market fit still emerging. Every production line we saw looked completely different – cereals, confectionery, ready meals – raising a key question: how do you design something repeatable when every factory follows a unique process?</p>
+    </TextImageBlock>
+
+    <TextImageBlock
+      subHeading="Iterating from zero"
+      heading="Drawing on my founder experience to shape 0–1 products"
+      image={wastemapVisualSchematic}
+      imageAlt="Zest Wastemap visual schematic showing iteration of the map structure"
+      imagePosition="left"
+      imageSize="medium"
+    >
+      <p class="body mb-6">With input from the Zest founders and team, I led the evolution of the "waste map" from a one‑off analysis into a candidate for a scalable digital product. We iterated it with insights from factory staff, ESG officers, quality teams and external experts, testing how it held up in real conversations and decision‑making.</p>
+      <p class="body">Over countless iterations and working sessions, we explored ways to represent very different production lines using the same underlying structure. The goal was a map that lets manufacturers see, at a glance, where waste appears, how much it is, and where it currently ends up – without needing to understand every nuance of the underlying data model.</p>
+    </TextImageBlock>
+    <ScrollScalingImage
+      src={wastemapEarlyVisual}
+      alt="Early Zest Wastemap visual showing the production flow structure"
+    />
+  </Section>
+
+  <Section heading="Impact & Outcome">
+    <TextImageBlock
+      subHeading="Designing the Waste Map interface"
+      heading="Turning complex factory data into a clear, modular map of where waste happens"
+      image={uiComponentExamples}
+      imageAlt="Examples of UI components used in iterations of the Waste Map"
+      imageCaption="Examples of UI components used in iterations of the Waste Map"
+      imagePosition="right"
+      imageSize="medium"
+    >
+      <p class="body">I worked with Zest's data scientists and engineers to turn messy factory data and early schematics into a clean, modular interface that sits inside Zest's app and scales across very different production lines. Together we defined the core flows, interaction patterns and visual language of the Waste Map, moving from hand‑drawn flow diagrams to wireframes and then to production‑ready UI that makes waste hotspots obvious at a glance, and can be adapted as new factory needs emerge without redesigning the whole experience.</p>
+    </TextImageBlock>
+    <TextImageBlock
+      subHeading="Core view for value and impact"
+      heading="The Waste Map is now the backbone of Zest's product and sales story"
+      image={wastemapUI1}
+      imageAlt="Zest Wastemap UI showing the core waste map view"
+      imagePosition="left"
+      imageSize="medium"
+    >
+      <p class="body">The Waste Map is becoming the backbone of Zest's app: the first touchpoint where manufacturers see their own data turned into a clear picture of losses and opportunities. It now anchors sales and pilot conversations, helping prospects quickly see where Zest can have impact and what follow‑on work – alerts, redistribution, wider optimisation – could look like.</p>
+    </TextImageBlock>
+    <ScrollScalingImage
+      src={wastemapUI2}
+      alt="Zest Wastemap UI overview"
+    />
   </Section>
 
   <ProjectMeta

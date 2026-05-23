@@ -11,6 +11,7 @@ interface Props {
   imageAlt: string;
   imagePosition?: "left" | "right";
   imageSize?: "default" | "medium" | "large";
+  imageCaption?: string;
 }
 
 const {
@@ -21,18 +22,19 @@ const {
   imageAlt,
   imagePosition = "right",
   imageSize = "default",
+  imageCaption,
 } = Astro.props;
 
 const imageLeftClass = imageSize === "large"
   ? "md:col-start-1 md:col-span-8"
   : imageSize === "medium"
-  ? "md:col-start-1 md:col-span-6"
+  ? "md:col-start-1 md:col-span-5"
   : "md:col-start-2 md:col-span-4";
 
 const imageRightClass = imageSize === "large"
   ? "md:col-start-5 md:col-span-8"
   : imageSize === "medium"
-  ? "md:col-start-7 md:col-span-6"
+  ? "md:col-start-8 md:col-span-5"
   : "md:col-start-8 md:col-span-4";
 
 const textClass = imageSize === "large"
@@ -42,12 +44,13 @@ const textClass = imageSize === "large"
   : `md:col-span-5 ${imagePosition === "right" ? "md:col-start-2" : "md:col-start-7"}`;
 ---
 
-<div class:list={["mx-auto max-w-7xl px-6 lg:px-8", className]}>
+<div class:list={["mx-auto max-w-7xl px-6 lg:px-16", className]}>
   <div class="grid gap-6 grid-cols-1 md:grid-cols-12 items-center">
     {
       imagePosition === "left" ? (
         <div class={imageLeftClass}>
           <Image class="rounded-xl w-full" src={image} alt={imageAlt} />
+          {imageCaption && <p class="text-sm text-gray-400 mt-3">{imageCaption}</p>}
         </div>
       ) : null
     }
@@ -70,6 +73,7 @@ const textClass = imageSize === "large"
       imagePosition === "right" ? (
         <div class={imageRightClass}>
           <Image class="rounded-xl w-full" src={image} alt={imageAlt} />
+          {imageCaption && <p class="text-sm text-gray-400 mt-3">{imageCaption}</p>}
         </div>
       ) : null
     }
