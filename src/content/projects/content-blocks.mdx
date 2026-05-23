@@ -23,14 +23,15 @@ import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
 import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
 import Testimonial from "@content-blocks/Testimonial/Testimonial.astro";
 import ScrollScalingImage from "@components/ScrollScalingImage.astro";
-import Typography from "@components/ui-library/Typography/Typography.astro";
+import Section from "@content-blocks/Section/Section.astro";
+import ProjectMeta from "@content-blocks/ProjectMeta/ProjectMeta.astro";
 
 import placeholder from "@content/projects/images/content-blocks/placeholder.jpg";
 import placeholderSmall from "@content/projects/images/content-blocks/placeholderSmall.jpg";
 
 <div class="not-prose">
 
-  {/* FeatureGrid — 3 cards, no prefix */}
+  {/* FeatureGrid — 3 columns, no prefix */}
   <FeatureGrid className="mb-16 md:mb-48">
     <FeatureGridItem
       title="Card title"
@@ -46,86 +47,110 @@ import placeholderSmall from "@content/projects/images/content-blocks/placeholde
     />
   </FeatureGrid>
 
-  {/* FeatureGrid — with prefix numbers */}
+  {/* FeatureGrid — 3 columns, with prefix */}
   <FeatureGrid className="mb-16 md:mb-48">
     <FeatureGridItem prefix="01" title="Step or metric title" description="Use the prefix prop for numbered steps or large metrics." />
     <FeatureGridItem prefix="02" title="Step or metric title" description="Use the prefix prop for numbered steps or large metrics." />
     <FeatureGridItem prefix="03" title="Step or metric title" description="Use the prefix prop for numbered steps or large metrics." />
   </FeatureGrid>
 
+  {/* FeatureGrid — 2 columns */}
+  <FeatureGrid columns={2} className="mb-16 md:mb-48">
+    <FeatureGridItem
+      title="Card title"
+      description="Two-column variant — use for paired content where three columns would feel sparse."
+    />
+    <FeatureGridItem
+      title="Card title"
+      description="Two-column variant — use for paired content where three columns would feel sparse."
+    />
+  </FeatureGrid>
+
   {/* CenteredTextBlock */}
   <CenteredTextBlock
-    subHeading="Sub heading label"
+    subHeading="CenteredTextBlock"
     heading="Centered section heading"
     className="mb-16 md:mb-48"
   >
-    <Typography variant="body" as="p">
-      Body text sits below the heading. Use this block for introductions, "How Might We" statements, or section transitions where no image is needed.
-    </Typography>
+    <p class="body">Body text sits below the heading. Use this block for introductions, "How Might We" statements, or section transitions where no image is needed.</p>
   </CenteredTextBlock>
 
-  {/* TextImageBlock — image right, default (50/50) */}
+  {/* TextImageBlock — default, image right */}
   <TextImageBlock
-    subHeading="Sub heading label"
-    heading="Text and image — image right"
+    subHeading="TextImageBlock"
+    heading="Default — image right"
     image={placeholder}
     imageAlt="Placeholder image"
     imagePosition="right"
     className="mb-16 md:mb-48"
   >
-    <Typography variant="body" as="p" class="mb-6">
-      First paragraph of body text. The image sits to the right on desktop and stacks below on mobile.
-    </Typography>
-    <Typography variant="body" as="p">
-      Second paragraph. You can pass as many Typography blocks as needed via the slot.
-    </Typography>
+    <p class="body mb-6">First paragraph of body text. The image sits to the right on desktop and stacks below on mobile.</p>
+    <p class="body">Second paragraph. Pass as many elements as needed via the slot.</p>
   </TextImageBlock>
 
-  {/* TextImageBlock — image right, large (75/25) */}
+  {/* TextImageBlock — default, image left */}
   <TextImageBlock
-    subHeading="Sub heading label"
-    heading="Text and image — image right, large"
+    subHeading="TextImageBlock"
+    heading="Default — image left"
+    image={placeholderSmall}
+    imageAlt="Placeholder image"
+    imagePosition="left"
+    className="mb-16 md:mb-48"
+  >
+    <p class="body mb-6">First paragraph of body text. The image sits to the left on desktop and stacks above on mobile.</p>
+    <p class="body">Second paragraph.</p>
+  </TextImageBlock>
+
+  {/* TextImageBlock — medium, image right */}
+  <TextImageBlock
+    subHeading="TextImageBlock"
+    heading="Medium — image right"
+    image={placeholder}
+    imageAlt="Placeholder image"
+    imagePosition="right"
+    imageSize="medium"
+    className="mb-16 md:mb-48"
+  >
+    <p class="body">With imageSize="medium" the image takes roughly half the width with a balanced text column alongside it.</p>
+  </TextImageBlock>
+
+  {/* TextImageBlock — medium, image left */}
+  <TextImageBlock
+    subHeading="TextImageBlock"
+    heading="Medium — image left"
+    image={placeholderSmall}
+    imageAlt="Placeholder image"
+    imagePosition="left"
+    imageSize="medium"
+    className="mb-16 md:mb-48"
+  >
+    <p class="body">Same medium variant with the image on the left.</p>
+  </TextImageBlock>
+
+  {/* TextImageBlock — large, image right */}
+  <TextImageBlock
+    subHeading="TextImageBlock"
+    heading="Large — image right"
     image={placeholder}
     imageAlt="Placeholder image"
     imagePosition="right"
     imageSize="large"
     className="mb-16 md:mb-48"
   >
-    <Typography variant="body" as="p">
-      With imageSize="large" the image takes roughly 3/4 of the width and text gets 1/4. Best for a short caption or label alongside a dominant visual.
-    </Typography>
+    <p class="body">With imageSize="large" the image takes roughly 3/4 of the width and text gets 1/4. Best for a short caption alongside a dominant visual.</p>
   </TextImageBlock>
 
-  {/* TextImageBlock — image left, large (75/25) */}
+  {/* TextImageBlock — large, image left */}
   <TextImageBlock
-    subHeading="Sub heading label"
-    heading="Text and image — image left, large"
+    subHeading="TextImageBlock"
+    heading="Large — image left"
     image={placeholderSmall}
     imageAlt="Placeholder image"
     imagePosition="left"
     imageSize="large"
     className="mb-16 md:mb-48"
   >
-    <Typography variant="body" as="p">
-      Same large variant with the image on the left.
-    </Typography>
-  </TextImageBlock>
-
-  {/* TextImageBlock — image left */}
-  <TextImageBlock
-    subHeading="Sub heading label"
-    heading="Text and image — image left"
-    image={placeholderSmall}
-    imageAlt="Placeholder image"
-    imagePosition="left"
-    className="mb-16 md:mb-48"
-  >
-    <Typography variant="body" as="p" class="mb-6">
-      First paragraph of body text. The image sits to the left on desktop and stacks above on mobile.
-    </Typography>
-    <Typography variant="body" as="p">
-      Second paragraph.
-    </Typography>
+    <p class="body">Same large variant with the image on the left.</p>
   </TextImageBlock>
 
   {/* ScrollScalingImage */}
@@ -140,7 +165,7 @@ import placeholderSmall from "@content/projects/images/content-blocks/placeholde
   {/* StickyContentGrid */}
   <StickyContentGrid
     className="mb-16 md:mb-48"
-    subHeading="Sub heading label"
+    subHeading="StickyContentGrid"
     heading="Sticky section heading"
     text="Introductory text in the sticky left column. This stays fixed while the right column scrolls through the items below."
   >
@@ -180,6 +205,24 @@ import placeholderSmall from "@content/projects/images/content-blocks/placeholde
   <Testimonial
     className="mb-16 md:mb-48"
     quote="Quote text goes here. Keep it short and punchy — one or two sentences from a stakeholder, client, or collaborator."
+  />
+
+  {/* Section */}
+  <Section background="subtle" className="mb-16 md:mb-48">
+    <CenteredTextBlock
+      subHeading="Section"
+      heading="Section wrapper with subtle background"
+    >
+      <p class="body">The Section component wraps other blocks in a full-width background band. Use background="subtle" for a light grey, or omit for white.</p>
+    </CenteredTextBlock>
+  </Section>
+
+  {/* ProjectMeta */}
+  <ProjectMeta
+    role="Role placeholder"
+    scope="Scope placeholder"
+    collaborators="Collaborators placeholder"
+    status="Status placeholder"
   />
 
 </div>
