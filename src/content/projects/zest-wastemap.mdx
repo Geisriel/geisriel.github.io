@@ -1,0 +1,73 @@
+---
+title: "Designing Zest's Wastemap to reveal hidden losses in food production"
+subtitle: "Zest's Wastemap turns fragmented factory data into a simple, visual picture of where food is lost and where edible surplus could have created value instead of being written off."
+slug: "zest-wastemap"
+publishDate: 2024-09-01 00:00:00
+description: "Seven times more food is wasted in factories than in supermarkets, and 70% of that waste is still perfectly edible – yet most manufacturers have no clear picture of where it happens or how much it really costs them."
+featured: true
+featureImageSmall: "./images/zest-wastemap/featureImageSmall.png"
+featureImageLarge: "./images/zest-wastemap/featureImageLarge.png"
+headerLayout: "imageLeft"
+tags:
+  - Product Design
+  - Data Visualisation
+  - UX
+---
+
+import TextImageBlock from "@content-blocks/TextImageBlock/TextImageBlock.astro";
+import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
+import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
+import Section from "@content-blocks/Section/Section.astro";
+import ProjectMeta from "@content-blocks/ProjectMeta/ProjectMeta.astro";
+
+import breadFactoryIllustration from "@content/projects/images/zest-wastemap/breadFactoryIllustration.png";
+
+<div class="not-prose">
+
+  <FeatureGrid className="mb-16 md:mb-48">
+    <FeatureGridItem
+      title="Challenge"
+      description="Food manufacturers are under pressure to cut waste and emissions, but often lack a clear view of where in production food is turning into waste and why. That makes it difficult to avoid losses early, and means they carry unnecessary cost, carbon and compliance risk."
+    />
+    <FeatureGridItem
+      title="Approach"
+      description="The waste map brings together data from across the factory into a stage‑by‑stage view of how food moves through production, where it is lost, and where it ends up."
+    />
+    <FeatureGridItem
+      title="Outcome"
+      description="The waste map now gives manufacturers a shared, clear picture of their biggest waste hotspots and opportunities, becoming the natural starting point for reduction, redistribution, and wider optimisation work."
+    />
+  </FeatureGrid>
+
+  <Section background="subtle">
+    <TextImageBlock
+      subHeading="Context & Problem"
+      heading="Why waste in factories is so hard to see and deal with"
+      image={breadFactoryIllustration}
+      imageAlt="Illustration of a bread factory production line"
+      imagePosition="left"
+      className="mb-16 md:mb-48"
+    >
+      <p class="body">Food manufacturers often treat most production losses the same, even when much of that "waste" is still perfectly edible. That hides both the true cost of waste and a huge opportunity to keep food in the human chain for longer.</p>
+    </TextImageBlock>
+
+    <FeatureGrid columns={2} className="mb-16 md:mb-48">
+      <FeatureGridItem
+        title="How valuable surplus becomes low‑value waste"
+        description="On most sites, anything that cannot be easily reworked back into production is effectively treated as inedible waste and moved off site, often at low value, for example as animal feed. Factory incentives, entrenched processes and fragmented data make it hard to keep more of those losses edible, even when everyone agrees that waste is a serious problem."
+      />
+      <FeatureGridItem
+        title="The scale of the opportunity"
+        description="At the same time, this blind spot is a major opportunity. When Zest analysed individual production lines in detail, they repeatedly found interventions that could avoid thousands of tonnes of waste per year or save up to seven figures annually on a single line. With tighter regulation, rising ingredient costs and growing demand for food donations, this became the right moment to act – and Zest set out to build a solution that could turn hidden waste into real value."
+      />
+    </FeatureGrid>
+  </Section>
+
+  <ProjectMeta
+    role="Placeholder role"
+    scope="Placeholder scope"
+    collaborators="Placeholder collaborators"
+    status="Placeholder status"
+  />
+
+</div>

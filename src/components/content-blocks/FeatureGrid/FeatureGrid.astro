@@ -1,13 +1,14 @@
 ---
 interface Props {
   className?: string;
+  columns?: 2 | 3;
 }
 
-const { className = "" } = Astro.props;
+const { className = "", columns = 3 } = Astro.props;
 ---
 
 <div class:list={["mx-auto max-w-7xl px-6 lg:px-8", className]}>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16">
+  <div class:list={["grid grid-cols-1 gap-x-12 gap-y-16", columns === 2 ? "md:grid-cols-2" : "md:grid-cols-3"]}>
     <slot />
   </div>
 </div>
