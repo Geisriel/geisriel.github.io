@@ -1,9 +1,9 @@
 ---
-title: "Translating user needs into a meaningful dashboard"
-subtitle: "Designing a user-friendly data visualisation to allow non-technical users to draw commercial insights from renewable energy systems' data"
+title: "Unlocking self-serve reporting for Wattstor's renewable energy platform"
+subtitle: "Performance dashboards turn manual CSV exports into instant performance insights, removing the operational bottleneck for non-technical users."
 slug: "wattstor-dashboard"
 publishDate: 2024-06-01 00:00:00
-description: "Designing a user-friendly data visualisation to allow non-technical users to draw commercial insights from renewable energy systems' data"
+description: "Wattstor designs and operates onsite renewable energy systems for commercial sites, using its Podium platform to manage energy optimisation and monitor performance. Podium users couldn't access key metrics, like ROI, battery utilisation, renewable consumption, without downloading raw CSVs and running manual calculations. This forced Wattstor staff to field constant reporting requests that should have been self-serve, whilst partners and customers waited for answers they needed for their own reporting."
 featured: true
 featureImageSmall: "./images/wattstor-dashboard/featureImageSmall.png"
 featureImageLarge: "./images/wattstor-dashboard/featureImageLarge.png"
@@ -15,44 +15,53 @@ tags:
 ---
 
 import { Image } from "astro:assets";
-import CenteredTextBlock from "@content-blocks/CenteredTextBlock/CenteredTextBlock.astro";
 import TextImageBlock from "@content-blocks/TextImageBlock/TextImageBlock.astro";
 import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
 import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
 import ScrollScalingImage from "@components/ScrollScalingImage.astro";
+import Section from "@content-blocks/Section/Section.astro";
 import ProjectMeta from "@content-blocks/ProjectMeta/ProjectMeta.astro";
 
 import featureImage from "@content/projects/images/wattstor-dashboard/featureImageLarge.png";
 import podiumOverview from "@content/projects/images/wattstor-dashboard/podiumOverview.png";
 import collaborativeWireframing from "@content/projects/images/wattstor-dashboard/collaborativeWireframing.png";
-import collaborativeWireframingDotted from "@content/projects/images/wattstor-dashboard/collaborativeWireframingDotted.png";
 
 <div class="not-prose">
 
   <FeatureGrid className="mb-16 md:mb-48">
     <FeatureGridItem
-      title="The Context"
-      description="While the Wattstor web app provided technical data on the performance of onsite renewable energy systems for engineers, it was challenging for non-technical users to understand the system's performance or value at a glance."
+      title="Challenge"
+      description="Podium lacked any summary or reporting layer, users had to export raw CSVs and calculate metrics like ROI and battery utilisation manually. This forced Wattstor staff to field constant reporting requests, whilst non-technical users struggled to interpret energy data confidently during customer conversations."
     />
     <FeatureGridItem
-      title="Strategic Fit"
-      description="For Wattstor's business goals, it was important to strengthen the relationship with the commercial end users, and make the web app a convenient source of information."
+      title="Approach"
+      description="Through stakeholder discovery, the most valuable metrics for operators and non-technical users were identified and translated into scannable site-level views. Summary dashboards prioritise key performance indicators whilst keeping granular data accessible when needed."
     />
     <FeatureGridItem
-      title="Intent"
-      description="The goal was to enable non-technical users to quickly review the performance of their investment, reassuring them of the continuous value Wattstor delivers."
+      title="Outcome"
+      description="Users can now assess site performance at a glance without manual data processing. This reduced the burden on Wattstor's support teams, enabled more confident customer conversations, and established reusable patterns for self-serve insights across the platform."
     />
   </FeatureGrid>
 
-  <CenteredTextBlock
-    subHeading="The Problem Space"
-    heading="Making complex energy data legible"
-    className="mb-16 md:mb-48"
-  >
-    <p class="body mb-6">The Wattstor team had been gathering insights on this particular problem for a while, and the sales team was a key stakeholder for a potential solution. They wanted to be able to visualise complex information to users in a meaningful and engaging way.</p>
-  </CenteredTextBlock>
+  <Section heading="Context & Problem">
+    <div class="mx-auto max-w-7xl px-6 lg:px-16">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+        <div class="md:col-span-6">
+          <p class="text-sm text-gray-500 uppercase mb-4">Placeholder subheading</p>
+          <h2 class="heading2 mb-8">Placeholder heading</h2>
+          <p class="body">Placeholder body text.</p>
+        </div>
+        <div class="md:col-start-8 md:col-span-5">
+          <img src="/images/wattstor-dashboard/WattstorEnergyFlowDiagram.gif" alt="Real-time power flow visualisation of the site" class="rounded-xl w-full" />
+          <p class="text-sm text-gray-400 mt-3">The real-time power flow visualisation of the site</p>
+        </div>
+      </div>
+    </div>
+  </Section>
 
-  <div class="mx-auto max-w-7xl px-6 lg:px-16 mb-16 md:mb-48">
+  <Section background="subtle" heading="Approach & Process">
+
+  <div class="mx-auto max-w-7xl px-6 lg:px-16">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
       <div class="md:col-span-5">
         <p class="text-sm text-gray-400 uppercase mb-3">Approach</p>
@@ -104,22 +113,11 @@ import collaborativeWireframingDotted from "@content/projects/images/wattstor-da
     imageAlt="Collaborative wireframing session for the Wattstor dashboard"
     imagePosition="right"
     imageSize="large"
-    className="mb-16 md:mb-48"
   >
     <p class="body">Placeholder caption — update with a short description of what this image shows.</p>
   </TextImageBlock>
 
-  <TextImageBlock
-    subHeading="Process"
-    heading="Collaborative wireframing"
-    image={collaborativeWireframingDotted}
-    imageAlt="Collaborative wireframing session for the Wattstor dashboard"
-    imagePosition="right"
-    imageSize="large"
-    className="mb-16 md:mb-48"
-  >
-    <p class="body">Placeholder caption — update with a short description of what this image shows.</p>
-  </TextImageBlock>
+  </Section>
 
   <TextImageBlock
     subHeading="Output"
