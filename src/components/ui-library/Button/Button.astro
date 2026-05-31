@@ -4,9 +4,10 @@ type Props = {
   text: string;
   className?: string;
   variant?: "primary" | "secondary";
+  target?: string;
 };
 
-const { href, text, className = "", variant = "secondary" } = Astro.props;
+const { href, text, className = "", variant = "secondary", target } = Astro.props;
 ---
 
 <a
@@ -14,6 +15,7 @@ const { href, text, className = "", variant = "secondary" } = Astro.props;
     variant === "primary" ? "button-primary" : "button-secondary"
   } ${className}`}
   href={href}
+  target={target}
 >
   <span class="circle" aria-hidden="true">
     <span class="icon arrow"></span>

@@ -15,10 +15,12 @@ tags:
 ---
 
 import { Image } from "astro:assets";
+import { Button } from "@ui-library";
 import TextImageBlock from "@content-blocks/TextImageBlock/TextImageBlock.astro";
 import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
 import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
 import ScrollScalingImage from "@components/ScrollScalingImage.astro";
+import CenteredTextBlock from "@content-blocks/CenteredTextBlock/CenteredTextBlock.astro";
 import Section from "@content-blocks/Section/Section.astro";
 import ProjectMeta from "@content-blocks/ProjectMeta/ProjectMeta.astro";
 
@@ -27,8 +29,20 @@ import podiumOverview from "@content/projects/images/wattstor-dashboard/podiumOv
 import collaborativeWireframing from "@content/projects/images/wattstor-dashboard/collaborativeWireframing.png";
 import technicalDataAnalysis from "@content/projects/images/wattstor-dashboard/technicalDataAnalysis.png";
 import dashboardInsights from "@content/projects/images/wattstor-dashboard/dashboardInsights.png";
+import wattstorDashboardCards from "@content/projects/images/wattstor-dashboard/wattstorDashboardCards.png";
 
 <div class="not-prose">
+
+  <div class="mx-auto max-w-7xl px-6 lg:px-16 mb-16 md:mb-48">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+      <div class="md:col-start-3 md:col-span-3">
+        <Button href="https://wattstor.com/" text="Visit the Wattstor website" variant="primary" target="_blank" />
+      </div>
+      <div class="md:col-start-7 md:col-span-5">
+        <h5 class="heading5">This project was delivered for Wattstor</h5>
+      </div>
+    </div>
+  </div>
 
   <FeatureGrid className="mb-16 md:mb-48">
     <FeatureGridItem
@@ -55,7 +69,7 @@ import dashboardInsights from "@content/projects/images/wattstor-dashboard/dashb
           <p class="body">Podium was built with engineers in mind, surfacing mostly raw technical data. But as Wattstor grew, customers were increasingly asking for savings figures, energy performance, and CO₂ impact, often requiring manual calculations from Wattstor staff. </p>
           <p class="body"> Leadership was also pushing toward direct end-customer relationships, away from a channel-partner model, and Podium needed to reflect that shift.</p>
         </div>
-        <div class="md:col-start-8 md:col-span-5">
+        <div class="md:col-start-7 md:col-span-6">
           <img src="/images/wattstor-dashboard/WattstorEnergyFlowDiagram.gif" alt="Real-time power flow visualisation of the site" class="rounded-xl w-full" />
           <p class="text-sm text-gray-400 mt-3">The real-time power flow visualisation of the site</p>
         </div>
@@ -80,43 +94,33 @@ import dashboardInsights from "@content/projects/images/wattstor-dashboard/dashb
   <div class="mx-auto max-w-7xl px-6 lg:px-16">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
       <div class="md:col-span-5">
-        <p class="text-sm text-gray-400 uppercase mb-3">Approach</p>
-        <h2 class="heading2 mb-6">Discovery and Design Process</h2>
-        <p class="body">A structured discovery process grounded in stakeholder knowledge, existing solutions, and iterative design.</p>
+        <p class="text-sm text-gray-400 uppercase mb-3">Reframing the starting point</p>
+        <h2 class="heading2 mb-6">From output brief to problem focus</h2>
+        <p class="body">The original brief was solution-first: build a dashboard. But before moving into design, I reframed it as a problem-first question: why couldn't commercial users access the data that mattered to them, and what would it take to change that. That shift shaped the work that followed.</p>
       </div>
-      <div class="md:col-span-6 md:col-start-7">
+      <div class="md:col-span-7 md:col-start-6">
         <video autoplay loop muted playsinline class="w-full rounded-xl">
           <source src="/videos/wattstor-miro-process.mp4" type="video/mp4" />
         </video>
-        <p class="text-sm text-gray-400 mt-3">Process overview — Miro board</p>
+        <p class="text-sm text-gray-400 mt-3">Miro Board process overview</p>
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mt-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
       <div>
         <p class="text-sm text-gray-400 mb-2">01</p>
-        <h3 class="heading6 mb-2">In-depth stakeholder interviews</h3>
-        <p class="text-sm text-gray-500">Without direct access to end-users, detailed conversations with the sales team — who knew their clients intimately — helped understand user needs sufficiently.</p>
+        <h3 class="heading6 mb-2">Starting from the commercial gap</h3>
+        <p class="text-sm text-gray-500">The work began by understanding the business problem. Interviews with sales and operations helped clarify what customers needed versus what Podium showed.</p>
       </div>
       <div>
         <p class="text-sm text-gray-400 mb-2">02</p>
-        <h3 class="heading6 mb-2">Researching existing solutions</h3>
-        <p class="text-sm text-gray-500">Dashboards and data visualisation are a standard web-app offer. A review of existing solutions provided a strong foundation of design patterns and insights to draw from.</p>
+        <h3 class="heading6 mb-2">Translating insights into user needs</h3>
+        <p class="text-sm text-gray-500">Call notes were distilled into insights, then shaped into two personas using a jobs/gains/pains framework. That step produced the specific list of metrics the dashboard had to surface.</p>
       </div>
       <div>
         <p class="text-sm text-gray-400 mb-2">03</p>
-        <h3 class="heading6 mb-2">User jobs-to-be-done and task analysis</h3>
-        <p class="text-sm text-gray-500">Using the JTBD framework to specify users goals, jobs, needs, pains, and desires helped clarify exactly what the dashboard needed to show.</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-400 mb-2">04</p>
-        <h3 class="heading6 mb-2">Data visualisation feasibility assessment</h3>
-        <p class="text-sm text-gray-500">Understanding the limitations of the open-source charting library in use was important to ensure the design solution remained achievable within technical constraints.</p>
-      </div>
-      <div>
-        <p class="text-sm text-gray-400 mb-2">05</p>
-        <h3 class="heading6 mb-2">Iterative wireframing</h3>
-        <p class="text-sm text-gray-500">Through an iterative cycle of lo-fi UI screens and stakeholder feedback sessions, the design progressed to a solution ready to take forwards.</p>
+        <h3 class="heading6 mb-2">Mapping needs against what the platform could actually deliver</h3>
+        <p class="text-sm text-gray-500">A data inventory checked what was available in the platform against what users needed. Some things existed, some required new calculations to be built.</p>
       </div>
     </div>
 
@@ -130,24 +134,32 @@ import dashboardInsights from "@content/projects/images/wattstor-dashboard/dashb
     imagePosition="right"
     imageSize="large"
   >
-    <p class="body">Placeholder caption — update with a short description of what this image shows.</p>
+    <p class="body">I then drafted multiple wireframes with structured feedback rounds from sales and leadership between versions.</p>
   </TextImageBlock>
 
   </Section>
 
+  <Section heading="Outcome">
+
   <TextImageBlock
-    subHeading="Output"
+    subHeading="Live in Podium"
     heading="Dashboard UI design"
-    image={featureImage}
+    image={wattstorDashboardCards}
     imageAlt="Wattstor Podium dashboard UI showing energy performance cards"
-    imagePosition="right"
+    imagePosition="left"
+    imageSize="medium"
     className="mb-16 md:mb-48"
   >
-    <p class="body mb-6">The new dashboard design was embedded into the existing Podium web app, with the intention to update and improve the UI and UX of other elements — such as the side navigation — in a future initiative.</p>
-    <p class="body">This is a live feature of the Wattstor Podium web app.</p>
+    <p class="body">The dashboard gives commercial users a clear read on the four metrics that came up consistently in research: financial savings, renewable energy and CO₂ avoided, battery performance, and consumption mix. Each sits in its own panel with a headline number for quick scanning and a chart underneath for anyone wanting more detail. A shared time selector ties the panels together, so the whole view shifts between yesterday, last week, last month, or a custom range in one step.</p>
   </TextImageBlock>
 
   <ScrollScalingImage alt="Wattstor Podium dashboard overview screen" src={podiumOverview} className="mb-16 md:mb-48" />
+
+  <CenteredTextBlock heading="Modular design, adaptable use" className="mb-16 md:mb-48">
+    <p class="body">The modular layout meant panels could be built and iterated independently, and extended as new data became available. The result is a single screen that works for a site owner checking their return on investment and a channel partner checking system health — without needing separate views for each.</p>
+  </CenteredTextBlock>
+
+  </Section>
 
   <ProjectMeta
     role="Lead Product Designer"
