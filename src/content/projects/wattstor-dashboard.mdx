@@ -1,9 +1,9 @@
 ---
-title: "Unlocking self-serve reporting for Wattstor's renewable energy platform"
-subtitle: "Performance dashboards turn manual CSV exports into instant performance insights, removing the operational bottleneck for non-technical users."
+title: "Making Wattstor's value visible to the customers paying for it"
+subtitle: "Redesigning a technical platform so non-technical users could see the ROI, savings, and CO₂ impact that Wattstor was already delivering."
 slug: "wattstor-dashboard"
 publishDate: 2024-06-01 00:00:00
-description: "Wattstor designs and operates onsite renewable energy systems for commercial sites, using its Podium platform to manage energy optimisation and monitor performance. Podium users couldn't access key metrics, like ROI, battery utilisation, renewable consumption, without downloading raw CSVs and running manual calculations. This forced Wattstor staff to field constant reporting requests that should have been self-serve, whilst partners and customers waited for answers they needed for their own reporting."
+description: "Wattstor designs and operates onsite renewable energy systems for commercial sites, monetising a share of the savings those systems generate. Its Podium platform was focused on the engineering — optimisation, monitoring, fault diagnosis — but it was \"built by technicians, for technicians.\" Site owners, energy managers, and channel partners couldn't see what they were getting for their money: how much they'd saved, how much CO₂ they'd avoided, whether the system was even working."
 featured: true
 featureImageSmall: "./images/wattstor-dashboard/featureImageSmall.png"
 featureImageLarge: "./images/wattstor-dashboard/featureImageLarge.png"
@@ -25,21 +25,23 @@ import ProjectMeta from "@content-blocks/ProjectMeta/ProjectMeta.astro";
 import featureImage from "@content/projects/images/wattstor-dashboard/featureImageLarge.png";
 import podiumOverview from "@content/projects/images/wattstor-dashboard/podiumOverview.png";
 import collaborativeWireframing from "@content/projects/images/wattstor-dashboard/collaborativeWireframing.png";
+import technicalDataAnalysis from "@content/projects/images/wattstor-dashboard/technicalDataAnalysis.png";
+import dashboardInsights from "@content/projects/images/wattstor-dashboard/dashboardInsights.png";
 
 <div class="not-prose">
 
   <FeatureGrid className="mb-16 md:mb-48">
     <FeatureGridItem
       title="Challenge"
-      description="Podium lacked any summary or reporting layer, users had to export raw CSVs and calculate metrics like ROI and battery utilisation manually. This forced Wattstor staff to field constant reporting requests, whilst non-technical users struggled to interpret energy data confidently during customer conversations."
+      description="Podium was engineered for technicians, with no summary layer. The metrics that mattered to customers and channel partners were buried in time-series data or absent entirely. Sales couldn't demo Wattstor's value proposition on the platform that delivered it."
     />
     <FeatureGridItem
       title="Approach"
-      description="Through stakeholder discovery, the most valuable metrics for operators and non-technical users were identified and translated into scannable site-level views. Summary dashboards prioritise key performance indicators whilst keeping granular data accessible when needed."
+      description="Stakeholder interviews with sales and operations surfaced two distinct user groups and the metrics each needed at a glance. User stories were prioritised, iterated through wireframes and feedback rounds, and validated with engineers on what the underlying data could actually support."
     />
     <FeatureGridItem
       title="Outcome"
-      description="Users can now assess site performance at a glance without manual data processing. This reduced the burden on Wattstor's support teams, enabled more confident customer conversations, and established reusable patterns for self-serve insights across the platform."
+      description="A dashboard sales now demos directly in Podium, channel partners scan across their portfolios, and customers use to see exactly what their investment delivered. Live in the Wattstor Podium web app."
     />
   </FeatureGrid>
 
@@ -47,13 +49,27 @@ import collaborativeWireframing from "@content/projects/images/wattstor-dashboar
     <div class="mx-auto max-w-7xl px-6 lg:px-16">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
         <div class="md:col-span-6">
-          <p class="text-sm text-gray-500 uppercase mb-4">Placeholder subheading</p>
-          <h2 class="heading2 mb-8">Placeholder heading</h2>
-          <p class="body">Placeholder body text.</p>
+          <p class="text-sm text-gray-500 uppercase mb-4">The problem behind the brief</p>
+          <h2 class="heading2 mb-8">From technical tool to customer platform</h2>
+          <p class="body mb-6">Initially, the brief asked for a better-looking dashboard to help sales communicate Wattstor's value, however, research uncovered a more specific problem:</p>
+          <p class="body">Podium was built with engineers in mind, surfacing mostly raw technical data. But as Wattstor grew, customers were increasingly asking for savings figures, energy performance, and CO₂ impact, often requiring manual calculations from Wattstor staff. </p>
+          <p class="body"> Leadership was also pushing toward direct end-customer relationships, away from a channel-partner model, and Podium needed to reflect that shift.</p>
         </div>
         <div class="md:col-start-8 md:col-span-5">
           <img src="/images/wattstor-dashboard/WattstorEnergyFlowDiagram.gif" alt="Real-time power flow visualisation of the site" class="rounded-xl w-full" />
           <p class="text-sm text-gray-400 mt-3">The real-time power flow visualisation of the site</p>
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <Image src={technicalDataAnalysis} alt="Podium data analysis screen" class="rounded-xl w-full" />
+          <p class="text-sm text-gray-400 mt-3">Podium's data analysis screen helps engineers spot issues</p>
+        </div>
+        <div>
+          <Image src={dashboardInsights} alt="Insights from user research" class="rounded-xl w-full" />
+          <p class="text-sm text-gray-400 mt-3">Insights from user research</p>
         </div>
       </div>
     </div>
