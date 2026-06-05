@@ -3,7 +3,7 @@ type Props = {
   href: string;
   text: string;
   className?: string;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "tertiary";
   target?: string;
 };
 
@@ -12,7 +12,7 @@ const { href, text, className = "", variant = "secondary", target } = Astro.prop
 
 <a
   class={`button ${
-    variant === "primary" ? "button-primary" : "button-secondary"
+    variant === "primary" ? "button-primary" : variant === "tertiary" ? "button-tertiary" : "button-secondary"
   } ${className}`}
   href={href}
   target={target}
@@ -48,9 +48,12 @@ const { href, text, className = "", variant = "secondary", target } = Astro.prop
   .button-primary {
     color: white;
     background-color: #111827; /*gray-900*/
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    font-weight: bold;
+    font-weight: 500;
     text-transform: uppercase;
     border-radius: 999px;
     overflow: hidden;
@@ -80,8 +83,10 @@ const { href, text, className = "", variant = "secondary", target } = Astro.prop
    * Secondary button
    ***************************************/
   .button-secondary {
-    padding-left: 3.5rem;
+    padding-left: 3rem;
     border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
   }
 
   /* The "circle" that expands on hover */
@@ -90,8 +95,8 @@ const { href, text, className = "", variant = "secondary", target } = Astro.prop
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     background: #111827; /*gray-900*/
     border-radius: 1.625rem;
     transition: width 0.45s cubic-bezier(0.65, 0, 0.076, 1);
@@ -103,7 +108,7 @@ const { href, text, className = "", variant = "secondary", target } = Astro.prop
   .button-secondary .icon.arrow {
     position: absolute;
     top: 50%;
-    left: 1.5rem;
+    left: 1.25rem;
     transform: translate(-50%, -50%);
     width: 1.125rem;
     height: 0.125rem;
@@ -129,10 +134,10 @@ const { href, text, className = "", variant = "secondary", target } = Astro.prop
     z-index: 1;
     display: inline-block;
     margin: 0;
-    padding: 0.75rem 1rem 0.75rem 0.25rem;
+    padding: 0 0.75rem 0 0.25rem;
     color: #111827; /*gray-900*/
-    font-weight: 700;
-    line-height: 1.6;
+    font-weight: 500;
+    line-height: 1;
     text-align: center;
     text-transform: uppercase;
     transition: color 0.45s cubic-bezier(0.65, 0, 0.076, 1);
@@ -144,6 +149,34 @@ const { href, text, className = "", variant = "secondary", target } = Astro.prop
   }
   .button-secondary:hover .button-text {
     color: white;
+  }
+
+  /***************************************
+   * Tertiary button (outline / ghost)
+   ***************************************/
+  .button-tertiary {
+    color: #111827;
+    background-color: transparent;
+    padding: 0.5rem 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 999px;
+    border: 2px solid #111827;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .button-tertiary:hover {
+    background-color: #111827;
+    color: white;
+  }
+  .button-tertiary .button-text {
+    position: relative;
+  }
+  .button-tertiary .circle {
+    display: none;
   }
 
   /***************************************

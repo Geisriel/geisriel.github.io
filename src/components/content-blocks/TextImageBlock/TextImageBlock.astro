@@ -6,7 +6,7 @@ import type { ImageMetadata } from "astro";
 interface Props {
   className?: string;
   heading: string;
-  subHeading: string;
+  subHeading?: string;
   image: ImageMetadata;
   imageAlt: string;
   imagePosition?: "left" | "right";
@@ -56,13 +56,15 @@ const textClass = imageSize === "large"
     }
 
     <div class={textClass}>
-      <Typography
-        variant="body-small"
-        as="p"
-        class="text-gray-500 mb-4 uppercase"
-      >
-        {subHeading}
-      </Typography>
+      {subHeading && (
+        <Typography
+          variant="body-small"
+          as="p"
+          class="text-gray-500 mb-4 uppercase"
+        >
+          {subHeading}
+        </Typography>
+      )}
       <Typography variant="heading2" as="h2" class="mb-8">
         {heading}
       </Typography>

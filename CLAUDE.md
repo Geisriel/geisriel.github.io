@@ -66,3 +66,6 @@ The reference page is at `src/content/projects/_content-blocks.mdx` (underscore-
 - `ThreeColumnGrid` / `TwoColumnGrid` — image grid wrappers, children passed as slot
 - `Testimonial` — single quote block
 - `ProjectMeta` — project summary footer bar, props: `role`, `scope`, `collaborators`, `status`. Use at the bottom of every project page.
+
+## Potential future components
+- `IconCard` / `IconCardGrid` — icon + heading + body cards, currently exist as raw inline divs in `src/pages/about.astro` (the 5-step process section). Could be extracted into a reusable content block for use in project MDXs — useful for tools used, process breakdowns, or feature highlights. Would complement `FeatureGrid` by adding a visual icon layer.
