@@ -1,0 +1,148 @@
+---
+title: "Making product-page sustainability claims 20% more engaging"
+subtitle: "A mobile-first redesign of Provenance's independently reviewed ecommerce embeds"
+slug: "provenance-proof-points"
+publishDate: 2023-06-01 00:00:00
+description: "Provenance's mission is to help more sustainable products succeed in the market by providing shoppers with independently verified sustainability information at point of sale. I redesigned the mobile experience to make these Proof Points easier to scan, tap, and explore."
+featured: false
+featureImageSmall: "./images/provenance-proof-points/featureImageSmall.png"
+featureImageLarge: "./images/provenance-proof-points/outcomeDavinesLive.gif"
+headerLayout: "imageLeft"
+tags:
+  - Product Design
+  - UX
+---
+
+import { Button } from "@ui-library";
+import TextImageBlock from "@content-blocks/TextImageBlock/TextImageBlock.astro";
+import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
+import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
+import Section from "@content-blocks/Section/Section.astro";
+import ProjectMeta from "@content-blocks/ProjectMeta/ProjectMeta.astro";
+import ScrollScalingImage from "@components/ScrollScalingImage.astro";
+
+import challengeOldDesign from "@content/projects/images/provenance-proof-points/challengeOldDesign.png";
+import challengeMiro from "@content/projects/images/provenance-proof-points/challengeMiro.png";
+import approachWorkshop from "@content/projects/images/provenance-proof-points/approachWorkshop.png";
+import approachSupervote from "@content/projects/images/provenance-proof-points/approachSupervote.png";
+import approachDesignOptions from "@content/projects/images/provenance-proof-points/approachDesignOptions.png";
+import approachHeatmap from "@content/projects/images/provenance-proof-points/approachHeatmap.png";
+import outcomeFinalUI from "@content/projects/images/provenance-proof-points/outcomeFinalUI.png";
+import outcomeTropicLive from "@content/projects/images/provenance-proof-points/outcomeTropicLive.gif";
+import outcomeDavinesLive from "@content/projects/images/provenance-proof-points/outcomeDavinesLive.gif";
+
+<div class="not-prose">
+
+  <div class="mx-auto max-w-7xl px-6 lg:px-16 mb-16 md:mb-48">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+      <div class="md:col-start-3 md:col-span-3">
+        <Button href="https://www.provenance.org/" text="Visit the Provenance website" variant="primary" target="_blank" />
+      </div>
+    </div>
+  </div>
+
+  <FeatureGrid className="mb-16 md:mb-48">
+    <FeatureGridItem
+      title="Challenge"
+      description="On mobile, product‑page Proof Points were easy to miss and hard to interpret, so even strong brand sustainability efforts failed to catch attention or guide shoppers' choices."
+    />
+    <FeatureGridItem
+      title="Approach"
+      description="I audited the existing claims, then ran design‑sprint workshops, extensive design iterations, user research, A/B testing, and customer conversations to converge on a clearer, mobile‑first pattern."
+    />
+    <FeatureGridItem
+      title="Outcome"
+      description="Provenance's new mobile‑first design increased engagement with Proof Points by 20%, giving Provenance a stronger chance to nudge shoppers toward the more sustainable option."
+    />
+  </FeatureGrid>
+
+  <Section heading="Challenge">
+
+    <TextImageBlock
+      subHeading="UX challenge"
+      heading="Desktop‑first claims in a mobile‑first world"
+      image={challengeOldDesign}
+      imageAlt="The original Provenance Proof Points design"
+      imagePosition="left"
+      className="mb-16 md:mb-48"
+    >
+      <p class="body">Provenance's existing product‑page Proof Points were designed primarily for desktop, when now about two-thirds of ecommerce traffic typically now happens on mobile. On smaller screens, the claims were easy to overlook: they often appeared as white‑on‑white pills, stacked awkwardly the more claims a product had, and they were frequently hidden behind expandable sections instead of being visible at a glance.<br /><br />The experience also lacked familiar mobile interactions like swiping, and the language and structure made it hard for shoppers to see which claims were "above and beyond," what matched their values, or whether a product was meaningfully better than alternatives.</p>
+    </TextImageBlock>
+
+    <ScrollScalingImage
+      src={challengeMiro}
+      alt="Engagement analysis in Miro"
+      className="mb-16 md:mb-48"
+    />
+
+  </Section>
+
+  <Section heading="Approach" background="subtle">
+
+    <TextImageBlock
+      subHeading="Collaborative design sprint"
+      heading="Co‑creating stronger mobile claim patterns in a one‑day sprint"
+      image={approachWorkshop}
+      imageAlt="Design for Engagement workshop"
+      imagePosition="right"
+      className="mb-16 md:mb-48"
+    >
+      <p class="body">I translated the Proof Point issues into “How might we…?” statements and used them to kick off a GV‑inspired design sprint with stakeholders from product, customer success, and engineering.<br /><br />Over the day we moved from rapid sketching to concept development and a super‑vote, then turned the strongest directions into concrete design options: new layouts, interaction patterns, and levels of visual emphasis, that met our criteria on clarity, performance, and third‑party trust, ready to test with shoppers.</p>
+    </TextImageBlock>
+
+
+    <TextImageBlock
+      subHeading="Design Iterations"
+      heading="Finding the right balance between visibility and brand fit"
+      image={approachDesignOptions}
+      imageAlt="Design options for Provenance Proof Points on mobile"
+      imagePosition="right"
+      imageSize="large"
+      className="mb-16 md:mb-48"
+    >
+      <p class="body">We explored more visual, image‑led cards, but they proved too expensive to scale, too opinionated for many claims, and often clashed with brands' own styling on product pages.<br /><br />Through multiple rounds of iteration, we pulled back from heavy illustration and refined a pattern that draws attention on mobile without overpowering the brand or feeling out of place.</p>
+    </TextImageBlock>
+
+    <TextImageBlock
+      subHeading="User research"
+      heading="Combining quick in‑context tests with larger‑scale validation"
+      image={approachHeatmap}
+      imageAlt="Heatmap from A/B test of Provenance Proof Points"
+      imagePosition="left"
+      imageSize="large"
+      className="mb-16 md:mb-48"
+    >
+      <p class="body">We first ran "Pret tests" with Pret a Manger shoppers to qualitatively stress‑test early Proof Point designs in context. Then, using Maze, we A/B‑tested the existing bundle (Group A) against the new engagement bundle (Group B) with 100+ participants, comparing click distribution, dwell time, and understanding of the widget's purpose to see whether the new pattern actually caused more people to pause, interact, and remember the claims.</p>
+    </TextImageBlock>
+
+  </Section>
+
+  <Section heading="Outcome">
+
+    <TextImageBlock
+      subHeading="Shopper and customer impact"
+      heading="Increasing engagement and strengthening the offer to brands"
+      image={outcomeFinalUI}
+      imageAlt="Final mobile UI for Provenance Proof Points"
+      imagePosition="left"
+      imageSize="medium"
+      className="mb-16 md:mb-48"
+    >
+      <p class="body">We rolled the new mobile‑first sustainability claim experience out with early beauty customers, including Tropic Skincare, and saw around a 20% uplift in shopper engagement (swipes, taps, and clicks).<br /><br />This increased interaction with sustainability content gave Provenance a stronger story for brand customers: their verified claims were not only present on the page, but measurably more likely to be noticed and explored.</p>
+    </TextImageBlock>
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-16 mb-16 md:mb-48 flex justify-center gap-6">
+      <img src={outcomeTropicLive.src} alt="Live Tropic Skincare Proof Points experience" class="rounded-xl max-w-sm w-full" />
+      <img src={outcomeDavinesLive.src} alt="Live Davines Proof Points experience" class="rounded-xl max-w-sm w-full" />
+    </div>
+
+  </Section>
+
+  <ProjectMeta
+    role="Lead product designer (end‑to‑end discovery and design)"
+    scope="Research, problem framing, design sprint facilitation, wireframing, user testing, and interaction design for product‑page sustainability claims"
+    collaborators="Product Manager, UI Designer, Software Engineer"
+    status="Live feature embedded in Provenance clients' ecommerce sites"
+  />
+
+</div>
