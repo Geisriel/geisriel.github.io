@@ -1,0 +1,195 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { Typography, Button } from "@ui-library";
+import aboutHero from "../images/aboutHero.jpg";
+import aboutCTA from "../images/aboutCTA.png";
+import jamesDysonAward from "../images/JamesDysonAward.png";
+import bbc3DPrinting from "../images/BBC3DPrintingPodcast.png";
+import kosmosKaffee from "../images/KosmosKaffeeExhibtion.png";
+import manufacturerTop100 from "../images/ManufacturerTop100.png";
+import bundespreisEcoDesign from "../images/BundespreisEcoDesign.png";
+import designboom from "../images/Designboom.png";
+import provenanceDesignOptions from "../content/projects/images/provenance-proof-points/approachDesignOptions.png";
+import TextImageBlock from "@components/content-blocks/TextImageBlock/TextImageBlock.astro";
+import FeatureGrid from "@components/content-blocks/FeatureGrid/FeatureGrid.astro";
+import FeatureGridItem from "@components/content-blocks/FeatureGrid/FeatureGridItem.astro";
+import Section from "@components/content-blocks/Section/Section.astro";
+---
+
+<Layout title="About — Gabriel Brueckner">
+  <main>
+    <Section background="subtle">
+      <TextImageBlock
+        heading="I am Gabriel, a freelance Strategic Product Designer"
+        image={aboutHero}
+        imageAlt="Gabriel Brueckner with the Climate Edge team"
+        imagePosition="left"
+        imageSize="medium"
+      >
+        <Typography variant="body" as="p" class="mb-6">Strategic Product Designer with 10 years across startups and scale-ups, working beyond traditional design boundaries, shaping product strategy, operations, delivering end-to-end UX/UI with AI fluency. <br /><br /> Experienced across B2B SaaS, energy, food tech and AgTech, with a track record of partnering with founders and senior product leaders to turn complex, ambiguous problems into shippable, scalable products.</Typography>
+        <div class="flex gap-x-3 gap-y-4 flex-wrap mt-6">
+          <Button href="https://drive.google.com/file/d/1HfOT33kk9yvtOImVxQOobmWCGo-JJfnM/view" text="View CV" variant="tertiary" target="_blank" />
+          <Button href="https://www.linkedin.com/in/gabriel-brueckner/" text="View LinkedIn" variant="secondary" target="_blank" />
+        </div>
+      </TextImageBlock>
+      <TextImageBlock
+        heading="Explore my strategic product work"
+        image={provenanceDesignOptions}
+        imageAlt="Design options for Provenance Proof Points"
+        imagePosition="left"
+      >
+        <Typography variant="body" as="p" class="mb-6">A selection of end-to-end Projects across B2B SaaS, AgTech, and sustainability, from early-stage 0–1 products to scaling existing platforms.</Typography>
+        <div class="flex gap-x-3 gap-y-4 flex-wrap mt-2">
+          <Button href="/projects" text="View projects" variant="secondary" />
+        </div>
+      </TextImageBlock>
+      <TextImageBlock
+        heading="Have an idea or project in mind?"
+        image={aboutCTA}
+        imageAlt="Design shapes"
+        imagePosition="right"
+      >
+        <Typography variant="body" as="p" class="mb-6">Want help turning an ambiguous idea into a shippable product? Email me or book a short call and let's map the next steps.</Typography>
+        <div class="flex gap-x-3 gap-y-4 flex-wrap mt-2">
+          <Button href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0_sdJRdyctnHs2Vys8RAf8k8rWNtaHXRaxvUNOqwKOPd_WX1Lx-SP-97Q3RU55vz3R30CkdA4v" text="Schedule a call" variant="primary" target="_blank" />
+          <Button href="mailto:mail@gabriel-brueckner.com" text="Send an email" variant="tertiary" />
+        </div>
+      </TextImageBlock>
+    </Section>
+
+    <!-- About Section: Work Experience -->
+    <section class="py-16 md:py-24 mb-16 md:mb-24">
+      <div class="mx-auto max-w-7xl px-6 lg:px-16 mb-8 md:mb-16">
+        <h2 class="heading3 text-gray-400">Work Experience</h2>
+      </div>
+      <FeatureGrid>
+        <FeatureGridItem size="compact"
+          prefix="Jan 2025–Present (Freelance)"
+          title="Zest Solutions"
+          href="https://www.zestsolutions.io/"
+          description="Strategic Product Designer: Partnering with Zest's founding team to turn food waste consultancy work into a coherent digital product. Leading at the intersection of product-market fit, strategy, and UX/UI design to build a scalable platform for food manufacturers from 0–1."
+        />
+        <FeatureGridItem size="compact"
+          prefix="Dec 2024–Present (Freelance)"
+          title="Wattstor Ltd"
+          href="https://wattstor.com/"
+          description="Strategic Product Designer: Working across strategy, discovery and UX/UI design, partnering with Wattstor's Head of Product (now CPO) to turn commercial strategy into shippable product capability for Podium, Wattstor's energy management platform for commercial and industrial clients."
+        />
+        <FeatureGridItem size="compact"
+          prefix="Oct–Dec 2024 (Freelance)"
+          title="Soil Association Exchange"
+          href="https://www.soilassociationexchange.com/"
+          description="Strategic Product Designer: Designed and implemented an AI-powered automation pipeline to replace a slow, manual process of reading and translating complex agricultural funding information into structured, platform-ready data."
+        />
+        <FeatureGridItem size="compact"
+          prefix="Apr 2021–Dec 2023"
+          title="Provenance"
+          href="https://www.provenance.org/"
+          description="Lead Product Designer: Working with the Head of Product to prioritise, develop, and implement strategic product solutions, establishing and leading the end-to-end discovery and design processes, and supporting product managers and software engineers to deliver product solutions following modern product principles."
+        />
+        <FeatureGridItem size="compact"
+          prefix="Jun 2016–Mar 2021"
+          title="Climate Edge"
+          href="https://challenge.whatdesigncando.com/projects/climate-edge/"
+          description="Co-founder & Designer: Co-founder of VC-backed AgTech startup, leading all design across hardware, SaaS and SMS products serving smallholder farming organisations across East Africa, Latin America and Southeast Asia."
+        />
+        <FeatureGridItem size="compact"
+          prefix="2021–Present"
+          title="Teaching & Mentoring"
+          description="Former Visiting Tutor at Royal College of Art & Imperial College (2023). Mentor at EIT New European Bauhaus (2023–present), Undaunted (2023), and The Mentoring Club."
+        />
+      </FeatureGrid>
+    </section>
+
+    <!-- About Section: Education -->
+    <section class="py-16 md:py-24 mb-16 md:mb-24 bg-[#F4F1ED]">
+      <div class="mx-auto max-w-7xl px-6 lg:px-16 mb-8 md:mb-16">
+        <h2 class="heading3 text-gray-400">Education</h2>
+      </div>
+      <FeatureGrid>
+        <FeatureGridItem size="compact"
+          prefix="2014–16"
+          title="MSc, MA — Global Innovation Design"
+          href="https://www.rca.ac.uk/"
+          description="Royal College of Art & Imperial College, London, NYC, Tokyo. Masters programme with focus on design, engineering, technology and business, with emphasis on internationally oriented design and innovation, including two terms at partner institutions abroad."
+        />
+        <FeatureGridItem size="compact"
+          prefix="2015 — 1 Semester"
+          title="Keio University, Tokyo"
+          href="https://www.keio.ac.jp/en/"
+          description="Exchange semester. Focus on information media, business management techniques, storytelling methods and policy design."
+        />
+        <FeatureGridItem size="compact"
+          prefix="2014 — 1 Semester"
+          title="Pratt Institute, New York City"
+          href="https://www.pratt.edu/"
+          description="Exchange semester. Exposure to traditional product design with emphasis on model making, aesthetic principles and system design."
+        />
+        <FeatureGridItem size="compact"
+          prefix="2009–13"
+          title="BA — Industrial Design"
+          href="https://www.hfg-gmuend.de/en/"
+          description="University of Applied Sciences, Schwäbisch Gmünd, DE. Foundations in product design and graphic design with an applied 'form follows function' approach, including a semester abroad at Hongik University in Seoul, South Korea."
+        />
+        <FeatureGridItem size="compact"
+          prefix="2012 — 1 Semester"
+          title="Hongik University, Seoul"
+          href="https://www.hongik.ac.kr/en/"
+          description="Exchange semester. Immersive experience in designing for cultural and societal differences, user behaviour and urban living."
+        />
+      </FeatureGrid>
+    </section>
+
+    <!-- About Section: Recognition -->
+    <section class="py-16 md:py-24 mb-16 md:mb-24">
+      <div class="mx-auto max-w-7xl px-6 lg:px-16 mb-8 md:mb-16">
+        <h2 class="heading3 text-gray-400">Recognition</h2>
+      </div>
+      <FeatureGrid>
+        <FeatureGridItem
+          size="compact"
+          image={jamesDysonAward}
+          title="James Dyson Award, National Runner Up UK"
+          href="https://www.jamesdysonaward.org/"
+          description="For the NEXO IoT weather station"
+        />
+        <FeatureGridItem
+          size="compact"
+          image={bbc3DPrinting}
+          title="BBC Business Daily Podcast"
+          href="https://www.bbc.co.uk/programmes/w3csy780"
+          description='"Has 3D printing met the hype?"'
+        />
+        <FeatureGridItem
+          size="compact"
+          image={kosmosKaffee}
+          title="Exhibition Kosmos Kaffee"
+          href="https://www.deutsches-museum.de/museumsinsel/ausstellung/sonderausstellungen/kosmos-kaffee"
+          description="Of the NEXO IoT weather station in the world's largest museum of science & technology in Munich"
+        />
+        <FeatureGridItem
+          size="compact"
+          image={manufacturerTop100}
+          title="The Manufacturer Top 100"
+          href="https://www.gabriel-brueckner.com/new-nexo-iot-weather-station"
+          description="For the innovative use of 3D printing to develop the NEXO"
+        />
+        <FeatureGridItem
+          size="compact"
+          image={bundespreisEcoDesign}
+          title="German Federal Eco Design Award"
+          href="https://www.bundespreis-ecodesign.de/de/gewinner/qualitaetswerte-in-der-produktgestaltung"
+          description="For the innovative and sustainable redesign of an inkjet printer"
+        />
+        <FeatureGridItem
+          size="compact"
+          image={designboom}
+          title="Designboom Article"
+          href="https://www.designboom.com/technology/aspekt-modular-slr-camera-system/"
+          description="Aspekt modular system camera"
+        />
+      </FeatureGrid>
+    </section>
+
+  </main>
+</Layout>
