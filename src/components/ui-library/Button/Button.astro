@@ -5,9 +5,10 @@ type Props = {
   className?: string;
   variant?: "primary" | "secondary" | "tertiary";
   target?: string;
+  umamiEvent?: string;
 };
 
-const { href, text, className = "", variant = "secondary", target } = Astro.props;
+const { href, text, className = "", variant = "secondary", target, umamiEvent } = Astro.props;
 ---
 
 <a
@@ -16,6 +17,7 @@ const { href, text, className = "", variant = "secondary", target } = Astro.prop
   } ${className}`}
   href={href}
   target={target}
+  data-umami-event={umamiEvent}
 >
   <span class="circle" aria-hidden="true">
     <span class="icon arrow"></span>
