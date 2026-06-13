@@ -11,4 +11,13 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  redirects: {
+    "/cv":                        "/about",
+    "/work":                      "/projects",
+    "/aspekt-modular":            "/projects",
+    "/work/susuru":               "/projects",
+    "/work/spring":               "/projects",
+    "/spring":                    "/projects",
+    "/work/proof-point-card-design": "/projects",
+  },
 });
