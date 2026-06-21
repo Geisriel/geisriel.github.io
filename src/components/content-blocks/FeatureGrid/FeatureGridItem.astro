@@ -37,6 +37,7 @@ const { prefix, title, description, size = "default", href, image } = Astro.prop
       {href ? <a href={href} target="_blank" rel="noopener noreferrer" class="title-link">{title}</a> : title}
     </Typography>
     <Typography>{description}</Typography>
+    <slot />
   </div>
 )}
 

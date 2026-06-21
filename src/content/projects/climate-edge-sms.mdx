@@ -1,0 +1,176 @@
+---
+title: Scaling trusted SMS services to thousands of smallholder farmers
+subtitle: Designing the Climate Edge platform and SMS services for organisations working with smallholder farmers
+slug: "climate-edge-sms"
+publishDate: 2016-06-01 00:00:00
+description: "Climate Edge helps agribusinesses, cooperatives, and NGOs run trusted two‑way SMS services with remote smallholder farmers, in contexts where smartphones and data are not a given. I led the product and service design of the Climate Edge platform and its early SMS services, focusing on how to build enough trust and relevance that farmers would actually respond at scale."
+featured: false
+featureImageSmall: ./images/climate-edge-sms/hero.png
+featureImageLarge: ./images/climate-edge-sms/tea-farmers.png
+headerLayout: "imageLeft"
+tags:
+  - Product Design
+  - Service Design
+  - AgTech
+---
+
+import TextImageBlock from "@content-blocks/TextImageBlock/TextImageBlock.astro";
+import FeatureGrid from "@content-blocks/FeatureGrid/FeatureGrid.astro";
+import FeatureGridItem from "@content-blocks/FeatureGrid/FeatureGridItem.astro";
+import Section from "@content-blocks/Section/Section.astro";
+import ProjectMeta from "@content-blocks/ProjectMeta/ProjectMeta.astro";
+
+import teaFarmers from "@content/projects/images/climate-edge-sms/tea-farmers.png";
+import heroImage from "@content/projects/images/climate-edge-sms/hero.png";
+import sumatraFarmers from "@content/projects/images/climate-edge-sms/sumatra-farmers.png";
+import bananaFarmWalking from "@content/projects/images/climate-edge-sms/banana-farm-walking.png";
+import phoneCoffeePlant from "@content/projects/images/climate-edge-sms/phone-coffee-plant.jpg";
+import bananaIrrigationServiceApp from "@content/projects/images/climate-edge-sms/banana-irrigation-service-app.png";
+
+<div class="not-prose">
+
+  <FeatureGrid className="mb-16 md:mb-48">
+    <FeatureGridItem
+      title="Challenge"
+      description="Agronomists were overstretched, the internet was often unavailable, and organisations were trying to manually text thousands of dispersed farmers in a context where SMS was low‑trust and easy to ignore."
+    />
+    <FeatureGridItem
+      title="Approach"
+      description="As designer–co‑founder, I used field research to identify where SMS was breaking down, designed new SMS services for cooperatives and NGOs, and built a SaaS platform that let them run and manage these services themselves."
+    />
+    <FeatureGridItem
+      title="Outcome"
+      description="We used these insights to shape the SaaS platform and outreach strategy, onboarding thousands of farmers and enabling cooperatives to deliver first‑of‑its‑kind COVID information, weather updates, agronomic advice, and farmer surveys via trusted SMS services."
+    />
+  </FeatureGrid>
+
+  <Section heading="Context & Problem" background="subtle">
+    <TextImageBlock
+      heading="Working with large, hard‑to‑reach farmer networks"
+      image={sumatraFarmers}
+      imageAlt="Smallholder farmers in Sumatra"
+      imagePosition="right"
+      imageSize="medium"
+      imageCaption="Discussing farm data with a Fairtrade Cooperative coffee farmer in Aceh Province, Sumatra"
+      className="mb-16 md:mb-32"
+    >
+      <p class="body mb-6">Climate Edge partnered with farming cooperatives in East Africa such as Sireet OEP, as well as pilots with organisations like Unilever and Fairtrade, often alongside NEXO agronomic weather stations to capture in‑field climate data.</p>
+      <p class="body">Through this work, we saw that many cooperatives represented 10,000+ smallholder farmers spread across vast, hard‑to‑reach rural areas, making it extremely hard to get timely, relevant information to everyone who needed it.</p>
+    </TextImageBlock>
+    <TextImageBlock
+      heading="Why existing outreach could not scale"
+      image={bananaFarmWalking}
+      imageAlt="Climate Edge team visiting remote farms in Honduras"
+      imageCaption="Climate Edge team visiting remote farms in Nicaragua"
+      imagePosition="left"
+      imageSize="medium"
+      className="mb-16 md:mb-48"
+    >
+      <p class="body mb-6">Organisations working with smallholder farmers relied on a mix of field agents, manual SMS, and ad‑hoc spreadsheets to deliver services and collect data. With very few agents and many small, dispersed farms, visits were slow and expensive, and most farmers heard from their cooperative only occasionally.</p>
+      <p class="body">When messages did go out, they were typically one‑off blasts with limited targeting and little opportunity for two‑way interaction, leading to low response rates and fragile services that were hard to sustain or improve over time.</p>
+    </TextImageBlock>
+  </Section>
+
+  <Section heading="Approach">
+    <TextImageBlock
+      heading="Transforming basic SMS into structured farmer services"
+      image={bananaIrrigationServiceApp}
+      imageAlt="Climate Edge banana irrigation service app"
+      imagePosition="right"
+      imageSize="medium"
+      className="mb-16 md:mb-48"
+    >
+      <p class="body mb-6">We worked with farming cooperatives and corporate partners to turn their fragmented outreach into real SMS services that could support both the cooperative and its farmers. Many organisations had very little structured data about their farmers, yet were responsible for reaching tens of thousands of people spread across hard‑to‑access rural areas.</p>
+      <p class="body">Our focus became to treat SMS like a digital service rather than one‑off messages: farmers could subscribe to specific services, receive timely, relevant information, and respond; organisations could collect data and manage ongoing relationships, not just send occasional blasts.</p>
+    </TextImageBlock>
+    <TextImageBlock
+      heading="Building a platform and flows that farmers would trust"
+      image={heroImage}
+      imageAlt="Climate Edge SMS platform"
+      imagePosition="left"
+      imageSize="medium"
+      className="mb-16 md:mb-48"
+    >
+      <p class="body mb-6">To make these services operable, we designed a SaaS platform that automated SMS sequencing, sign‑ups, and data collection so a small team could run multiple services and reach thousands of farmers without manual messaging. But SMS in Kenya was also associated with scams and spam, so asking farmers to sign up to a new short code was not straightforward – even when it represented their own cooperative.</p>
+      <p class="body">I led a research project with a team of Kenyan researchers, combining phone interviews with 32 farmers and experiments on different invitation patterns. We found that farmers were most likely to sign up when encouraged by someone they already trusted, moderately likely when sign‑up promised immediate, useful information, and very unlikely to respond to unexpected, anonymous SMS. These insights directly shaped how we designed the sign‑up flows, short‑code framing, and service invitations in the platform, so SMS services felt safer, clearer, and more worthwhile to engage with.</p>
+    </TextImageBlock>
+  </Section>
+
+  <Section heading="In practice" background="subtle">
+    <FeatureGrid className="mb-16 md:mb-48">
+      <FeatureGridItem
+        title="Protecting farmers during the COVID‑19 pandemic"
+        description="Kagaari North, a Kenyan coffee cooperative, used Climate Edge SMS services to keep farmers informed during COVID‑19 when field visits were impossible. Staff uploaded member phone numbers and sent timely messages about agronomic support, coffee prices, and PPE collection, maintaining support levels despite travel restrictions."
+      >
+        <div class="mt-6 pt-6 border-t border-gray-200 flex flex-col gap-3">
+          <div>
+            <p class="heading4">1,115</p>
+            <p class="text-sm text-gray-500">farmers received COVID guidance</p>
+          </div>
+          <div>
+            <p class="heading4">65%</p>
+            <p class="text-sm text-gray-500">of members successfully collected PPE</p>
+          </div>
+          <div>
+            <p class="heading4">27,000+</p>
+            <p class="text-sm text-gray-500">SMS messages sent</p>
+          </div>
+        </div>
+      </FeatureGridItem>
+      <FeatureGridItem
+        title="From no contact list to weekly SMS services"
+        description="Kibirigwi Farmers Cooperative Society in Kenya used Climate Edge to build a farmer contact database from scratch via a short‑code registration flow during harvest. With farmers subscribed, the cooperative now sends weekly SMS about factory opening times, soil testing, loans, and agronomic services, ensuring members receive time‑sensitive information in real time."
+      >
+        <div class="mt-6 pt-6 border-t border-gray-200 flex flex-col gap-3">
+          <div>
+            <p class="heading4">648</p>
+            <p class="text-sm text-gray-500">farmers subscribed to Kibirigwi's SMS service</p>
+          </div>
+          <div>
+            <p class="heading4">35,000+</p>
+            <p class="text-sm text-gray-500">SMS messages sent</p>
+          </div>
+        </div>
+      </FeatureGridItem>
+      <FeatureGridItem
+        title="40% more efficient banana irrigation via SMS"
+        description="Cranfield University's downscaled irrigation model for Colombian banana smallholders was delivered through Climate Edge as a weekly SMS service. Tailored irrigation recommendations and follow‑up surveys helped farmers adjust water use while feeding real‑world data back into the model to keep it accurate over time."
+      >
+        <div class="mt-6 pt-6 border-t border-gray-200 flex flex-col gap-3">
+          <div>
+            <p class="heading4">40%</p>
+            <p class="text-sm text-gray-500">improvement in irrigation efficiency</p>
+          </div>
+          <div>
+            <p class="heading4">50%</p>
+            <p class="text-sm text-gray-500">of farmers rated the service effective or very effective</p>
+          </div>
+        </div>
+      </FeatureGridItem>
+    </FeatureGrid>
+  </Section>
+
+  <Section heading="Outcomes">
+    <div class="mx-auto max-w-7xl px-6 lg:px-16 mb-16 md:mb-48">
+      <div class="grid gap-6 grid-cols-1 md:grid-cols-12 items-center">
+        <div class="md:col-start-1 md:col-span-5">
+          <img class="rounded-xl w-full" src="/climate-edge-sms/sms-service.gif" alt="Climate Edge SMS service in action" />
+        </div>
+        <div class="md:col-span-6 md:col-start-7">
+          <h2 class="heading2 mb-8">Outcome – SMS services as real farm support</h2>
+          <p class="body mb-6">By turning SMS from ad hoc messaging into managed, subscription-based services, we enabled cooperatives, NGOs, and research partners to stay in regular contact with thousands of dispersed farmers using only a small technical team. Instead of relying on slow, expensive field visits that reached each farm only occasionally, they could configure and run multiple services in parallel and see how farmers were engaging through simple survey responses.</p>
+          <p class="body mb-6">A dedicated research project with Kenyan farmers helped us identify more effective, trust-building sign-up patterns. This made it easier for farmers to subscribe via short codes and start receiving services that felt relevant to their daily work, such as irrigation advice, COVID safety guidance, factory updates, and payment or training notifications.</p>
+          <p class="body">For farmers, this meant timely, actionable information that previously depended on the next field visit. They now knew when to irrigate, when PPE would be available, when factories were accepting coffee, and when support or training was on offer, allowing them to manage their farms more efficiently and make better use of scarce resources.</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <ProjectMeta
+    role="Co-founder & lead product/service designer"
+    scope="Business and service strategy, farmer research, service design, platform UX, and early go‑to‑market materials for SMS‑based services"
+    collaborators="Co‑founders, engineering lead, field partners, cooperative leaders, and NGO programme teams"
+    status="Climate Edge has wound down as a startup. The technology and platform have since been sold to an NGO."
+  />
+
+</div>
